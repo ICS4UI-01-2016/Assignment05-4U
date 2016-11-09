@@ -1,21 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package hhssadventure;
 
 /**
  *
- * @author lamon
+ * @author hadik9595
  */
 public class HHSSAdventure {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
+    
+    public static void main(String[] args) {
+        // creat the interface
+        HHSSAdventureFrame gui = new HHSSAdventureFrame();
+        // show the interface
+        gui.setVisible(true);
+        
+        //create the map
+        Map map = new Map("zelda/tiles.txt");
+        
+        Controller c = new Controller(gui,map,8,8);
+    }
 }
