@@ -8,6 +8,6 @@ package hhssadventure;
  *
  * @author halll7908
  */
-public class AdventureFrame {
+public class Map {
     
 }

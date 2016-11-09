@@ -9,7 +9,7 @@ package hhssadventure;
  *
  * @author lamon
  */
-public class HHSSAdventure {
+public class RunGame {
 
     /**
      * @param args the command line arguments
