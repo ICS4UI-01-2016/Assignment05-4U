@@ -22,12 +22,17 @@ public class Screen {
     private boolean south;
     private boolean west;
 
+    /**
+     * Using a scanner to create new screen
+     *
+     * @param input A scanner containing screen info
+     */
     public Screen(Scanner input) {
         // Scan in the image name
         String imageName = input.next();
-        // find x and y out of the file name
-        
-        
+        // read in direction facing and then find corresponding image
+
+        // load the image
         try {
             File file = new File("file.txt");
             Scanner s = new Scanner(file);
@@ -37,5 +42,60 @@ public class Screen {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // get possible directions
+        north = input.nextBoolean();
+        east = input.nextBoolean();
+        south = input.nextBoolean();
+        west = input.nextBoolean();
+
+        // move to next Line
+        input.nextLine();
+    }
+
+    /**
+     * Get the row of the screen
+     *
+     * @return the row of the screen
+     */
+    public int getRow() {
+        return row;
+    }
+
+    /**
+     * Get the column of the screen
+     *
+     * @return column row of the screen
+     */
+    public int getCol() {
+        return col;
+    }
+
+    public boolean canGoNorth() {
+        return north;
+    }
+
+    public boolean canGoEast() {
+        return east;
+    }
+
+    public boolean canGoSouth() {
+        return south;
+    }
+
+    public boolean canGoWest() {
+        return west;
+    }
+
+    public BufferedImage getImage() {
+        return image;
+    }
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Screen s = new Screen(in);
+        
+        // direction?
+        System.out.println(s.canGoNorth());
     }
 }
