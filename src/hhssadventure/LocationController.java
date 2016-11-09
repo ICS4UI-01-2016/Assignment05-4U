@@ -8,6 +8,6 @@ package hhssadventure;
  *
  * @author halll7908
  */
-public class Controller {
-    
+public class LocationController {
+    // scan in the 4 possible directions of where you could be facing for that spot
 }
