@@ -97,19 +97,19 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNorthActionPerformed
-        // TODO add your handling code here:
+        controller.goNorth();
     }//GEN-LAST:event_buttonNorthActionPerformed
 
     private void buttonEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEastActionPerformed
-        // TODO add your handling code here:
+        controller.goEast();
     }//GEN-LAST:event_buttonEastActionPerformed
 
     private void buttonSouthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSouthActionPerformed
-        // TODO add your handling code here:
+        controller.goSouth();
     }//GEN-LAST:event_buttonSouthActionPerformed
 
     private void buttonWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWestActionPerformed
-        // TODO add your handling code here:
+        controller.goWest();
     }//GEN-LAST:event_buttonWestActionPerformed
 
     /**
