@@ -99,4 +99,6 @@ public class Screen {
         System.out.println(s.canGoNorth());
         System.out.println(s.getImage());
     }
+    
+    
 }
