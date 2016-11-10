@@ -1,5 +1,3 @@
-
-
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
@@ -11,7 +9,7 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author hadik9595
+ * @author hadik9595 & Kevin Y
  */
 public class ImageComponent extends JComponent {
     private BufferedImage image;

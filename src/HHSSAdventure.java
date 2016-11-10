@@ -17,7 +17,7 @@ public class HHSSAdventure {
         gui.setVisible(true);
         
         //create the map
-        Map map = new Map("zelda/tiles.txt");
+        Map map = new Map("images/pics.txt");
         
         Controller c = new Controller(gui,map,8,8);
     }
