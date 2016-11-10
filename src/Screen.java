@@ -26,10 +26,11 @@ public class Screen {
      * @param input A scanner containing screen info
      */
   public Screen(Scanner input){
+      String placeStart = input.next();
       // scan in the image name 
       String imageName = input.next();
       // split the string to grab row and col
-      String[] split = imageName.split("_");
+      String[] split = imageName.split("false");
       
       // save the row  - gets rid of R, conver to int 
       place = String.(split[1].substring(1));
@@ -59,7 +60,7 @@ public class Screen {
    * get row of the screen
    * @return the row of screen
    */
-   public int getPlace(){
+   public String getPlace(){
           return place;
       }
    
@@ -91,11 +92,10 @@ public class Screen {
        return image;
    }
    
-   /**
-    * for testing purposes
-    * @param args 
-    */
     public static void main(String[] args) {
-       
+        Scanner in = new Scanner(System.in);
+        
+        Screen s = new Screen(in);
     }
+    
 }
