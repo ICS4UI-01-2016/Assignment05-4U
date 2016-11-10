@@ -4,19 +4,33 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author richj0985
  */
 public class GUI extends javax.swing.JFrame {
-
+    
+    private Controller controller;
+    
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
     }
-
+    
+    public void setController(Controller c){
+        controller = c;
+    }
+    
+    public void setImage(BufferedImage img){
+        // the image panel sets its image
+//        imagePanel.setImage(img);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +44,7 @@ public class GUI extends javax.swing.JFrame {
         buttonWest = new javax.swing.JButton();
         buttonEast = new javax.swing.JButton();
         buttonSouth = new javax.swing.JButton();
+        imageComponent1 = new hhssadventure.ImageComponent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,21 +83,29 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(buttonWest)
-                        .addGap(69, 69, 69)
-                        .addComponent(buttonEast))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonSouth, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buttonNorth, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(208, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(184, 184, 184)
+                                .addComponent(buttonWest)
+                                .addGap(69, 69, 69)
+                                .addComponent(buttonEast))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(248, 248, 248)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonSouth, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(buttonNorth, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(0, 198, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(374, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(imageComponent1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(buttonNorth)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -151,5 +174,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonNorth;
     private javax.swing.JButton buttonSouth;
     private javax.swing.JButton buttonWest;
+    private hhssadventure.ImageComponent imageComponent1;
     // End of variables declaration//GEN-END:variables
 }

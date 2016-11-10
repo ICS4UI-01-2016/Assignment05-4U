@@ -15,8 +15,8 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
 
-    private int row;
-    private int col;
+    private int location;
+    private int direction;
     private BufferedImage image;
     private int height;
     private int width;
@@ -29,7 +29,7 @@ public class Screen {
         // Scan in the image name
         String imageName = input.next();
         // Split the string to grab row and column 
-        String[] split = imageName.split(" ");
+        String[] split = imageName.split("_");
         // Save the row - gets rid of ... 
 
         // Save the col = gets rid of ...
@@ -38,7 +38,7 @@ public class Screen {
 
         // Load the image file 
         try {
-            image = ImageIO.read(new File("images/" + imageName + ".txt"));
+            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,15 +53,23 @@ public class Screen {
         input.nextLine();
     }
 
-    public location(Scanner) {
-        // 4 screens (that the system will know
-        // the name of the location (Caf1 etc)
-        // ALSO ADD A METHOD FOR THE NAMES (THE IMAGE DIRECTION, AND THE IMAGE ITSELF
+//    public location(Scanner) {
+//        // 4 screens (that the system will know
+//        // the name of the location (Caf1 etc)
+//        // ALSO ADD A METHOD FOR THE NAMES (THE IMAGE DIRECTION, AND THE IMAGE ITSELF
+//    }
+//
+//    public screen() {
+//    }
+    
+    public int getLocation(){
+        return location;
     }
-
-    public screen() {
+    
+    public int getDirection(){
+        return direction;
     }
-
+    
     /**
      * Depicts whether the user can go north or not
      *
@@ -105,5 +113,9 @@ public class Screen {
      */
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public static void main(String[] args) {
+        
     }
 }
