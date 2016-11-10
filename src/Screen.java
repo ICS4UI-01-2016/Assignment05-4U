@@ -21,14 +21,23 @@ public class Screen {
     private BufferedImage eastImage;
     private BufferedImage southImage;
     private BufferedImage westImage;
-    private int north;
-    private int east;
-    private int south;
-    private int west;
+    private String north;
+    private String east;
+    private String south;
+    private String west;
+    private Boolean forwards;
 
     public Screen(Scanner input) {
+        // scan in the direction the photo is facing 
+        north = input.next();
         // scan in the image name
         String imageName = input.next();
+        // scan in whether you can move forwards
+        forwards = input.nextBoolean();
+        
+        // move to next line
+        input.nextLine();
+
         
         // set all to null - so no error codes for now
         northConnect = null;
