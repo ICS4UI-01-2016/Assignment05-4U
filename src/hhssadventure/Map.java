@@ -14,9 +14,10 @@ import java.util.Scanner;
  * @author richj0985
  */
 public class Map {
+
     private ArrayList<Screen> screens;
-    
-    public Map(String fileName){
+
+    public Map(String fileName) {
         // initialize the list
         screens = new ArrayList<>();
         try {
@@ -24,24 +25,23 @@ public class Map {
             Scanner input = new Scanner(new File(fileName));
             // Make screens
             // loop to the end of the file
-            while(input.hasNext()){
+            while (input.hasNext()) {
                 // creating a screen from the scanner
                 Screen s = new Screen(input);
                 // added the created screen to the list
                 screens.add(s);
             }
-        
+
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
     }
-    
 
-    public Screen getScreen(int location, int direction){
-        // go through each screen
-        for(Screen s: screens){
+    public Screen getScreen(int location, int direction) {
+        // go through each screen each time ******************
+        for (Screen s : screens) {
             // see if the row and col match
-            if(s.getLocation() == location && s.getDirection() == direction){
+            if (s.getLocation() == location && s.getDirection() == direction) {
                 // I found the screen
                 return s;
             }
