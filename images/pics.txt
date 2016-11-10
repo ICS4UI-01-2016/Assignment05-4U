@@ -1,4 +1,5 @@
-Strating point Caf1 N(IMG_0083.JPG)
+Caf1 
+N
 Upstairs1
 N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
 E IMG_0046.JPG true
