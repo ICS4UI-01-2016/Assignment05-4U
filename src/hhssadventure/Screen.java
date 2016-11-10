@@ -29,10 +29,11 @@ public class Screen {
         // Scan in the image name
         String imageName = input.next();
         // Split the string to grab row and column 
-        String[] split = imageName.split("_");
-        // Save the row - gets rid of ... 
-
-        // Save the col = gets rid of ...
+        String[] split = imageName.split(" ");
+        // Save the location - gets rid of ... 
+        location = Integer.parseInt("");
+        // Save the direction = gets rid of ...
+        direction = Integer.parseInt("");
 
 
 
@@ -53,23 +54,14 @@ public class Screen {
         input.nextLine();
     }
 
-//    public location(Scanner) {
-//        // 4 screens (that the system will know
-//        // the name of the location (Caf1 etc)
-//        // ALSO ADD A METHOD FOR THE NAMES (THE IMAGE DIRECTION, AND THE IMAGE ITSELF
-//    }
-//
-//    public screen() {
-//    }
-    
-    public int getLocation(){
+    public int getLocation() {
         return location;
     }
-    
-    public int getDirection(){
+
+    public int getDirection() {
         return direction;
     }
-    
+
     /**
      * Depicts whether the user can go north or not
      *
@@ -114,8 +106,7 @@ public class Screen {
     public BufferedImage getImage() {
         return image;
     }
-    
+
     public static void main(String[] args) {
-        
     }
 }
