@@ -18,17 +18,17 @@ public class Map {
     private ArrayList<Screen> screens;
 
     public Map(String fileName) {
-        // initialize the list
+        // Initialize the list
         screens = new ArrayList<>();
         try {
-            // make the scanner for the text file
+            // Make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
             // Make screens
-            // loop to the end of the file
+            // Loop to the end of the file
             while (input.hasNext()) {
-                // creating a screen from the scanner
+                // Creating a screen from the scanner
                 Screen s = new Screen(input);
-                // added the created screen to the list
+                // Added the created screen to the list
                 screens.add(s);
             }
 
@@ -38,15 +38,15 @@ public class Map {
     }
 
     public Screen getScreen(int location, int direction) {
-        // go through each screen each time ******************
+        // Go through each screen 
         for (Screen s : screens) {
-            // see if the row and col match
+            // See if the row and col match
             if (s.getLocation() == location && s.getDirection() == direction) {
-                // I found the screen
+                // Finding the image
                 return s;
             }
         }
-        // no screen found
+        // No screen found
         return null;
     }
 }
