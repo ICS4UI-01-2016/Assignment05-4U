@@ -96,7 +96,7 @@ public class Screen {
         Screen s = new Screen(in);
         
         // direction?
-        System.out.println(s.canGoNorth());
+        System.out.println(s.canGoEast());
         System.out.println(s.getImage());
     }
     

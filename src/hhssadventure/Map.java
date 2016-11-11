@@ -8,6 +8,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,9 +35,9 @@ public class Map {
                 screens.add(s);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-  
+  public Screen getScreen()
 }
