@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
     private String place;
-    private int direction;
+    private char direction;
     private BufferedImage image;
     private boolean north;
     private boolean east;
@@ -26,16 +26,21 @@ public class Screen {
      * @param input A scanner containing screen info
      */
   public Screen(Scanner input){
-      String placeStart = input.next();
+      //scan in the place
+      String place = input.next();
+      
+      //go down to the next line
+      input.nextLine();
       // scan in the image name 
       String imageName = input.next();
-      // split the string to grab row and col
-      String[] split = imageName.split("false");
+      // split the string to grab 
+      String[] split = imageName.split(" ");
       
       // save the row  - gets rid of R, conver to int 
       place = String.(split[1].substring(1));
       // save the col - gets rid of C, likewise
-      direction = Integer.parseInt(split[2].substring(1));
+      direction = split[0].charAt(0);
+      direction = split[0];
       
       //load the image file 
       try{
