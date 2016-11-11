@@ -32,6 +32,7 @@ public class Screen {
         String imageName = input.next();
         // read in direction facing and then find corresponding image
 
+        
         // load the image
         try {
             File file = new File("file.txt");
@@ -51,24 +52,6 @@ public class Screen {
 
         // move to next Line
         input.nextLine();
-    }
-
-    /**
-     * Get the row of the screen
-     *
-     * @return the row of the screen
-     */
-    public int getRow() {
-        return row;
-    }
-
-    /**
-     * Get the column of the screen
-     *
-     * @return column row of the screen
-     */
-    public int getCol() {
-        return col;
     }
 
     public boolean canGoNorth() {
