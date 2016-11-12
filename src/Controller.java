@@ -11,19 +11,20 @@ public class Controller {
     private HHSSAdventureFrame gui;
     private Map map;
     private String place;
-    private int direction;
+    private String direction;
     
-    public Controller(HHSSAdventureFrame gui, Map m, String word, char c){
+    public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
         this.gui = gui;
         this.map = m;
         this.place = word;
         this.direction = c;
         
+        
         //make sure the GUI can talk to you
         gui.setController(this);
         
         //set starting image 
-        Screen start = map.getScreen(row, col);
+        Screen start = map.getScreen(place,direction);
         gui.setImage(start.getImage());
     }
     

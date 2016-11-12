@@ -13,47 +13,54 @@ import javax.imageio.ImageIO;
  * @author hadik9595
  */
 public class Screen {
-    private String place;
-    private char direction;
+    private String currentPlace;
+    private String currentDirection;
     private BufferedImage image;
-    private boolean north;
-    private boolean east;
-    private boolean south;
-    private boolean west;
+    private String nextPlace;
+    private String nextDirection;
+
+   
   
     /**
      * Using a scanner to create a new screen
      * @param input A scanner containing screen info
      */
   public Screen(Scanner input){
+      
+      //scan in spawn
+      String spawnPlace = input.next();
+      String spawnDirection = input.next();
+      String check = input.next();
+      
+      
+      
       //scan in the place
-      String place = input.next();
+       place = input.next();
+       direction = input.next();
+        
       
       //go down to the next line
       input.nextLine();
       // scan in the image name 
       String imageName = input.next();
-      // split the string to grab 
-      String[] split = imageName.split(" ");
+      
+      
       
       // save the row  - gets rid of R, conver to int 
       
       // save the col - gets rid of C, likewise
-      direction = split[0].charAt(0);
+      
       
       
       //load the image file 
       try{
-          image = ImageIO.read(new File("images/"  + imageName + ".JPG"));
+          image = ImageIO.read(new File("images/"  + imageName));
       }catch(Exception e){
           e.printStackTrace();
       }
       
       // get the possible directions 
-      north = input.nextBoolean();
-      east = input.nextBoolean();
-      south = input.nextBoolean();
-      west = input.nextBoolean();
+     
       
       //move to next line 
       input.nextLine();
@@ -65,33 +72,25 @@ public class Screen {
    * get row of the screen
    * @return the row of screen
    */
-   public String getPlace(){
-          return place;
-      }
    
-   /**
-    * get column of the screen
-    * @return the column of the screen
-    */
-   public int getDirection(){
-       return direction;
+   
+  
+   public String getCurrentDirection(){
+       return currentDirection;
+   }
+  
+   public String getCurrentPlace(){
+       return currentPlace;
    }
    
-   public boolean canGoNorth(){
-       return north;
+   public String getNextDirection(){
+       return nextDirection;
    }
    
-   public boolean canGoEast(){
-       return east;
+   public String getNextPlace(){
+       return nextPlace;
    }
-   
-   public boolean canGoSouth(){
-       return south;
-   }
-   
-   public boolean canGoWest(){
-       return west;
-   }
+  
    
    public BufferedImage getImage(){
        return image;
@@ -101,6 +100,8 @@ public class Screen {
         Scanner in = new Scanner(System.in);
         
         Screen s = new Screen(in);
+        
+        
         
         
     }
