@@ -19,6 +19,7 @@ public class HHSSAdventure {
         //create the map
         Map map = new Map("images/pics.txt");
         
-        Controller c = new Controller(gui,map,8,8);
+        //initial spawn of the game, sets coordinates, and calls the map as well as the GUI
+        Controller c = new Controller(gui,map,"Caf1",'N');
     }
 }

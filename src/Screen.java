@@ -37,14 +37,14 @@ public class Screen {
       String[] split = imageName.split(" ");
       
       // save the row  - gets rid of R, conver to int 
-      place = String.(split[1].substring(1));
+      
       // save the col - gets rid of C, likewise
       direction = split[0].charAt(0);
-      direction = split[0];
+      
       
       //load the image file 
       try{
-          image = ImageIO.read(new File("zelda/"  + imageName + ".gif"));
+          image = ImageIO.read(new File("images/"  + imageName + ".JPG"));
       }catch(Exception e){
           e.printStackTrace();
       }
@@ -101,6 +101,8 @@ public class Screen {
         Scanner in = new Scanner(System.in);
         
         Screen s = new Screen(in);
+        
+        
     }
     
 }

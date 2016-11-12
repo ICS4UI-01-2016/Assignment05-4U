@@ -13,7 +13,7 @@ public class Controller {
     private String place;
     private int direction;
     
-    public Controller(HHSSAdventureFrame gui, Map m, String word, int c){
+    public Controller(HHSSAdventureFrame gui, Map m, String word, char c){
         this.gui = gui;
         this.map = m;
         this.place = word;
