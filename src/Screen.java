@@ -35,8 +35,8 @@ public class Screen {
       
       
       //scan in the place
-       place = input.next();
-       direction = input.next();
+       String place = input.next();
+       String direction = input.next();
         
       
       //go down to the next line
@@ -96,6 +96,11 @@ public class Screen {
        return image;
    }
    
+  
+   
+  
+  
+       
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         

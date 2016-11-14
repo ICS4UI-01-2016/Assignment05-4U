@@ -30,14 +30,14 @@ public class Controller {
     
     public void goNorth(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(place, direction);
         
         //ask if we can move north
         if(current.canGoNorth()){
             // move up a row
             row--;
             //Get new screen 
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(place, direction);
             // set the image
             gui.setImage(newScreen.getImage());
         }

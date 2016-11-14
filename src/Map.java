@@ -42,11 +42,11 @@ public class Map {
      * @param col the col which the screen appears 
      * @return the screen at (row,col) or null if not found
      */
-    public Screen getScreen(int row, int col){
+    public Screen getScreen(String place, String direction){
         //go through each screen 
         for(Screen s: screens){
             // see if row and col match
-            if(s.getPlace() == row && s.getDirection()== col){
+            if(s.getCurrentPlace() == place && s.getCurrentDirection()== direction){
                 //I found the screen
                 return s;
             }
