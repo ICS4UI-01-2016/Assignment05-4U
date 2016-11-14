@@ -1,3 +1,5 @@
+package hhssadventure;
+
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,23 +16,33 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
     // instance variables
+    //Connection screens
     private Screen northConnect;
     private Screen eastConnect;
     private Screen southConnect;
     private Screen westConnect;
+    //Connection screen names
+    private String northConnectName;
+    private String eastConnectName;
+    private String southConnectName;
+    private String westConnectName;
+    //images
     private BufferedImage northImage;
     private BufferedImage eastImage;
     private BufferedImage southImage;
     private BufferedImage westImage;
+    //image locations
     private String northImageName;
     private String eastImageName;
     private String southImageName;
     private String westImageName;
-    private String north;
-    private String east;
-    private String south;
-    private String west;
-    private Boolean forward;
+    //
+    private String northMoveDir;//not what i meant
+    private String eastMoveDir;
+    private String southMoveDir;
+    private String westMoveDir;
+    //not needed
+    //private Boolean forward;
     private String name;
 
     public Screen(Scanner input) {
@@ -39,8 +51,8 @@ public class Screen {
         // move to next line
         input.nextLine();
         
-        // scan in the direction the photo is facing 
-        north = input.next();
+        // skip direction
+        input.next();
         // scan in the north image name
         northImageName = input.next();
         // load the north image file
@@ -49,13 +61,18 @@ public class Screen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // scan in whether you can move forwards
-        forward = input.nextBoolean();
+        // scan in whether you can move North
+        if(input.nextBoolean()){
+            //store connect name
+            northConnectName = input.next();
+            //store connect direction
+            northMoveDir = input.next();
+        }
         // move to next line
         input.nextLine(); 
 
-        // scan in the direction the photo is facing 
-        east = input.next();
+        // skip direction
+        input.next();
         // scan in the east image name
         eastImageName = input.next();
         // load the east image file
@@ -65,12 +82,17 @@ public class Screen {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        forward = input.nextBoolean();
+        if(input.nextBoolean()){
+            //store connect name
+            eastConnectName = input.next();
+            //store move dir
+            eastMoveDir = input.next();
+        }
         // move to next line
         input.nextLine(); 
 
-        // scan in the direction the photo is facing 
-        south = input.next();
+        // skip direction
+        input.next();
         // scan in the south image name
         southImageName = input.next();
         // load the east image file
@@ -80,12 +102,17 @@ public class Screen {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        forward = input.nextBoolean();
+        if(input.nextBoolean()){
+            //store connect name
+            southConnectName = input.next();
+            //store move direction
+            southMoveDir = input.next();
+        }
         // move to next line
         input.nextLine(); 
 
-        // scan in the direction the photo is facing 
-        west = input.next();
+        // skip direction
+        input.next();
         // scan in the west image name
         westImageName = input.next();
         // load the east image file
@@ -95,7 +122,12 @@ public class Screen {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        forward = input.nextBoolean();
+        if(input.nextBoolean()){
+            //store connect name
+            westConnectName = input.next();
+            //store move direction
+            westMoveDir = input.next();
+        }
         // move to next line
         input.nextLine(); 
 
@@ -113,7 +145,7 @@ public class Screen {
      * @return true if you can move forward, false if you 
      */
     public boolean canGoForward(){
-        return this.forward;
+        return false;
     }
     
     /**
@@ -122,6 +154,38 @@ public class Screen {
      */
     public String getName(){
         return this.name;
+    }
+    
+    public String getNorthConnectName(){
+        return this.northConnectName;
+    }
+    
+    public String getEastConnectName(){
+        return this.eastConnectName;
+    }
+    
+    public String getSouthConnectName(){
+        return this.southConnectName;
+    }
+    
+    public String getWestConnectName(){
+        return this.westConnectName;
+    }
+    
+    public Screen getNorthConnect(){
+        return this.northConnect;
+    }
+    
+    public Screen getEastConnect(){
+        return this.eastConnect;
+    }
+    
+    public Screen getSouthConnect(){
+        return this.southConnect;
+    }
+    
+    public Screen getWestConnect(){
+        return this.westConnect;
     }
     
     /**
