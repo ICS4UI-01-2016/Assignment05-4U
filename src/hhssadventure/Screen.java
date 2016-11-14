@@ -6,6 +6,7 @@ package hhssadventure;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
@@ -14,12 +15,15 @@ import javax.imageio.ImageIO;
  * @author tatad6701
  */
 public class Screen {
-
+    
     // Creating the constants to be used (instance variables)
-    private char location;
-    private int direction;
+    private String  direction;
+    private String  imageName;
     private BufferedImage image;
-    private boolean north;
+    private boolean blockedMovement;
+    private String  newLocation;
+    private String  newDirection;
+/*
     private boolean east;
     private boolean south;
     private boolean west;
@@ -27,33 +31,68 @@ public class Screen {
     public static final int EAST = 1;
     public static final int SOUTH = 2;
     public static final int WEST = 3;
-
+*/
+    
+/*
+Upstairs1
+N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
+E IMG_0046.JPG true
+S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
+W IMG_0049.JPG true
+*/
     public Screen(Scanner input) {
-        // Scan in the image name
-        String imageName = input.nextLine();
+        
+        // Read a line from the file of the form
+        // N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
+        String line = ""; 
+        try {
+           line = input.nextLine();
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
 
-        // Split the string to grab location and direction
-        String[] split = imageName.split("false");
-        // Save the location - gets rid of ... 
+        // Split the line into it's pieces
+        String[] split = line.split(" ");
 
+        // load up the locations object variables
+        direction       = split[0];
+        imageName       = split[1];
+        blockedMovement = Boolean.parseBoolean( split[2] );
+        
+        // if this direction is not blocked than there will be a 
+        // new location and direction
+        if ( ! blockedMovement ) {
+            newLocation  = split[3];
+            newDirection = split[4].substring(0, 1);
+        }
+   
+        // Load the image file 
+        try {
+            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
+/*        
         // Setting the direction of the pictures based off of pic.txt file 
         if (split[0].equals("N")) {
             direction = 0;
         }
-        if (split[0].equals("E")) {
+        else if (split[0].equals("E")) {
             direction = 1;
         }
-        if (split[0].equals("S")) {
+        else if (split[0].equals("S")) {
             direction = 2;
         }
-        if (split[0].equals("W")) {
+        else if (split[0].equals("W")) {
             direction = 3;
         }
         // Getting the very first letter of the pics.txt file which is the direction
         direction = split[0].charAt(0);
 
 
-        //* Intake the place above the direction && Intake the place ALWAYS beside false
+        // Intake the place above the direction && Intake the place ALWAYS beside false
         if (split[0].equals(split[1])) {
             location = 
         }
@@ -76,23 +115,29 @@ public class Screen {
 
         // Move to the next line
         input.nextLine();
+ */
     }
 
+   
     /**
      * Acknowledging the location of the user
      *
      * @return the current location of the user
      */
-    public String getLocation() {
-        return location;
-    }
+   // public char getLocation() {
+   //    return location;
+   //    return 0;
+   // }
 
-    /**
+    
+    
+    /*
+     *
      * Acknowledging the direction of the user
      *
      * @return the current direction of the user
      */
-    public int getDirection() {
+    public String getDirection() {
         return direction;
     }
 
@@ -105,7 +150,8 @@ public class Screen {
      * @return if user is able to move north (true) or not (false)
      */
     public boolean canGoNorth() {
-        return north;
+    //    return north;
+        return false;
     }
 
     /**
@@ -114,7 +160,8 @@ public class Screen {
      * @return if the user can move east (true) or not (false)
      */
     public boolean canGoEast() {
-        return east;
+    //    return east;
+        return false;
     }
 
     /**
@@ -123,7 +170,8 @@ public class Screen {
      * @return if the user can move south (true) or not (false)
      */
     public boolean canGoSouth() {
-        return south;
+    //    return south;
+        return false;
     }
 
     /**
@@ -132,7 +180,8 @@ public class Screen {
      * @return if the user can move west (true) or not (false)
      */
     public boolean canGoWest() {
-        return west;
+     //   return west;
+        return false;
     }
 
     /**

@@ -11,14 +11,14 @@ package hhssadventure;
 public class Controller {
     private GUI gui;
     private Map map;
-    int location;
-    int direction;
+    String location;
+    String direction;
     
-    public Controller(GUI gui, Map map, int location, int direction){
+    public Controller(GUI gui, Map map){
         this.gui = gui;
         this.map = map;
-        this.location = location;
-        this.direction = direction;
+        this.location  = map.getInitialLocation();
+        this.direction = map.getInitialDirection();
         
         // make sure the GUI can talk to you
         gui.setController(this);
