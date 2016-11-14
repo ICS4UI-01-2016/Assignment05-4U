@@ -9,13 +9,17 @@
  * @author hadik9595
  */
 public class HHSSAdventureFrame extends javax.swing.JFrame {
-
+    private Controller controller;
     /**
      * Creates new form GUI
      */
     public HHSSAdventureFrame() {
         initComponents();
     }
+public void setController(Controller c){
+        controller = c;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

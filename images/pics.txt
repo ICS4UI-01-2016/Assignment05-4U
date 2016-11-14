@@ -1,7 +1,7 @@
 Caf1
 N
-Upstairs1
-N IMG_0045.JPG false Dowstairs S
+Upstairs1 
+N IMG_0045.JPG false Downstairs S
 E IMG_0046.JPG true
 S IMG_0047.JPG false Upstairs2 S
 W IMG_0049.JPG true
@@ -41,7 +41,7 @@ E IMG_0076.JPG false Eng3 E
 S IMG_0077.JPG true
 W IMG_0078.JPG false Eng1 W
 Eng3
-N IMG_0079.JPG false Dowstairs N
+N IMG_0079.JPG false Downstairs N
 E IMG_0080.JPG false Caf1 E
 S IMG_0081.JPG  true
 W IMG_0082.JPG false Eng2 W
@@ -115,7 +115,7 @@ N IMG_0132.JPG true
 E IMG_0133.JPG false Staff E
 S IMG_0134.JPG true
 W IMG_0135.JPG false Upstairs3 W
-Dowstairs
+Downstairs
 N IMG_0136.JPG false Upstairs1 S
 E IMG_0137.JPG true
 S IMG_0138.JPG false Eng3 S
