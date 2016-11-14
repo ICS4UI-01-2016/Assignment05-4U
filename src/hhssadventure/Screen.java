@@ -63,12 +63,16 @@ W IMG_0049.JPG true
         // new location and direction
         if ( ! blockedMovement ) {
             newLocation  = split[3];
+            System.out.println("New Location: " + newLocation);
             newDirection = split[4].substring(0, 1);
+            System.out.println("New Direction: " + newDirection);
         }
    
         // Load the image file 
         try {
-            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
+            System.out.println("");
+            System.out.println("Image: " + imageName);
+            image = ImageIO.read(new File("images/" + imageName));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,13 +128,10 @@ W IMG_0049.JPG true
      *
      * @return the current location of the user
      */
-   // public char getLocation() {
-   //    return location;
-   //    return 0;
-   // }
+    public String getImageName() {
+       return imageName;
+    }
 
-    
-    
     /*
      *
      * Acknowledging the direction of the user
@@ -140,10 +141,10 @@ W IMG_0049.JPG true
     public String getDirection() {
         return direction;
     }
-
-    public void north() {
+    
+    public String getNewImageName(){
+        
     }
-
     /**
      * Depicts whether the user can go north or not
      *

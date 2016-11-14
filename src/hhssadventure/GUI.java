@@ -27,7 +27,7 @@ public class GUI extends javax.swing.JFrame {
 
     public void setImage(BufferedImage img) {
         // the image panel sets its image
-//        imagePanel.setImage(img);
+        imagePanel.setImage(img);
     }
 
     /**
@@ -43,7 +43,7 @@ public class GUI extends javax.swing.JFrame {
         buttonWest = new javax.swing.JButton();
         buttonEast = new javax.swing.JButton();
         buttonSouth = new javax.swing.JButton();
-        imageComponent1 = new hhssadventure.ImageComponent();
+        imagePanel = new hhssadventure.ImageComponent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,14 +97,14 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(0, 198, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonNorth)
                 .addGap(18, 18, 18)
@@ -178,6 +178,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonNorth;
     private javax.swing.JButton buttonSouth;
     private javax.swing.JButton buttonWest;
-    private hhssadventure.ImageComponent imageComponent1;
+    private hhssadventure.ImageComponent imagePanel;
     // End of variables declaration//GEN-END:variables
 }
