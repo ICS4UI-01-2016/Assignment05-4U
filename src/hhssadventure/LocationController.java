@@ -10,14 +10,14 @@ package hhssadventure;
  */
 public class LocationController {
     // scan in the 4 possible directions of where you could be facing for that spot
-    
+
     private GUI gui;
     private Map map;
-    
-    public LocationController(GUI gui, Map m){
+
+    public LocationController(GUI gui, Map m) {
         this.gui = gui;
         this.map = map;
-        
+
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
