@@ -21,6 +21,6 @@ public class LocationController {
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
-        Screen start = 
+       
     }
 }

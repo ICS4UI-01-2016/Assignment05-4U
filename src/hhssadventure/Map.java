@@ -39,6 +39,6 @@ public class Map {
         }
     }
 
-  public Screen getScreen()
+
           
 }

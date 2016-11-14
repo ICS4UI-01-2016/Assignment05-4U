@@ -30,7 +30,7 @@ public class Screen {
     public Screen(Scanner input) {
         // Scan in the image name
         String imageName = input.next();
-        // read in direction facing and then find corresponding image
+        // read in the room/area and compare it with direction facing
 
         
         // load the image
