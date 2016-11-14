@@ -19,6 +19,7 @@ public class Map {
     //
     private ArrayList<Screen> screens;
     private Screen location;
+    private String direction;
     
     
     public Map(String fileName){
@@ -31,7 +32,7 @@ public class Map {
             String start = fileCreate.next();
             fileCreate.nextLine();
             //read start direction
-            String direction = fileCreate.next();
+            this.direction = fileCreate.next();
             //loop to make arraylist of screens
             while(fileCreate.hasNext()){
                 //make a new screen
@@ -41,40 +42,32 @@ public class Map {
             }
             //close scanner
             fileCreate.close();
-            //
-            int ii;
+            //connect all of the nodes
             for(int i = 0; i < screens.size(); i++){
                 //connect north
-                ii=0;
-                while(screens.get(i).getNorthConnect()==null){
+                
+                for(int ii = 0;screens.get(i).getNorthConnect()==null;ii++){
                     if(screens.get(ii).getName().equals(screens.get(i).getNorthConnectName())){
                         screens.get(i).setNorthConnect(screens.get(ii));
                     }
-                    ii++;
                 }
                 //connect east
-                ii=0;
-                while(screens.get(i).getEastConnect()==null){
+                for(int ii = 0;screens.get(i).getEastConnect()==null;ii++){
                     if(screens.get(ii).getName().equals(screens.get(i).getEastConnectName())){
                         screens.get(i).setEastConnect(screens.get(ii));
                     }
-                    ii++;
                 }
                 //connect south
-                ii=0;
-                while(screens.get(i).getSouthConnect()==null){
+                for(int ii = 0;screens.get(i).getSouthConnect()==null;ii++){
                     if(screens.get(ii).getName().equals(screens.get(i).getSouthConnectName())){
                         screens.get(i).setSouthConnect(screens.get(ii));
                     }
-                    ii++;
                 }
                 //connect west
-                ii=0;
-                while(screens.get(i).getWestConnect()==null){
+                for(int ii = 0;screens.get(i).getWestConnect()==null;ii++){
                     if(screens.get(ii).getName().equals(screens.get(i).getWestConnectName())){
                         screens.get(i).setWestConnect(screens.get(ii));
                     }
-                    ii++;
                 }
             }
         } catch(FileNotFoundException ex) {
