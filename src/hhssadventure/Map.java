@@ -81,5 +81,20 @@ public class Map {
             ex.printStackTrace();
         }
         
+        
     }
+    
+    public int dir(String dir){
+        //if direction is equal to North, South, East or West
+            if(dir.equals("N")){
+                return 0;
+            }else if(dir.equals("E")){
+                return 1;
+            }else if(dir.equals("S")){
+                return 2;
+            }else if(dir.equals("W")){
+                return 3;
+            }
+            return -1;
+        }
 }
