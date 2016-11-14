@@ -39,6 +39,13 @@ public class Map {
         }
     }
 
-
-          
+    public Screen getScreen() {
+        // go through the pics.txt file and 'locate' our next screen
+        for (Screen s : screens){
+            // compare new direction to directions underneath title of screen
+            
+        }
+        // no screen found
+        return null;
+    }
 }
