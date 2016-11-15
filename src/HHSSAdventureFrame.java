@@ -1,3 +1,6 @@
+
+import java.awt.image.BufferedImage;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -19,6 +22,10 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
 public void setController(Controller c){
         controller = c;
     }
+public void setImage(BufferedImage img){
+        // the image panel sets its image
+        imagePanel.setImage(img);
+    }
 
 
     /**
@@ -30,25 +37,40 @@ public void setController(Controller c){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        northButton = new javax.swing.JButton();
+        westButton = new javax.swing.JButton();
+        eastButton = new javax.swing.JButton();
+        southButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("North");
-
-        jButton2.setText("West");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        northButton.setText("North");
+        northButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                northButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("East");
+        westButton.setText("West");
+        westButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                westButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("South");
+        eastButton.setText("East");
+        eastButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eastButtonActionPerformed(evt);
+            }
+        });
+
+        southButton.setText("South");
+        southButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                southButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,36 +80,48 @@ public void setController(Controller c){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(jButton2)
+                        .addComponent(westButton)
                         .addGap(79, 79, 79)
-                        .addComponent(jButton3))
+                        .addComponent(eastButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(258, 258, 258)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addComponent(jButton1))))
+                            .addComponent(southButton)
+                            .addComponent(northButton))))
                 .addContainerGap(212, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(510, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(northButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(westButton)
+                    .addComponent(eastButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(southButton)
                 .addGap(147, 147, 147))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void westButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_westButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_westButtonActionPerformed
+
+    private void northButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_northButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_northButtonActionPerformed
+
+    private void eastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eastButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eastButtonActionPerformed
+
+    private void southButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_southButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +158,10 @@ public void setController(Controller c){
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton eastButton;
+    private javax.swing.JButton northButton;
+    private javax.swing.JButton southButton;
+    private javax.swing.JButton westButton;
     // End of variables declaration//GEN-END:variables
+
 }

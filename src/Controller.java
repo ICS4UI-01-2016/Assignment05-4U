@@ -28,22 +28,42 @@ public class Controller {
         gui.setImage(start.getImage());
     }
     
-    public void goNorth(){
+    public void goForward(){
         //get the screen we are on right now 
         Screen current = map.getScreen(place, direction);
+        
+        //if we can move north
+        if(current.isFrontClear()){
+            
+            //Get new screen, set at next place according 
+            Screen newScreen = map.getScreen(current.getNextPlace(), current.getNextDirection());
+            newScreen.getNextPlace();
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
+      
+    }
+    
+    //pretty sure we don't need these **********************************************************************
+       public void goNorth(){
+        //get the screen we are on right now 
+        Screen current = map.getScreen(row, col);
         
         //ask if we can move north
         if(current.canGoNorth()){
             // move up a row
             row--;
             //Get new screen 
-            Screen newScreen = map.getScreen(place, direction);
+            Screen newScreen = map.getScreen(row, col);
             // set the image
             gui.setImage(newScreen.getImage());
         }
-      
-    }
-       public void goSouth(){
+        
+    
+    
+    
+}
+    public void goSouth(){
         //get the screen we are on right now 
         Screen current = map.getScreen(row, col);
         

@@ -9,7 +9,7 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author hadik9595 & Kevin Y
+ * @author hadik9595 & yuk4142
  */
 public class ImageComponent extends JComponent {
     private BufferedImage image;
