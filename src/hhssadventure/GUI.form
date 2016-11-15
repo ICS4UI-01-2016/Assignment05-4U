@@ -26,21 +26,14 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="turnleft" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                       <Component id="west" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="east" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="turnright" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="south" min="-2" max="-2" attributes="0"/>
-                          <Component id="north" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="north" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
@@ -62,12 +55,8 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="west" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="east" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="turnright" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="turnleft" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="south" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,11 +67,6 @@
         <Property name="text" type="java.lang.String" value="north"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="south">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="south"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="west">
       <Properties>
         <Property name="text" type="java.lang.String" value="west"/>
@@ -91,16 +75,6 @@
     <Component class="javax.swing.JButton" name="east">
       <Properties>
         <Property name="text" type="java.lang.String" value="east"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="turnleft">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="turnleft"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="turnright">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="turnright"/>
       </Properties>
     </Component>
     <Container class="hhssadventure.ImageCompontent" name="imageCompontent1">

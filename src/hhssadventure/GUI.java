@@ -28,26 +28,17 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         north = new javax.swing.JButton();
-        south = new javax.swing.JButton();
         west = new javax.swing.JButton();
         east = new javax.swing.JButton();
-        turnleft = new javax.swing.JButton();
-        turnright = new javax.swing.JButton();
         imageCompontent1 = new hhssadventure.ImageCompontent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         north.setText("north");
 
-        south.setText("south");
-
         west.setText("west");
 
         east.setText("east");
-
-        turnleft.setText("turnleft");
-
-        turnright.setText("turnright");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,19 +47,13 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(turnleft)
-                        .addGap(18, 18, 18)
+                        .addGap(268, 268, 268)
                         .addComponent(west)
                         .addGap(58, 58, 58)
-                        .addComponent(east)
-                        .addGap(18, 18, 18)
-                        .addComponent(turnright))
+                        .addComponent(east))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(322, 322, 322)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(south)
-                            .addComponent(north)))
+                        .addComponent(north))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(imageCompontent1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -84,12 +69,8 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(west)
-                    .addComponent(east)
-                    .addComponent(turnright)
-                    .addComponent(turnleft))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(south)
-                .addGap(72, 72, 72))
+                    .addComponent(east))
+                .addGap(101, 101, 101))
         );
 
         pack();
@@ -134,9 +115,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton east;
     private hhssadventure.ImageCompontent imageCompontent1;
     private javax.swing.JButton north;
-    private javax.swing.JButton south;
-    private javax.swing.JButton turnleft;
-    private javax.swing.JButton turnright;
     private javax.swing.JButton west;
     // End of variables declaration//GEN-END:variables
 }

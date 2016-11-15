@@ -38,7 +38,7 @@ public class Location {
           }
        return true; 
   }
-    //this 
+    //this will get the next location if the front is not blocked
     public String getNextLocation(String dir) {
         for (int i = 0; i < 4; i++) {
             if (scenes[i].getDirection().equals(dir)) {
@@ -47,6 +47,7 @@ public class Location {
         }
         return null;
     }
+    // this grabs the current image the user is facing 
     public BufferedImage getImage(String dir) {
         for (int i = 0; i < 4; i++) {
             if (scenes[i].getDirection().equals(dir)) {
