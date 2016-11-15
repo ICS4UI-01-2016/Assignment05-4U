@@ -110,6 +110,8 @@ public class Map {
                 this.direction = "E";
             case 3:
                 this.direction = "S";
+            default:
+                break;
         }
     }
     /**
@@ -125,6 +127,37 @@ public class Map {
                 this.direction = "W";
             case 3:
                 this.direction = "N";
+            default:
+                break;
+        }
+    }
+    /**
+     * move location in facing direction and change direction
+     */
+    public void move(){
+        switch(dir(this.direction)){
+            case 0:
+                if(this.location.getNorthConnect() != null){
+                    this.direction = this.location.getNorthMoveDir();
+                    this.location = this.location.getNorthConnect();
+                }
+            case 1:
+                if(this.location.getEastConnect() != null){
+                    this.direction = this.location.getEastMoveDir();
+                    this.location = this.location.getEastConnect();
+                }
+            case 2:
+                if(this.location.getSouthConnect() != null){
+                    this.direction = this.location.getSouthMoveDir();
+                    this.location = this.location.getSouthConnect();
+                }
+            case 3:
+                if(this.location.getWestConnect() != null){
+                    this.direction = this.location.getWestMoveDir();
+                    this.location = this.location.getWestConnect();
+                }
+            default:
+                break;
         }
     }
 }

@@ -26,23 +26,22 @@ public class Screen {
     private String eastConnectName;
     private String southConnectName;
     private String westConnectName;
-    //images
+    //images for each direction
     private BufferedImage northImage;
     private BufferedImage eastImage;
     private BufferedImage southImage;
     private BufferedImage westImage;
-    //image locations
+    //image file location locations
     private String northImageName;
     private String eastImageName;
     private String southImageName;
     private String westImageName;
-    //
-    private String northMoveDir;//not what i meant
+    //direction faced after moving 
+    private String northMoveDir;
     private String eastMoveDir;
     private String southMoveDir;
     private String westMoveDir;
-    //not needed
-    //private Boolean forward;
+    //name of this screen
     private String name;
 
     public Screen(Scanner input) {
@@ -186,6 +185,22 @@ public class Screen {
     
     public Screen getWestConnect(){
         return this.westConnect;
+    }
+    
+    public String getNorthMoveDir(){
+        return this.northMoveDir;
+    }
+    
+    public String getEastMoveDir(){
+        return this.eastMoveDir;
+    }
+    
+    public String getSouthMoveDir(){
+        return this.southMoveDir;
+    }
+    
+    public String getWestMoveDir(){
+        return this.westMoveDir;
     }
     
     /**
