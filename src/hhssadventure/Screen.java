@@ -21,7 +21,7 @@ public class Screen {
     private String  imageName;
     private BufferedImage image;
     private boolean blockedMovement;
-    private String  newLocation;
+    private String  newImageName;
     private String  newDirection;
 /*
     private boolean east;
@@ -62,8 +62,8 @@ W IMG_0049.JPG true
         // if this direction is not blocked than there will be a 
         // new location and direction
         if ( ! blockedMovement ) {
-            newLocation  = split[3];
-            System.out.println("New Location: " + newLocation);
+            newImageName  = split[3];
+            System.out.println("New Location: " + newImageName);
             newDirection = split[4].substring(0, 1);
             System.out.println("New Direction: " + newDirection);
         }
@@ -76,62 +76,8 @@ W IMG_0049.JPG true
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        
-/*        
-        // Setting the direction of the pictures based off of pic.txt file 
-        if (split[0].equals("N")) {
-            direction = 0;
-        }
-        else if (split[0].equals("E")) {
-            direction = 1;
-        }
-        else if (split[0].equals("S")) {
-            direction = 2;
-        }
-        else if (split[0].equals("W")) {
-            direction = 3;
-        }
-        // Getting the very first letter of the pics.txt file which is the direction
-        direction = split[0].charAt(0);
-
-
-        // Intake the place above the direction && Intake the place ALWAYS beside false
-        if (split[0].equals(split[1])) {
-            location = 
-        }
-        location = Integer.parseInt(split[2].substring(1));
-
-        // Load the image file 
-        try {
-            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Getting the possible directions
-        north = input.nextBoolean();
-        east = input.nextBoolean();
-        south = input.nextBoolean();
-        west = input.nextBoolean();
-
-        // boolean blocked = input.nextBoolean();
-
-        // Move to the next line
-        input.nextLine();
- */
     }
-
-   
-    /**
-     * Acknowledging the location of the user
-     *
-     * @return the current location of the user
-     */
-    public String getImageName() {
-       return imageName;
-    }
-
+    
     /*
      *
      * Acknowledging the direction of the user
@@ -141,49 +87,62 @@ W IMG_0049.JPG true
     public String getDirection() {
         return direction;
     }
+   
+    /**
+     * Acknowledging the location of the user
+     *
+     * @return the current location of the user
+     */
+    public String getImageName() {
+       return imageName;
+    }
     
     public String getNewImageName(){
-        
+        return newImageName;
     }
-    /**
-     * Depicts whether the user can go north or not
-     *
-     * @return if user is able to move north (true) or not (false)
-     */
-    public boolean canGoNorth() {
-    //    return north;
-        return false;
+    
+    public boolean isBlocked(){
+        return blockedMovement;
     }
-
-    /**
-     * Depicts whether the user can go east or not
-     *
-     * @return if the user can move east (true) or not (false)
-     */
-    public boolean canGoEast() {
-    //    return east;
-        return false;
-    }
-
-    /**
-     * Depicts whether the user can go south or not
-     *
-     * @return if the user can move south (true) or not (false)
-     */
-    public boolean canGoSouth() {
-    //    return south;
-        return false;
-    }
-
-    /**
-     * Depicts whether the user can go west or not
-     *
-     * @return if the user can move west (true) or not (false)
-     */
-    public boolean canGoWest() {
-     //   return west;
-        return false;
-    }
+//    /**
+//     * Depicts whether the user can go north or not
+//     *
+//     * @return if user is able to move north (true) or not (false)
+//     */
+//    public boolean canGoNorth() {
+//    //    return north;
+//        return false;
+//    }
+//
+//    /**
+//     * Depicts whether the user can go east or not
+//     *
+//     * @return if the user can move east (true) or not (false)
+//     */
+//    public boolean canGoEast() {
+//    //    return east;
+//        return false;
+//    }
+//
+//    /**
+//     * Depicts whether the user can go south or not
+//     *
+//     * @return if the user can move south (true) or not (false)
+//     */
+//    public boolean canGoSouth() {
+//    //    return south;
+//        return false;
+//    }
+//
+//    /**
+//     * Depicts whether the user can go west or not
+//     *
+//     * @return if the user can move west (true) or not (false)
+//     */
+//    public boolean canGoWest() {
+//     //   return west;
+//        return false;
+//    }
 
     /**
      * Load in the image of the adventure
