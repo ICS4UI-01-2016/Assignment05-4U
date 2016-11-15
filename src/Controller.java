@@ -13,6 +13,7 @@ public class Controller {
     private String place;
     private String direction;
     
+    
     public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
         this.gui = gui;
         this.map = m;
@@ -47,14 +48,14 @@ public class Controller {
    
        public void lookNorth(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(place, direction);
         
         //ask if we can move north
-        if(current.canGoNorth()){
+       
             // move up a row
-            row--;
+            direction = "N"; 
             //Get new screen 
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(place, direction);
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -62,20 +63,19 @@ public class Controller {
     
     
     
-}
+
     public void lookSouth(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(place, direction);
         
-        //ask if we can move north
-        if(current.canGoSouth()){
-            // move up a row
-            row++;
+        
+    
+           direction = "S";
             //Get new screen 
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(place, direction);
             // set the image
             gui.setImage(newScreen.getImage());
-        }
+        
         
     
     
@@ -83,30 +83,30 @@ public class Controller {
 }
          public void lookWest(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(place, direction);
         
         //ask if we can move north
-        if(current.canGoWest()){
-            // move up a row
-            col--;
+      
+            direction = "W";
+         
             //Get new screen 
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(place, direction);
             // set the image
             gui.setImage(newScreen.getImage());
-        }
+        
 }
            public void lookEast(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(place, direction);
         
         //ask if we can move north
-        if(current.canGoEast()){
-            // move up a row
-            col++;
+        
+            direction = "E";
+            
             //Get new screen 
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(place, direction);
             // set the image
             gui.setImage(newScreen.getImage());
-        }
+        
 }
 }
