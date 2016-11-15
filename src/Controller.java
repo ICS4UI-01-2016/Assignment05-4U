@@ -44,8 +44,8 @@ public class Controller {
       
     }
     
-    //pretty sure we don't need these **********************************************************************
-       public void goNorth(){
+   
+       public void lookNorth(){
         //get the screen we are on right now 
         Screen current = map.getScreen(row, col);
         
@@ -63,7 +63,7 @@ public class Controller {
     
     
 }
-    public void goSouth(){
+    public void lookSouth(){
         //get the screen we are on right now 
         Screen current = map.getScreen(row, col);
         
@@ -81,7 +81,7 @@ public class Controller {
     
     
 }
-         public void goWest(){
+         public void lookWest(){
         //get the screen we are on right now 
         Screen current = map.getScreen(row, col);
         
@@ -95,7 +95,7 @@ public class Controller {
             gui.setImage(newScreen.getImage());
         }
 }
-           public void goEast(){
+           public void lookEast(){
         //get the screen we are on right now 
         Screen current = map.getScreen(row, col);
         

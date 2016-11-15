@@ -41,6 +41,7 @@ public void setImage(BufferedImage img){
         westButton = new javax.swing.JButton();
         eastButton = new javax.swing.JButton();
         southButton = new javax.swing.JButton();
+        moveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,13 @@ public void setImage(BufferedImage img){
             }
         });
 
+        moveButton.setText("Move");
+        moveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,14 +89,16 @@ public void setImage(BufferedImage img){
                     .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
                         .addComponent(westButton)
-                        .addGap(79, 79, 79)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(moveButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(eastButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(258, 258, 258)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(southButton)
                             .addComponent(northButton))))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +108,8 @@ public void setImage(BufferedImage img){
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(westButton)
-                    .addComponent(eastButton))
+                    .addComponent(eastButton)
+                    .addComponent(moveButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(southButton)
                 .addGap(147, 147, 147))
@@ -122,6 +133,10 @@ public void setImage(BufferedImage img){
     private void southButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_southButtonActionPerformed
+
+    private void moveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moveButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +174,7 @@ public void setImage(BufferedImage img){
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton eastButton;
+    private javax.swing.JButton moveButton;
     private javax.swing.JButton northButton;
     private javax.swing.JButton southButton;
     private javax.swing.JButton westButton;
