@@ -5,19 +5,35 @@
  */
 package hhssadventure;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Ajay
  */
 public class GUI extends javax.swing.JFrame {
+    
+    private Controller controller;
 
     /**
      * Creates new form GUI
      */
-    public GUI() {
+     public GUI() {
         initComponents();
     }
+    
+    public void setController(Controller c){
+        controller = c;
+    }
+    
+    public void setImage(BufferedImage img){
+        // the image panel sets its image
+    Image.setImage(img);
+    }
 
+        // make sure the GUI can talk to you
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +46,7 @@ public class GUI extends javax.swing.JFrame {
         north = new javax.swing.JButton();
         west = new javax.swing.JButton();
         east = new javax.swing.JButton();
-        imageCompontent1 = new hhssadventure.ImageCompontent();
+        Image = new hhssadventure.ImageCompontent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,15 +71,15 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(322, 322, 322)
                         .addComponent(north))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(imageCompontent1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(166, Short.MAX_VALUE))
+                        .addGap(110, 110, 110)
+                        .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(imageCompontent1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(Image, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(north)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -112,8 +128,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private hhssadventure.ImageCompontent Image;
     private javax.swing.JButton east;
-    private hhssadventure.ImageCompontent imageCompontent1;
     private javax.swing.JButton north;
     private javax.swing.JButton west;
     // End of variables declaration//GEN-END:variables
