@@ -17,11 +17,13 @@ import java.util.logging.Logger;
  */
 public class Map {
     private ArrayList<Screen> screens;
+    private ArrayList<Location> locations;
     
     
     public Map(String fileName){
         //initialize the list 
         screens = new ArrayList<>();
+        locations = new ArrayList<>();
         try {
             //make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));

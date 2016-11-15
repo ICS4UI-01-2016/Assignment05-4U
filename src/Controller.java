@@ -35,10 +35,12 @@ public class Controller {
         
         //if we can move north
         if(current.isFrontClear()){
+            place = current.getNextPlace();
             
             //Get new screen, set at next place according 
             Screen newScreen = map.getScreen(current.getNextPlace(), current.getNextDirection());
             newScreen.getNextPlace();
+
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -109,4 +111,10 @@ public class Controller {
             gui.setImage(newScreen.getImage());
         
 }
+           public static void main(String[] args) {
+   
+               
+               
 }
+}
+

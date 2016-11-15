@@ -24,7 +24,7 @@ public void setController(Controller c){
     }
 public void setImage(BufferedImage img){
         // the image panel sets its image
-        imagePanel.setImage(img);
+       imagePanel.setImage(img);
     }
 
 
@@ -42,6 +42,7 @@ public void setImage(BufferedImage img){
         eastButton = new javax.swing.JButton();
         southButton = new javax.swing.JButton();
         moveButton = new javax.swing.JButton();
+        imagePanel = new ImageComponent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,13 +98,18 @@ public void setImage(BufferedImage img){
                         .addGap(258, 258, 258)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(southButton)
-                            .addComponent(northButton))))
-                .addContainerGap(220, Short.MAX_VALUE))
+                            .addComponent(northButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(510, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(northButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -179,6 +185,7 @@ public void setImage(BufferedImage img){
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton eastButton;
+    private ImageComponent imagePanel;
     private javax.swing.JButton moveButton;
     private javax.swing.JButton northButton;
     private javax.swing.JButton southButton;

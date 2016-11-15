@@ -28,29 +28,34 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(Scanner input) {
-        
-        currentPlace = input.nextLine();
+       
+        String currentPlace = input.nextLine();
+  
         String currentDirection = input.next();
+        
 
         // scan in the image name 
         String imageName = input.next();
 
-        String check = input.next();
+        
+         frontClear = input.nextBoolean();
 
       //scan in the place
-        if (check == "false") {
+        if (frontClear == false) {
             nextPlace = input.next();
             nextDirection = input.next();
+            
         }
 
         //load the image file 
         try {
-            image = ImageIO.read(new File("images/" + imageName));
+            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
+        System.out.println(imageName);
         //move to next line 
         input.nextLine();
 
@@ -93,15 +98,6 @@ public class Screen {
         return frontClear;
     }
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-
-        Screen s = new Screen(in);
-
-        System.out.println("Test");
-
-        s.isFrontClear();
-
-    }
+  
 
 }
