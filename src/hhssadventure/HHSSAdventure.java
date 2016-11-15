@@ -5,6 +5,9 @@
  */
 package hhssadventure;
 
+
+import javafx.stage.Screen;
+
 /**
  *
  * @author lamon
@@ -25,4 +28,6 @@ public class HHSSAdventure {
        Map map = new Map("images/pics.txt");
     }
     
+    
+        
 }
