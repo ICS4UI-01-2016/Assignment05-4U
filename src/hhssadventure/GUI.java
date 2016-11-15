@@ -41,6 +41,11 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         SouthButton.setText("South");
+        SouthButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SouthButtonActionPerformed(evt);
+            }
+        });
 
         EastButton.setText("East");
         EastButton.addActionListener(new java.awt.event.ActionListener() {
@@ -50,8 +55,18 @@ public class GUI extends javax.swing.JFrame {
         });
 
         WestButton.setText("West");
+        WestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WestButtonActionPerformed(evt);
+            }
+        });
 
         NorthButton.setText("North");
+        NorthButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NorthButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ImageLayout = new javax.swing.GroupLayout(Image);
         Image.setLayout(ImageLayout);
@@ -106,6 +121,18 @@ public class GUI extends javax.swing.JFrame {
     private void EastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EastButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EastButtonActionPerformed
+
+    private void NorthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorthButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NorthButtonActionPerformed
+
+    private void WestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WestButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WestButtonActionPerformed
+
+    private void SouthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SouthButtonActionPerformed
 
     /**
      * @param args the command line arguments
