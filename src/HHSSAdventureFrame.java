@@ -120,22 +120,27 @@ public void setImage(BufferedImage img){
 
     private void westButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_westButtonActionPerformed
         // TODO add your handling code here:
+        controller.lookWest();
     }//GEN-LAST:event_westButtonActionPerformed
 
     private void northButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_northButtonActionPerformed
         // TODO add your handling code here:
+        controller.lookNorth();
     }//GEN-LAST:event_northButtonActionPerformed
 
     private void eastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eastButtonActionPerformed
         // TODO add your handling code here:
+        controller.lookEast();
     }//GEN-LAST:event_eastButtonActionPerformed
 
     private void southButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southButtonActionPerformed
         // TODO add your handling code here:
+        controller.lookSouth();
     }//GEN-LAST:event_southButtonActionPerformed
 
     private void moveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveButtonActionPerformed
         // TODO add your handling code here:
+        controller.goForward();
     }//GEN-LAST:event_moveButtonActionPerformed
 
     /**

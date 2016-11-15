@@ -28,7 +28,7 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(Scanner input) {
-
+        
         currentPlace = input.nextLine();
         String currentDirection = input.next();
 
