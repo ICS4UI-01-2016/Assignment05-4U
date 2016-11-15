@@ -101,6 +101,10 @@ W IMG_0049.JPG true
         return newImageName;
     }
     
+    public String getNewDirection(){
+        return newDirection;
+    }
+    
     public boolean isBlocked(){
         return blockedMovement;
     }

@@ -55,6 +55,9 @@ public class Map {
             // read the initial location and direction from the config file
             initialLocation  = input.nextLine();
             initialDirection = input.nextLine();
+            
+            System.out.println("Initial Location: " + initialLocation);
+            System.out.println("Initial Direction: " + initialDirection);
                     
             // Make screens
             // Loop to the end of the file.  Check to see 
@@ -82,15 +85,15 @@ public class Map {
     }
             
 
-    public Screen getScreen( String findLocation, String findDirection) {
+    public Screen getScreen( String findLocation, String findDirection) {        
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
-            if ( loc.name ==  findLocation) {
+            if (loc.name.equals(findLocation)) {
                 // found the location 
                 // now loop through the 4 screens/direction for this location
                 for (Screen scn : loc.screens) {
                     // See if we have a direction match
-                    if (scn.getDirection() == findDirection) {
+                    if (scn.getDirection().equals(findDirection)) {
                         // Finding the image
                         return scn;
                     }

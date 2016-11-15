@@ -25,6 +25,7 @@ public class Controller {
         gui.setController(this);
         // set the starting image
         Screen start = map.getScreen(location, direction);
+        System.out.println("Start: " + start);
         gui.setImage(start.getImage());
     }
 
@@ -32,8 +33,10 @@ public class Controller {
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move north
-        if (current.isBlocked == false) {
-        
+        if (current.isBlocked() == false) {
+            
+            location = current.getNewImageName();
+            direction = current.getNewDirection();
             // get the new screen
             Screen newScreen = map.getScreen(location, direction);
             // set the image
@@ -45,7 +48,10 @@ public class Controller {
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move south
-        if (current.isBlocked == false) {
+        if (current.isBlocked() == false) {
+            
+            location = current.getNewImageName();
+            direction = current.getNewDirection();
             // get the new screen
             Screen newScreen = map.getScreen(location, direction);
             // set the image
@@ -57,7 +63,10 @@ public class Controller {
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move east
-        if (current.isBlocked == false) {
+        if (current.isBlocked() == false) {
+            
+            location = current.getNewImageName();
+            direction = current.getNewDirection();
             Screen newScreen = map.getScreen(location, direction);
             gui.setImage(newScreen.getImage());
         }
@@ -67,7 +76,10 @@ public class Controller {
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move west
-        if (current.isBlocked == false) {
+        if (current.isBlocked() == false) {
+            
+            location = current.getNewImageName();
+            direction = current.getNewDirection();
             // get the new screen
             Screen newScreen = map.getScreen(location, direction);
             // set the image
