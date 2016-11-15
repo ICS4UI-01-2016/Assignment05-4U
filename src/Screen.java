@@ -18,6 +18,7 @@ public class Screen {
     private BufferedImage image;
     private String nextPlace;
     private String nextDirection;
+    private boolean frontClear;
 
    
   
@@ -39,16 +40,12 @@ public class Screen {
        String direction = input.next();
         
       
-      //go down to the next line
-      input.nextLine();
+      
       // scan in the image name 
       String imageName = input.next();
       
       
       
-      // save the row  - gets rid of R, conver to int 
-      
-      // save the col - gets rid of C, likewise
       
       
       
@@ -96,7 +93,18 @@ public class Screen {
        return image;
    }
    
+  public boolean isFrontClear(){
+      return frontClear;
+  }
   
+  public void checks(Scanner input){
+       String spawnPlace = input.next();
+      String spawnDirection = input.next();
+      String check = input.next();
+      
+      System.out.println(check);
+      System.out.println("yo");
+  }
    
   
   
@@ -106,8 +114,10 @@ public class Screen {
         
         Screen s = new Screen(in);
         
+        System.out.println("Test");
         
-        
+        s.checks(in);
+        s.isFrontClear();
         
     }
     
