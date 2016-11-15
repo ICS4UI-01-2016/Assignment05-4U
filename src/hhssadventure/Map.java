@@ -76,18 +76,55 @@ public class Map {
         
         
     }
-    
-    public int dir(String dir){
+    /**
+     * Convert directions from strings to integer
+     * @param dir single character string that represent the cardinal directions
+     * @return integer from 0-3 representing the cardinal directions
+     */
+    private int dir(String dir){
         //if direction is equal to North, South, East or West
-            if(dir.equals("N")){
+        switch (dir) {
+            case "N":
                 return 0;
-            }else if(dir.equals("E")){
+            case "E":
                 return 1;
-            }else if(dir.equals("S")){
+            case "S":
                 return 2;
-            }else if(dir.equals("W")){
+            case "W":
                 return 3;
-            }
+            default:
+                break;
+        }
             return -1;
         }
+    /**
+     * changes direction to turn left
+     */
+    public void turnLeft(){
+        switch(dir(this.direction)){
+            case 0:
+                this.direction = "W";
+            case 1:
+                this.direction = "N";
+            case 2:
+                this.direction = "E";
+            case 3:
+                this.direction = "S";
+        }
+    }
+    /**
+     * changes direction to turn right
+     */
+    public void turnRight(){
+        switch(dir(this.direction)){
+            case 0:
+                this.direction = "E";
+            case 1:
+                this.direction = "S";
+            case 2:
+                this.direction = "W";
+            case 3:
+                this.direction = "N";
+        }
+    }
 }
