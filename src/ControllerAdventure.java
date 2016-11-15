@@ -23,22 +23,21 @@ public class ControllerAdventure {
         gui.setController(this); 
         
         // set starting image
-        Screen start = map.getScreen(row, col);
+        ScreenAdventure start = map.getScreen(direction, location);
         gui.setImage(start.getImage()); 
     }
     
-    public void goNorth(){
+    public void lookNorth(){
         // get the screen we are on right now
-        ScreenAdventure current = map.getScreen(row, col);
+        ScreenAdventure current = map.getScreen(direction, location);
         // ask if we can move north
-        if(){
+        direction = "north";
             // move up a row
-            row--;
+            
             // get the new screen 
-            Screen newScreen = map.getScreen(row, col);
+            ScreenAdventure newScreen = map.getScreen(direction, location);
             // set the image
-            gui.setImage(newScreen.getImage()); 
-        }
+            gui.setImage(newScreen.getImage());       
     }
     
 }

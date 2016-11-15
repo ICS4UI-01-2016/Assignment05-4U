@@ -8,14 +8,15 @@ import java.util.Scanner;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author guanv6321
  */
 public class MapAdventure {
-   private ArrayList<ScreenAdventure> screens;
-   public MapAdventure(String fileName){
+
+    private ArrayList<ScreenAdventure> screens;
+
+    public MapAdventure(String fileName) {
         // initialize the list
         screens = new ArrayList<>();
         try {
@@ -23,7 +24,7 @@ public class MapAdventure {
             Scanner input = new Scanner(new File(fileName));
             // Make screens
             // loop to the end of the file
-            while(input.hasNext()){
+            while (input.hasNext()) {
                 // creating a screen from the scanner
                 ScreenAdventure s = new ScreenAdventure(input);
                 // added the created screen to the list
@@ -32,21 +33,17 @@ public class MapAdventure {
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        
+
     }
-   /**
-     * Retrieve a specific screen from the map
-     * @param row the row which the screen appears 
-     * @param col the column which the screen appears
-     * @return the screen at (row, col) or null if not found
-     */
-    public ScreenAdventure getScreen(int row, int col){
+
+    
+    public ScreenAdventure getScreen(String direction, String location) {
         // go through each screen
-        for(ScreenAdventure s: screens){
+        for (ScreenAdventure scrn : screens) {
             // see if the row and col match
-            if(s.getRow() == row && s.getCol() == col){
+            if (scrn.getCurrentLocation() == direction && scrn.getCurrentDirection() == location) {
                 // found the screen
-                return s;
+                return scrn;
             }
         }
         // no screen found
