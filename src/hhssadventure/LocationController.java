@@ -22,5 +22,7 @@ public class LocationController {
         gui.setController(this);
         // set starting image
        
+        // store starting position
+        
     }
 }
