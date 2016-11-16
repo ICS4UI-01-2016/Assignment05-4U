@@ -29,12 +29,12 @@ public class Screen {
      */
     public Screen(Scanner input) {
         
-        String check = input.next();
+        String checkPlace = input.next();
          //checks if first word is more than 1 letter (because if it is, then that's where we need to call location) 
-        if(check.length() > 1){
-            currentPlace = check;
+        if(checkPlace.length() > 1){
+            currentPlace = checkPlace;
             input.nextLine();
-        }else{
+        }else if (input.next() != null){
          
          currentDirection = input.next();
         
@@ -57,8 +57,7 @@ public class Screen {
             frontClear = true;
             input.next();
         }
-            System.out.println(" image ? "+ imageName);
-            System.out.println(currentDirection);
+           
 
         //move to next line 
         input.nextLine(); 
@@ -68,7 +67,9 @@ public class Screen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        }
+        }else{
+           input.nextLine();
+       }
        
         
        
@@ -76,8 +77,8 @@ public class Screen {
 
      
         
-
-    }
+        }
+    
 
     /**
      * get row of the screen
