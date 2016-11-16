@@ -25,17 +25,16 @@ public class Controller {
         gui.setController(this);
         // set the starting image
         Screen start = map.getScreen(location, direction);
-        System.out.println("Star loc: " + start);
-        System.out.println("Start: " + start.getImage());
         gui.setImage(start.getImage());
     }
 
     public void goNorth() {
+        System.out.println("Here");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move north
         if (current.isBlocked() == false) {
-            
+
             location = current.getNewImageName();
             direction = current.getNewDirection();
             // get the new screen
@@ -46,11 +45,12 @@ public class Controller {
     }
 
     public void goSouth() {
+        System.out.println("Here");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move south
         if (current.isBlocked() == false) {
-            
+
             location = current.getNewImageName();
             direction = current.getNewDirection();
             // get the new screen
@@ -61,11 +61,12 @@ public class Controller {
     }
 
     public void goEast() {
+        System.out.println("Here");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move east
         if (current.isBlocked() == false) {
-            
+
             location = current.getNewImageName();
             direction = current.getNewDirection();
             Screen newScreen = map.getScreen(location, direction);
@@ -74,11 +75,12 @@ public class Controller {
     }
 
     public void goWest() {
+        System.out.println("Here");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move west
         if (current.isBlocked() == false) {
-            
+
             location = current.getNewImageName();
             direction = current.getNewDirection();
             // get the new screen
