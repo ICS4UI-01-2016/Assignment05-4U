@@ -63,15 +63,14 @@ W IMG_0049.JPG true
         // new location and direction
         if ( ! blockedMovement ) {
             newImageName  = split[3];
-            System.out.println("New Location: " + newImageName);
+            
             newDirection = split[4].substring(0, 1);
-            System.out.println("New Direction: " + newDirection);
+           
         }
    
         // Load the image file 
         try {
-            System.out.println("");
-            System.out.println("Image: " + imageName);
+            
             image = ImageIO.read(new File("images/" + imageName));
         } catch (Exception e) {
             e.printStackTrace();
@@ -108,45 +107,6 @@ W IMG_0049.JPG true
     public boolean isBlocked(){
         return blockedMovement;
     }
-//    /**
-//     * Depicts whether the user can go north or not
-//     *
-//     * @return if user is able to move north (true) or not (false)
-//     */
-//    public boolean canGoNorth() {
-//    //    return north;
-//        return false;
-//    }
-//
-//    /**
-//     * Depicts whether the user can go east or not
-//     *
-//     * @return if the user can move east (true) or not (false)
-//     */
-//    public boolean canGoEast() {
-//    //    return east;
-//        return false;
-//    }
-//
-//    /**
-//     * Depicts whether the user can go south or not
-//     *
-//     * @return if the user can move south (true) or not (false)
-//     */
-//    public boolean canGoSouth() {
-//    //    return south;
-//        return false;
-//    }
-//
-//    /**
-//     * Depicts whether the user can go west or not
-//     *
-//     * @return if the user can move west (true) or not (false)
-//     */
-//    public boolean canGoWest() {
-//     //   return west;
-//        return false;
-//    }
 
     /**
      * Load in the image of the adventure
@@ -157,6 +117,4 @@ W IMG_0049.JPG true
         return image;
     }
 
-    public static void main(String[] args) {
-    }
 }

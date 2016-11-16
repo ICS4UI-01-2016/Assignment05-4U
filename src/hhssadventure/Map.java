@@ -86,18 +86,15 @@ public class Map {
             
 
     public Screen getScreen( String findLocation, String findDirection) {        
+        
+        System.out.println("Find Location = " + findLocation);
+        System.out.println("Find Direction = " + findDirection);
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
-            if (loc.name.equals(findLocation)) {
+            
+            if (loc.getName().equals(findLocation)) {
                 // found the location 
-                // now loop through the 4 screens/direction for this location
-                for (Screen scn : loc.screens) {
-                    // See if we have a direction match
-                    if (scn.getDirection().equals(findDirection)) {
-                        // Finding the image
-                        return scn;
-                    }
-                }
+                return loc.getScreen(findDirection);
             }
         }
         // No screen found

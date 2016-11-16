@@ -25,7 +25,8 @@ public class Controller {
         gui.setController(this);
         // set the starting image
         Screen start = map.getScreen(location, direction);
-        System.out.println("Start: " + start);
+        System.out.println("Star loc: " + start);
+        System.out.println("Start: " + start.getImage());
         gui.setImage(start.getImage());
     }
 
