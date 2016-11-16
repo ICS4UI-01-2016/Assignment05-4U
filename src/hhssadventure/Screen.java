@@ -244,7 +244,7 @@ public class Screen {
      *
      * @return the south image
      */
-    public BufferedImage setNorthImage() {
+    public BufferedImage getNorthImage() {
         return northImage;
     }
 
@@ -253,7 +253,7 @@ public class Screen {
      *
      * @return the east image
      */
-    public BufferedImage setEastImage() {
+    public BufferedImage getEastImage() {
         return eastImage;
     }
 
@@ -262,7 +262,7 @@ public class Screen {
      *
      * @return the south image
      */
-    public BufferedImage setSouthImage() {
+    public BufferedImage getSouthImage() {
         return southImage;
     }
 
@@ -271,7 +271,7 @@ public class Screen {
      *
      * @return the west image
      */
-    public BufferedImage setWestImage() {
+    public BufferedImage getWestImage() {
         return westImage;
     }
 }
