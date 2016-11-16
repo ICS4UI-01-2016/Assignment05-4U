@@ -5,6 +5,7 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -158,6 +159,21 @@ public class Map {
                 }
             default:
                 break;
+        }
+    }
+    
+    public BufferedImage getImage(){
+        switch(this.direction){
+            case "N":
+                return location.getNorthImage();
+            case "E":
+                return location.getEastImage();
+            case "S":
+                return location.getSouthImage();
+            case "W":
+                return location.getWestImage();
+            default:
+                return null;
         }
     }
 }
