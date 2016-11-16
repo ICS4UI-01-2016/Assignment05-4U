@@ -21,5 +21,6 @@ public class HHSSAdventure {
         
         //initial spawn of the game, sets coordinates, and calls the map as well as the GUI
         Controller c = new Controller(gui,map,"Caf1","N");
+        
     }
 }

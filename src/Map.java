@@ -34,6 +34,7 @@ public class Map {
                 Screen s = new Screen(input);
                  // added the created screen to the list
                 screens.add(s);
+                
             }
             
         } catch (FileNotFoundException ex) {
@@ -50,7 +51,7 @@ public class Map {
         //go through each screen 
         for(Screen s: screens){
             // see if place and direction match
-            if(s.getCurrentPlace() == place && s.getCurrentDirection()== direction){
+            if(s.getCurrentPlace().equals(place) && s.getCurrentDirection().equals(direction)){
                 //I found the screen
                 return s;
             }

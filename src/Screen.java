@@ -28,36 +28,54 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(Scanner input) {
-       
-        String currentPlace = input.nextLine();
-  
-        String currentDirection = input.next();
         
-
+        String check = input.next();
+         //checks if first word is more than 1 letter (because if it is, then that's where we need to call location) 
+        if(check.length() > 1){
+            currentPlace = check;
+            input.nextLine();
+        }else{
+         
+         currentDirection = input.next();
+        
+        
+        
+       
+ 
         // scan in the image name 
         String imageName = input.next();
 
+        String check2 = input.next();
         
-         frontClear = input.nextBoolean();
-
-      //scan in the place
-        if (frontClear == false) {
+      //checks if boolean is false or not
+        if (check2.equals("false")) {
+            frontClear = false;
             nextPlace = input.next();
             nextDirection = input.next();
             
+        }else{
+            frontClear = true;
+            input.next();
         }
+            System.out.println(" image ? "+ imageName);
+            System.out.println(currentDirection);
 
-        //load the image file 
+        //move to next line 
+        input.nextLine(); 
+         //load the image file 
         try {
-            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
+            image = ImageIO.read(new File("images/" +  imageName + ".JPG"));
         } catch (Exception e) {
             e.printStackTrace();
         }
+        }
+       
+        
+       
 
 
-        System.out.println(imageName);
-        //move to next line 
-        input.nextLine();
+     
+        
 
     }
 

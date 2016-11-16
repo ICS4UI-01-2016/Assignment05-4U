@@ -52,7 +52,7 @@ public class Controller {
         //get the screen we are on right now 
         Screen current = map.getScreen(place, direction);
         
-        //ask if we can move north
+ 
        
             // move up a row
             direction = "N"; 
@@ -113,7 +113,7 @@ public class Controller {
 }
            public static void main(String[] args) {
    
-               
+               Controller f = new Controller(null, null, "Hey", "h");
                
 }
 }
