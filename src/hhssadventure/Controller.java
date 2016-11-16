@@ -46,7 +46,7 @@ public class Controller {
     public void goSouth(){
         // get the screen we are on right now
         Screen current = map.getScreen(row, col);
-        //ask if we can move north
+        //ask if we can move south
         if(current.canGoSouth()){
             // move down a row
             row++;

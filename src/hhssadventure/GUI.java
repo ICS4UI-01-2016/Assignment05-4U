@@ -113,12 +113,12 @@ public class GUI extends javax.swing.JFrame {
         controller.goSouth();
     }
      
-     private void NorthButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        controller.goNorth();
+     private void EastButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        controller.goEast();
     }
       
-     private void NorthButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        controller.goNorth();
+     private void WestButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        controller.goWest();
     }
     /**
      * @param args the command line arguments
