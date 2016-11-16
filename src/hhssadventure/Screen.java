@@ -155,10 +155,18 @@ public class Screen {
         return this.name;
     }
     
+    /**
+     * Get the north connection name
+     * @return the north connection name
+     */
     public String getNorthConnectName(){
         return this.northConnectName;
     }
     
+    /**
+     * Get the east connection name
+     * @return the east connection name
+     */
     public String getEastConnectName(){
         return this.eastConnectName;
     }
