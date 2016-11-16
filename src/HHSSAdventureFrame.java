@@ -12,21 +12,33 @@ import java.awt.image.BufferedImage;
  * @author hadik9595
  */
 public class HHSSAdventureFrame extends javax.swing.JFrame {
+
     private Controller controller;
+
     /**
      * Creates new form GUI
      */
     public HHSSAdventureFrame() {
         initComponents();
     }
-public void setController(Controller c){
+
+    /**
+     * 
+     *Sets the controller
+     * @param c the controller to be initialized
+     */
+    public void setController(Controller c) {
         controller = c;
     }
-public void setImage(BufferedImage img){
-        // the image panel sets its image
-       imagePanel.setImage(img);
-    }
 
+    /**
+     *Use image panel to set image 
+     * @param img the image the screen will be set to
+     */
+    public void setImage(BufferedImage img) {
+        // the image panel sets its image
+        imagePanel.setImage(img);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

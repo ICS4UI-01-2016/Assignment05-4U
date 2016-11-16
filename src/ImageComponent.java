@@ -25,7 +25,10 @@ public class ImageComponent extends JComponent {
         }
     }
     
-    
+    /**
+     * Sets the screen to a specific image
+     * @param img the image to set the screen as
+     */
     public void setImage(BufferedImage img){
         image = img;
         //To see a change done to the component itself
