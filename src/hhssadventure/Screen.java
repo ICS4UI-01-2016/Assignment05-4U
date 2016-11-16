@@ -171,30 +171,58 @@ public class Screen {
         return this.eastConnectName;
     }
     
+    /**
+     * Get the south connection name
+     * @return the south connection name
+     */
     public String getSouthConnectName(){
         return this.southConnectName;
     }
     
+    /**
+     * Get the west connection name
+     * @return the west connection name
+     */
     public String getWestConnectName(){
         return this.westConnectName;
     }
     
+    /**
+     * Get the north connection 
+     * @return the north connection 
+     */
     public Screen getNorthConnect(){
         return this.northConnect;
     }
     
+    /**
+     * Get the east connection 
+     * @return the east connection 
+     */
     public Screen getEastConnect(){
         return this.eastConnect;
     }
     
+    /**
+     * Get the south connection 
+     * @return the south connection 
+     */
     public Screen getSouthConnect(){
         return this.southConnect;
     }
     
+    /**
+     * Get the west connection 
+     * @return the west connection 
+     */
     public Screen getWestConnect(){
         return this.westConnect;
     }
     
+    /**
+     * Get the north direction
+     * @return the north direction
+     */
     public String getNorthMoveDir(){
         return this.northMoveDir;
     }
