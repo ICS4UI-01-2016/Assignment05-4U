@@ -21,7 +21,6 @@ public class screen {
     private BufferedImage image;
     private String direction;
     private boolean north;
-    private boolean south;
     private boolean east;
     private boolean west;
     private boolean turnLeft;
@@ -55,7 +54,6 @@ public class screen {
       //get the possible directions
      north = input.nextBoolean();
      east = input.nextBoolean();
-     south = input.nextBoolean();
      west = input.nextBoolean();
      
      //move to next line
@@ -95,9 +93,7 @@ public class screen {
         return north;
     }
     
-    public boolean canGoSouth(){
-        return south;
-    }
+   
     
     public boolean canGoEast(){
         return east;

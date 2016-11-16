@@ -25,9 +25,7 @@ public class HHSSAdventure {
        gui.setVisible(true);
        
        //create the map
-       Map map = new Map("images/pics.txt");
-    }
+       Map map = new Map("images/.JPG");
     
-    
-        
+    }       
 }
