@@ -61,6 +61,8 @@ public class Screen {
 
         //move to next line 
         input.nextLine(); 
+        
+            System.out.println(imageName);
          //load the image file 
         try {
             image = ImageIO.read(new File("images/" +  imageName + ".JPG"));
@@ -117,6 +119,9 @@ public class Screen {
         return frontClear;
     }
 
-  
+
+    public static void main(String[] args) {
+        
+    }
 
 }

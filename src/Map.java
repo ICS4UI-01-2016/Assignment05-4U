@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Map {
     private ArrayList<Screen> screens;
-    private ArrayList<Location> locations;
+    private ArrayList<Spawn> locations;
     
     
     public Map(String fileName){
@@ -53,6 +53,7 @@ public class Map {
             // see if place and direction match
             if(s.getCurrentPlace().equals(place) && s.getCurrentDirection().equals(direction)){
                 //I found the screen
+                System.out.println("Test "  + s.getCurrentDirection()+ " " + s.getCurrentPlace() );
                 return s;
             }
             

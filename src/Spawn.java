@@ -7,9 +7,9 @@
  *
  * @author hadik9595
  */
-public class Location {
+public class Spawn {
     
-    
+    public Spawn 
     
     
 }
