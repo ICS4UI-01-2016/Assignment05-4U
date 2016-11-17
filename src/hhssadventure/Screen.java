@@ -21,24 +21,29 @@ public class Screen {
     private String imageName;
     private BufferedImage image;
     private boolean blockedMovement;
-    private String newImageName;
-    private String newDirection;
-    /*
-     private boolean east;
-     private boolean south;
-     private boolean west;
-     public static final int NORTH = 0;
-     public static final int EAST = 1;
-     public static final int SOUTH = 2;
-     public static final int WEST = 3;
-     */
-
-    /*
-     Upstairs1
-     N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
-     E IMG_0046.JPG true
-     S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
-     W IMG_0049.JPG true
+    private String  newImageName;
+    private String  newDirection;
+/*
+    private boolean east;
+    private boolean south;
+    private boolean west;
+    public static final int NORTH = 0;
+    public static final int EAST = 1;
+    public static final int SOUTH = 2;
+    public static final int WEST = 3;
+*/
+    
+/*
+    Upstairs1
+    N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
+    E IMG_0046.JPG true
+    S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
+    W IMG_0049.JPG true
+*/
+    
+    /**
+     * Scans in all of the information for each screen from the text file
+     * @param input scanner for the text to be scanned into
      */
     public Screen(Scanner input) {
 
@@ -94,17 +99,22 @@ public class Screen {
     public String getImageName() {
         return imageName;
     }
-
-    public String getNewImageName() {
+    
+    /**
+     * Acknowledging the new location of the user
+     * @return 
+     */
+    public String getNewImageName(){
         return newImageName;
     }
-
-    public String getNewDirection() {
-        System.out.println("NEW DIRECTION? " + newDirection);
+    
+    // Acknowledging the new direction of the user
+    public String getNewDirection(){
         return newDirection;
     }
-
-    public boolean isBlocked() {
+    
+    // Acknowledging if the direction one is choosing is blocked 
+    public boolean isBlocked(){
         return blockedMovement;
     }
 
