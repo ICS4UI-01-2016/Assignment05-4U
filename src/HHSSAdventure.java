@@ -9,8 +9,21 @@
  */
 public class HHSSAdventure {
     
+        private String currentPlace;
+    private String currentDirection;
+    
+    
+    
+    
+    
+    
+    
+    
     
     public static void main(String[] args) {
+        
+        
+        
         // creat the interface
         HHSSAdventureFrame gui = new HHSSAdventureFrame();
         // show the interface
@@ -20,7 +33,10 @@ public class HHSSAdventure {
         Map map = new Map("images/pics.txt");
         
         //initial spawn of the game, sets coordinates, and calls the map as well as the GUI
-        Controller c = new Controller(gui,map,"Caf1","N");
+        Controller c = new Controller(gui,map,currentPlace,currentDirection);
+        
+        
+        
         
     }
 }

@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
 
+    private String place;
     private String currentPlace;
     private String currentDirection;
     private BufferedImage image;
@@ -29,10 +30,16 @@ public class Screen {
      */
     public Screen(Scanner input) {
         
+        Spawn start = new Spawn();
+        
+        
+        
+        
+        
         String checkPlace = input.next();
          //checks if first word is more than 1 letter (because if it is, then that's where we need to call location) 
         if(checkPlace.length() > 1){
-            currentPlace = checkPlace;
+             place = checkPlace;
             input.nextLine();
         }else if (input.next() != null){
          
@@ -55,14 +62,13 @@ public class Screen {
             
         }else{
             frontClear = true;
-            input.next();
         }
            
 
         //move to next line 
         input.nextLine(); 
         
-            System.out.println(imageName);
+           
          //load the image file 
         try {
             image = ImageIO.read(new File("images/" +  imageName + ".JPG"));

@@ -10,15 +10,15 @@
 public class Controller {
     private HHSSAdventureFrame gui;
     private Map map;
-    private String place;
-    private String direction;
+    private String currentPlace;
+    private String currentDirection;
     
     
     public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
         this.gui = gui;
         this.map = m;
-        this.place = word;
-        this.direction = c;
+        this.currentPlace = word;
+        this.currentDirection = c;
         
         
         //make sure the GUI can talk to you
