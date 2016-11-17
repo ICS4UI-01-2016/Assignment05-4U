@@ -26,6 +26,23 @@ public class Map {
             //make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
 
+            //starting location
+            String startArea = input.nextLine();
+            String startDirection = input.nextLine();
+           
+            //for each area
+            while(true){
+            String area = input.nextLine();
+            String direction = input.nextLine();  
+            String imageName = input.next();
+            Boolean bool = input.nextBoolean();
+            if(bool == false){
+            String nextArea = input.next();
+            String nextDirection = input.next();
+            }
+            break;
+             }
+            
             //make screens
             //loop to the end of the file
             while (input.hasNext()) {

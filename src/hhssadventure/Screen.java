@@ -27,7 +27,7 @@ public class Screen {
      *
      * @param input A scanner containing screen info
      */
-    public Screen(Scanner input) {
+    public Screen(String name, Scanner input) {
              
         // load the image
         try {
