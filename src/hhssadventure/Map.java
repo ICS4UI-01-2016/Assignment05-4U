@@ -85,6 +85,7 @@ public class Map {
     }
 
     public Screen getScreen(String findLocation, String findDirection) {
+        System.out.println("findDirection: " + findDirection);
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
 

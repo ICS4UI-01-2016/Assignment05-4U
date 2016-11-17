@@ -121,7 +121,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void buttonNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNorthActionPerformed
         // Go North
-        controller.goNorth();
+        if (controller.direction.equals("N")) {
+            controller.goNorth();
+        } else {
+            controller.turnNorth();
+        }
     }//GEN-LAST:event_buttonNorthActionPerformed
 
     private void buttonEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEastActionPerformed
@@ -136,7 +140,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void buttonWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWestActionPerformed
         // Go West!
-        controller.goWest();
+        if (controller.direction.equals("W")) {
+            controller.goWest();
+        } else {
+            controller.turnWest();
+        }
     }//GEN-LAST:event_buttonWestActionPerformed
 
     /**

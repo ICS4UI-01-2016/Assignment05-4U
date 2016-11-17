@@ -29,7 +29,7 @@ public class Controller {
     }
 
     public void goNorth() {
-        System.out.println("Here");
+        System.out.println("Go North Clicked");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move north
@@ -37,6 +37,8 @@ public class Controller {
 
             location = current.getNewImageName();
             direction = current.getNewDirection();
+            System.out.println("New Location: " + location);
+            System.out.println("New Direction: " + direction);
             // get the new screen
             Screen newScreen = map.getScreen(location, direction);
             // set the image
@@ -44,8 +46,14 @@ public class Controller {
         }
     }
 
+    public void turnNorth() {
+        // get the screen we are on right now
+        Screen current = map.getScreen(location, direction);
+        direction = current.getNewDirection();
+    }
+
     public void goSouth() {
-        System.out.println("Here");
+        System.out.println("Go South Clicked");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move south
@@ -61,7 +69,7 @@ public class Controller {
     }
 
     public void goEast() {
-        System.out.println("Here");
+        System.out.println("Go East Clicked");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         // ask if we can move east
@@ -75,18 +83,33 @@ public class Controller {
     }
 
     public void goWest() {
-        System.out.println("Here");
+        System.out.println("Go West Clicked");
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
+        // Swtiching direction to face the new direction which was clicked
         // ask if we can move west
         if (current.isBlocked() == false) {
-
+            System.out.println("Hello:");
             location = current.getNewImageName();
-            direction = current.getNewDirection();
             // get the new screen
-            Screen newScreen = map.getScreen(location, direction);
+            System.out.println("New West: " + current);
             // set the image
-            gui.setImage(newScreen.getImage());
+            gui.setImage(current.getImage());
         }
+    }
+
+    public void turnWest() {
+        // get the screen we are on right now
+        // Set direction to equal W
+        // Print screen
+        Screen current = map.getScreen(location, direction);
+        System.out.println("Current img: " + current.getImageName());
+        System.out.println("Start Direction: " + direction);
+        direction = current.getNewDirection();
+        System.out.println("New Direction: " + direction);
+        current = map.getScreen(location, direction);
+        System.out.println("New West: " + current);
+        // set the image
+        gui.setImage(current.getImage());
     }
 }
