@@ -34,12 +34,17 @@ public class Screen {
 */
     
 /*
-Upstairs1
-N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
-E IMG_0046.JPG true
-S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
-W IMG_0049.JPG true
+    Upstairs1
+    N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
+    E IMG_0046.JPG true
+    S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
+    W IMG_0049.JPG true
 */
+    
+    /**
+     * Scans in all of the information for each screen from the text file
+     * @param input scanner for the text to be scanned into
+     */
     public Screen(Scanner input) {
         
         // Read a line from the file of the form
@@ -96,14 +101,20 @@ W IMG_0049.JPG true
        return imageName;
     }
     
+    /**
+     * Acknowledging the new location of the user
+     * @return 
+     */
     public String getNewImageName(){
         return newImageName;
     }
     
+    // Acknowledging the new direction of the user
     public String getNewDirection(){
         return newDirection;
     }
     
+    // Acknowledging if the direction one is choosing is blocked 
     public boolean isBlocked(){
         return blockedMovement;
     }
