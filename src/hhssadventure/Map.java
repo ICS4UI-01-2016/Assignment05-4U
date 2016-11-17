@@ -43,14 +43,7 @@ public class Map {
             break;
              }
             
-            //make screens
-            //loop to the end of the file
-            while (input.hasNext()) {
-                //creating a screen from the scanner
-                Screen s = new Screen(input);
-                //added the created screen to the list
-                screens.add(s);
-            }
+           
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
         }
