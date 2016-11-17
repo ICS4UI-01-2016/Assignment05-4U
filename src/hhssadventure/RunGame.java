@@ -24,6 +24,7 @@ public class RunGame {
         //create map
         Map map = new Map("images/pics.txt");
         
+        LocationController c = new LocationController(gui, map, Caf1, N);
     }
     
 }

@@ -13,16 +13,32 @@ public class LocationController {
 
     private GUI gui;
     private Map map;
+    // area name
+    private char area;
+    // direction facing
+    private char direction;
 
-    public LocationController(GUI gui, Map m) {
+    public LocationController(GUI gui, Map m, char area, char direction) {
         this.gui = gui;
         this.map = map;
+        this.area = area;
+        this.direction = direction;
 
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
-       
-        // store starting position
-        
+       Screen start = map.getScreen(area, direction);
+       gui.setImage(start.getImage());
     }
+    
+    public void goNorth() {
+        // get the screen we are on right now
+        Screen current = map.getScreen(area, direction);
+        if (current.canGoNorth()) {
+            
+            // get the new screen
+            Screen newScreen = map.getScreen(area, direction);
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
 }
