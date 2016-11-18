@@ -120,31 +120,68 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNorthActionPerformed
-        // Go North
+        // Go North!
+        System.out.println("Direction: " + controller.direction);
+        System.out.println("Location: " + controller.location);
         if (controller.direction.equals("N")) {
             controller.goNorth();
         } else {
             controller.turnNorth();
+            System.out.println("Direction After Turn: " + controller.direction);
+            System.out.println("Location After Turn: " + controller.location);
+            System.out.println(controller.direction.equals("N"));
+            
         }
+        System.out.println("");
     }//GEN-LAST:event_buttonNorthActionPerformed
 
     private void buttonEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEastActionPerformed
         // Go East!
-        controller.goEast();
+        System.out.println("Direction: " + controller.direction);
+        System.out.println("Location: " + controller.location);
+        if (controller.direction.equals("E")) {
+            controller.goEast();
+        } else {
+            controller.turnEast();
+            System.out.println("Direction After Turn: " + controller.direction);
+            System.out.println("Location After Turn: " + controller.location);
+            System.out.println(controller.direction.equals("E"));
+            
+        }
+        System.out.println("");
     }//GEN-LAST:event_buttonEastActionPerformed
 
     private void buttonSouthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSouthActionPerformed
         // Go South!
-        controller.goSouth();
+        System.out.println("Direction: " + controller.direction);
+        System.out.println("Location: " + controller.location);
+        if (controller.direction.equals("S")) {
+            controller.goSouth();
+        } else {
+            controller.turnSouth();
+            System.out.println("Direction After Turn: " + controller.direction);
+            System.out.println("Location After Turn: " + controller.location);
+            System.out.println(controller.direction.equals("S"));
+            
+        }
+        System.out.println("");
     }//GEN-LAST:event_buttonSouthActionPerformed
 
     private void buttonWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWestActionPerformed
         // Go West!
+        System.out.println("Direction: " + controller.direction);
+        System.out.println("Location: " + controller.location);
+        
         if (controller.direction.equals("W")) {
             controller.goWest();
         } else {
             controller.turnWest();
+            System.out.println("Direction After Turn: " + controller.direction);
+            System.out.println("Location After Turn: " + controller.location);
+            System.out.println(controller.direction.equals("W"));
+            
         }
+        System.out.println("");
     }//GEN-LAST:event_buttonWestActionPerformed
 
     /**

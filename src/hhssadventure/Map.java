@@ -55,9 +55,6 @@ public class Map {
             initialLocation = input.nextLine();
             initialDirection = input.nextLine();
 
-            System.out.println("Initial Location: " + initialLocation);
-            System.out.println("Initial Direction: " + initialDirection);
-
             // Make screens
             // Loop to the end of the file.  Check to see 
             // if more lines available in the file (hasNext)
@@ -85,7 +82,6 @@ public class Map {
     }
 
     public Screen getScreen(String findLocation, String findDirection) {
-        System.out.println("findDirection: " + findDirection);
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
 

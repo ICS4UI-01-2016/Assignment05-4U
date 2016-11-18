@@ -108,12 +108,14 @@ public class Screen {
         return newImageName;
     }
     
-    // Acknowledging the new direction of the user
     public String getNewDirection(){
         return newDirection;
     }
     
-    // Acknowledging if the direction one is choosing is blocked 
+    /**
+     * Acknowledging if the direction one is choosing is blocked 
+     * @return 
+     */
     public boolean isBlocked(){
         return blockedMovement;
     }
