@@ -39,21 +39,21 @@ public class Controller {
         gui.setImage(current.getImage());
     }
     
-    public void goNorth() {
-        // get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
-        // Swtiching direction to face the new direction which was clicked
-        // ask if we can move west
-        if (current.isBlocked() == false) {
-            location = current.getNewImageName();
-            direction = current.getNewDirection();
-            current = map.getScreen(location, direction);
-
-        }
-        // set the image
-        gui.setImage(current.getImage());
-        
-    }
+//    public void goNorth() {
+//        // get the screen we are on right now
+//        Screen current = map.getScreen(location, direction);
+//        // Swtiching direction to face the new direction which was clicked
+//        // ask if we can move west
+//        if (current.isBlocked() == false) {
+//            location = current.getNewImageName();
+//            direction = current.getNewDirection();
+//            current = map.getScreen(location, direction);
+//
+//        }
+//        // set the image
+//        gui.setImage(current.getImage());
+//        
+//    }
 
     public void turnEast() {
         // get the screen we are on right now
@@ -66,20 +66,20 @@ public class Controller {
         gui.setImage(current.getImage());
     }
     
-    public void goEast() {
-        // get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
-        // Swtiching direction to face the new direction which was clicked
-        // ask if we can move west
-        if (current.isBlocked() == false) {
-            location = current.getNewImageName();
-            direction = current.getNewDirection();
-            current = map.getScreen(location, direction);
-        }
-        // set the image
-        gui.setImage(current.getImage());
-        
-    }
+//    public void goEast() {
+//        // get the screen we are on right now
+//        Screen current = map.getScreen(location, direction);
+//        // Swtiching direction to face the new direction which was clicked
+//        // ask if we can move west
+//        if (current.isBlocked() == false) {
+//            location = current.getNewImageName();
+//            direction = current.getNewDirection();
+//            current = map.getScreen(location, direction);
+//        }
+//        // set the image
+//        gui.setImage(current.getImage());
+//        
+//    }
 
     public void turnSouth() {
         // get the screen we are on right now
@@ -92,20 +92,20 @@ public class Controller {
         gui.setImage(current.getImage());
     }
     
-    public void goSouth() {
-        // get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
-        // Swtiching direction to face the new direction which was clicked
-        // ask if we can move west
-        if (current.isBlocked() == false) {
-            location = current.getNewImageName();
-            direction = current.getNewDirection();
-            current = map.getScreen(location, direction);
-        }
-        
-        // set the image
-        gui.setImage(current.getImage());
-    }
+//    public void goSouth() {
+//        // get the screen we are on right now
+//        Screen current = map.getScreen(location, direction);
+//        // Swtiching direction to face the new direction which was clicked
+//        // ask if we can move west
+//        if (current.isBlocked() == false) {
+//            location = current.getNewImageName();
+//            direction = current.getNewDirection();
+//            current = map.getScreen(location, direction);
+//        }
+//        
+//        // set the image
+//        gui.setImage(current.getImage());
+//    }
 
     public void turnWest() {
         // get the screen we are on right now
@@ -118,7 +118,23 @@ public class Controller {
         gui.setImage(current.getImage());
     }
     
-    public void goWest() {
+//    public void goWest() {
+//        // get the screen we are on right now
+//        Screen current = map.getScreen(location, direction);
+//        
+//        // Swtiching direction to face the new direction which was clicked
+//        // ask if we can move west
+//        if (current.isBlocked() == false) {
+//            location = current.getNewImageName();
+//            direction = current.getNewDirection();
+//            current = map.getScreen(location, direction);
+//        }
+//        
+//        // set the image
+//        gui.setImage(current.getImage());
+//    }
+    
+    public void goForward() {
         // get the screen we are on right now
         Screen current = map.getScreen(location, direction);
         
@@ -133,5 +149,6 @@ public class Controller {
         // set the image
         gui.setImage(current.getImage());
     }
+    
     
 }
