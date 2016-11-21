@@ -121,10 +121,7 @@ public class GUI extends javax.swing.JFrame {
         map.turnLeft();
     }//GEN-LAST:event_leftActionPerformed
 
-    
-    public void setMap(Map m){
-        this.map = m;
-    }
+
     
     /**
      * @param args the command line arguments
