@@ -43,11 +43,11 @@ public class Map {
      * @param col the column which the screen appears
      * @return the screen at(row, col) or null if not found
      */
-    public Screen getScreen(int row, int col){
+    public Screen getScreen(int IMGNum){
         //go through each screen
         for(Screen s: screens){
             // see if the row and column match
-            if(s.getRow() == row && s.getCol() == col){
+            if(IMGNum == ){
                 return s;
             }
         }
