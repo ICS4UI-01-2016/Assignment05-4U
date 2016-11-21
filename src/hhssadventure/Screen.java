@@ -15,10 +15,11 @@ import java.util.Scanner;
 public class Screen {
 
     private BufferedImage image;
-    private boolean north;
-    private boolean east;
-    private boolean south;
-    private boolean west;
+    private String area;
+    private String direction;
+    private boolean isBlocked;
+    private String nextArea;
+    private String nextDirection;
 
     /**
      * Using a scanner to create new screen
@@ -38,30 +39,14 @@ public class Screen {
             e.printStackTrace();
         }
 
-        // get possible directions
-        north = input.nextBoolean();
-        east = input.nextBoolean();
-        south = input.nextBoolean();
-        west = input.nextBoolean();
-
         // move to next Line
         input.nextLine();
+        
     }
 
-    public boolean canGoNorth() {
-        return north;
-    }
-
-    public boolean canGoEast() {
-        return east;
-    }
-
-    public boolean canGoSouth() {
-        return south;
-    }
-
-    public boolean canGoWest() {
-        return west;
+    // automatically not blocked
+    public boolean isBlocked() {
+        return false;
     }
 
     public BufferedImage getImage() {
@@ -72,8 +57,7 @@ public class Screen {
         Scanner in = new Scanner(System.in);
         Screen s = new Screen(in);
         
-        // direction?
-        System.out.println(s.canGoEast());
+        // display image
         System.out.println(s.getImage());
     }
     
