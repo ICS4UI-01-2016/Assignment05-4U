@@ -14,8 +14,6 @@ import java.util.Scanner;
  */
 public class Screen {
 
-    private int row;
-    private int col;
     private BufferedImage image;
     private boolean north;
     private boolean east;
