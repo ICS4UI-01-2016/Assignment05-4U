@@ -44,6 +44,7 @@ public class GUI extends javax.swing.JFrame {
         buttonEast = new javax.swing.JButton();
         buttonSouth = new javax.swing.JButton();
         imagePanel = new hhssadventure.ImageComponent();
+        buttonForward = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,45 +76,57 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        buttonForward.setText("FORWARD");
+        buttonForward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonForwardActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(172, 172, 172)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonWest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonForward, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonEast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(184, 184, 184)
-                                .addComponent(buttonWest)
-                                .addGap(69, 69, 69)
-                                .addComponent(buttonEast))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(248, 248, 248)
-                                .addComponent(buttonSouth))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(246, 246, 246)
-                                .addComponent(buttonNorth)))
-                        .addGap(0, 198, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(buttonSouth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(78, 78, 78))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(buttonNorth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(77, 77, 77)))))
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonNorth)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonNorth, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonWest)
-                    .addComponent(buttonEast))
+                    .addComponent(buttonForward)
+                    .addComponent(buttonEast)
+                    .addComponent(buttonWest))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonSouth)
-                .addContainerGap())
+                .addComponent(buttonSouth, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -121,68 +134,80 @@ public class GUI extends javax.swing.JFrame {
 
     private void buttonNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNorthActionPerformed
         // Go North!
-        System.out.println("Direction: " + controller.direction);
-        System.out.println("Location: " + controller.location);
-        if (controller.direction.equals("N")) {
-            controller.goNorth();
-        } else {
-            controller.turnNorth();
-            System.out.println("Direction After Turn: " + controller.direction);
-            System.out.println("Location After Turn: " + controller.location);
-            System.out.println(controller.direction.equals("N"));
-            
-        }
-        System.out.println("");
+//        System.out.println("Direction: " + controller.direction);
+//        System.out.println("Location: " + controller.location);
+//        if (controller.direction.equals("N")) {
+//            controller.goNorth();
+//        } else {
+//            controller.turnNorth();
+//            System.out.println("Direction After Turn: " + controller.direction);
+//            System.out.println("Location After Turn: " + controller.location);
+//            System.out.println(controller.direction.equals("N"));
+//            
+//        }
+//        System.out.println("");
+        controller.turnNorth();
     }//GEN-LAST:event_buttonNorthActionPerformed
 
     private void buttonEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEastActionPerformed
         // Go East!
-        System.out.println("Direction: " + controller.direction);
-        System.out.println("Location: " + controller.location);
-        if (controller.direction.equals("E")) {
-            controller.goEast();
-        } else {
-            controller.turnEast();
-            System.out.println("Direction After Turn: " + controller.direction);
-            System.out.println("Location After Turn: " + controller.location);
-            System.out.println(controller.direction.equals("E"));
-            
-        }
-        System.out.println("");
+//        System.out.println("Direction: " + controller.direction);
+//        System.out.println("Location: " + controller.location);
+//        if (controller.direction.equals("E")) {
+//            controller.goEast();
+//        } else {
+//            controller.turnEast();
+//            System.out.println("Direction After Turn: " + controller.direction);
+//            System.out.println("Location After Turn: " + controller.location);
+//            System.out.println(controller.direction.equals("E"));
+//            
+//        }
+//        System.out.println("");
+        controller.turnEast();
     }//GEN-LAST:event_buttonEastActionPerformed
 
     private void buttonSouthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSouthActionPerformed
         // Go South!
-        System.out.println("Direction: " + controller.direction);
-        System.out.println("Location: " + controller.location);
-        if (controller.direction.equals("S")) {
-            controller.goSouth();
-        } else {
-            controller.turnSouth();
-            System.out.println("Direction After Turn: " + controller.direction);
-            System.out.println("Location After Turn: " + controller.location);
-            System.out.println(controller.direction.equals("S"));
-            
-        }
-        System.out.println("");
+//        System.out.println("Direction: " + controller.direction);
+//        System.out.println("Location: " + controller.location);
+//        if (controller.direction.equals("S")) {
+//            controller.goSouth();
+//        } else {
+//            controller.turnSouth();
+//            System.out.println("Direction After Turn: " + controller.direction);
+//            System.out.println("Location After Turn: " + controller.location);
+//            System.out.println(controller.direction.equals("S"));
+//            
+//        }
+//        System.out.println("");
+        controller.turnSouth();
     }//GEN-LAST:event_buttonSouthActionPerformed
 
     private void buttonWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWestActionPerformed
-        // Go West!
-        System.out.println("Direction: " + controller.direction);
-        System.out.println("Location: " + controller.location);
-        
-        if (controller.direction.equals("W")) {
-            controller.goWest();
-        } else {
-            controller.turnWest();
-            System.out.println("Direction After Turn: " + controller.direction);
-            System.out.println("Location After Turn: " + controller.location);
-            System.out.println(controller.direction.equals("W"));
-            
-        }
-        System.out.println("");
+//        // Go West!
+//        System.out.println("Direction: " + controller.direction);
+//        System.out.println("Location: " + controller.location);
+//        
+//        if (controller.direction.equals("W")) {
+//            controller.goWest();
+//        } else {
+//            // Controller will turn west
+//            controller.turnWest();
+//            System.out.println("Direction After Turn: " + controller.direction);
+//            System.out.println("Location After Turn: " + controller.location);
+//            System.out.println(controller.direction.equals("W"));
+//            
+//        }
+//        System.out.println("");
+
+        controller.turnWest();
     }//GEN-LAST:event_buttonWestActionPerformed
+
+    private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
+        // Go forwards!
+        controller.goForward();
+
+    }//GEN-LAST:event_buttonForwardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +245,7 @@ public class GUI extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonEast;
+    private javax.swing.JButton buttonForward;
     private javax.swing.JButton buttonNorth;
     private javax.swing.JButton buttonSouth;
     private javax.swing.JButton buttonWest;
