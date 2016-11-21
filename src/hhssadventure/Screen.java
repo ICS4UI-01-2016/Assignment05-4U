@@ -15,8 +15,6 @@ import javax.imageio.ImageIO;
  * @author moore3607
  */
 public class Screen {
-    private int row;
-    private int col;
     private BufferedImage image;
     public boolean north;
     public boolean south;
@@ -31,7 +29,8 @@ public class Screen {
     public Screen(Scanner input){
         // scan in the image name
         String imageName = input.next();
-
+        //splitting the string to get the row and col
+        String[] split = imageName.split(" ");
 
         
         // loading the image file
@@ -51,7 +50,6 @@ public class Screen {
             input.nextLine();   
        }
 
-        
         public boolean canGoNorth(){
             return north;
         }
