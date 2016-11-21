@@ -25,6 +25,7 @@ public class Map {
         screens = new ArrayList<>();
         locations = new ArrayList<>();
         try {
+            
             //make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
             //Make screens

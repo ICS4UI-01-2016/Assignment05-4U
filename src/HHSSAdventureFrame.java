@@ -49,40 +49,25 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        northButton = new javax.swing.JButton();
-        westButton = new javax.swing.JButton();
-        eastButton = new javax.swing.JButton();
-        southButton = new javax.swing.JButton();
+        leftButton = new javax.swing.JButton();
+        rightButton = new javax.swing.JButton();
         moveButton = new javax.swing.JButton();
         imagePanel = new ImageComponent();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        northButton.setText("North");
-        northButton.addActionListener(new java.awt.event.ActionListener() {
+        leftButton.setText("Left");
+        leftButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                northButtonActionPerformed(evt);
+                leftButtonActionPerformed(evt);
             }
         });
 
-        westButton.setText("West");
-        westButton.addActionListener(new java.awt.event.ActionListener() {
+        rightButton.setText("Right");
+        rightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                westButtonActionPerformed(evt);
-            }
-        });
-
-        eastButton.setText("East");
-        eastButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eastButtonActionPerformed(evt);
-            }
-        });
-
-        southButton.setText("South");
-        southButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                southButtonActionPerformed(evt);
+                rightButtonActionPerformed(evt);
             }
         });
 
@@ -93,6 +78,15 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("DAB");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        imagePanel.add(jButton1);
+        jButton1.setBounds(160, 300, 73, 23);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,17 +94,12 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(southButton)
-                            .addComponent(northButton)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(westButton)
+                        .addComponent(leftButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moveButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(eastButton))
+                        .addComponent(rightButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -121,45 +110,35 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(181, Short.MAX_VALUE)
                 .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(northButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(westButton)
-                    .addComponent(eastButton)
+                    .addComponent(leftButton)
+                    .addComponent(rightButton)
                     .addComponent(moveButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(southButton)
-                .addGap(147, 147, 147))
+                .addGap(176, 176, 176))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void westButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_westButtonActionPerformed
+    private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
         // TODO add your handling code here:
         controller.lookWest();
-    }//GEN-LAST:event_westButtonActionPerformed
+    }//GEN-LAST:event_leftButtonActionPerformed
 
-    private void northButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_northButtonActionPerformed
-        // TODO add your handling code here:
-        controller.lookNorth();
-    }//GEN-LAST:event_northButtonActionPerformed
-
-    private void eastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eastButtonActionPerformed
-        // TODO add your handling code here:
+    private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
+        // TODO adeastd your handling code here:
         controller.lookEast();
-    }//GEN-LAST:event_eastButtonActionPerformed
-
-    private void southButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southButtonActionPerformed
-        // TODO add your handling code here:
-        controller.lookSouth();
-    }//GEN-LAST:event_southButtonActionPerformed
+    }//GEN-LAST:event_rightButtonActionPerformed
 
     private void moveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveButtonActionPerformed
         // TODO add your handling code here:
         controller.goForward();
     }//GEN-LAST:event_moveButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,12 +175,11 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton eastButton;
     private ImageComponent imagePanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton leftButton;
     private javax.swing.JButton moveButton;
-    private javax.swing.JButton northButton;
-    private javax.swing.JButton southButton;
-    private javax.swing.JButton westButton;
+    private javax.swing.JButton rightButton;
     // End of variables declaration//GEN-END:variables
 
 }
