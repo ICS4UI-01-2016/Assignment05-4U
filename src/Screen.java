@@ -17,10 +17,11 @@ public class Screen {
 
     private String place;
     private String currentPlace;
-    private String currentDirection;
+    private int currentDirection;
     private BufferedImage image;
     private String nextPlace;
     private String nextDirection;
+    private String direction;
     private boolean frontClear;
 
     /**
@@ -30,13 +31,19 @@ public class Screen {
      */
     public Screen(Scanner input) {
         
-        Spawn start = new Spawn();
+        direction = input.next();
+        
+        String[] split = direction.split("_");
+        
+         currentDirection = Integer.parseInt("322");
         
         
         
         
         
-        String checkPlace = input.next();
+        
+        
+        
          //checks if first word is more than 1 letter (because if it is, then that's where we need to call location) 
         if(checkPlace.length() > 1){
              place = checkPlace;
