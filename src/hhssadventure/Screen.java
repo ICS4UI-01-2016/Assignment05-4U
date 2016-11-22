@@ -7,6 +7,7 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -26,21 +27,21 @@ public class Screen {
      *
      * @param input A scanner containing screen info
      */
-    public Screen(String area, String direction, BufferedImage image, boolean isBlocked, String nextArea, String nextDirection, Scanner input) {
+    public Screen(String area, String direction, String image, boolean isBlocked, String nextArea, String nextDirection) {
              
         // load the image
         try {
-            File file = new File("file.txt");
-            Scanner s = new Scanner(file);
-            while (s.hasNext()) {
-                System.out.println(s.nextInt());
-            }
+            this.image = ImageIO.read(new File("pics/" + image));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // move to next Line
-        input.nextLine();
+        
+        // establish variables
+        this.area = area;
+        this.direction = direction;
+        this.isBlocked = isBlocked;
+        this.nextArea = nextArea;
+        this.nextDirection = nextDirection;
         
     }
 
@@ -56,7 +57,7 @@ public class Screen {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // creates new screen
-        Screen s = new Screen("", "", image, false, "", "", in);
+        Screen s = new Screen("", "", "", false, "", "");
         
         // display image
         System.out.println(s.getImage());

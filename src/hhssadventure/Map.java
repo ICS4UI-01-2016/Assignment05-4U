@@ -41,10 +41,10 @@ public class Map {
                     if (isBlocked == false) {
                         String nextArea = input.next();
                         String nextDirection = input.next();
-                        Screen s = new Screen(area, direction, false, imageName, nextArea, nextDirection);
+                        Screen s = new Screen(area, direction, imageName,false, nextArea, nextDirection);
                         screens.add(s);
                     } else {
-                        Screen s = new Screen(area, direction, true, imageName, null, null);
+                        Screen s = new Screen(area, direction, imageName,true, null, null);
                     }
                     i++;
                 }
