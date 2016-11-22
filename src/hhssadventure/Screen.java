@@ -55,7 +55,8 @@ public class Screen {
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Screen s = new Screen(in);
+        // creates new screen
+        Screen s = new Screen("", in);
         
         // display image
         System.out.println(s.getImage());
