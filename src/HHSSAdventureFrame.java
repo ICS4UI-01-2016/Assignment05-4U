@@ -53,7 +53,6 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
         rightButton = new javax.swing.JButton();
         moveButton = new javax.swing.JButton();
         imagePanel = new ImageComponent();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,15 +76,6 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
                 moveButtonActionPerformed(evt);
             }
         });
-
-        jButton1.setText("DAB");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        imagePanel.add(jButton1);
-        jButton1.setBounds(160, 300, 73, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,10 +126,6 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
         controller.goForward();
     }//GEN-LAST:event_moveButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -176,7 +162,6 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private ImageComponent imagePanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton leftButton;
     private javax.swing.JButton moveButton;
     private javax.swing.JButton rightButton;
