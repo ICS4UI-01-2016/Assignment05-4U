@@ -4,6 +4,8 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author halll7908
@@ -21,6 +23,11 @@ public class GUI extends javax.swing.JFrame {
 
     public void setController(LocationController c){
         controller = c;
+    }
+    
+    public void setImage(BufferedImage img){
+        // the image panel sets its image
+        Image.setImage(img);
     }
     
     /**

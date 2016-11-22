@@ -17,13 +17,13 @@ public class RunGame {
     public static void main(String[] args) {
         // create GUI (interface
         GUI gui = new GUI();
-        
+
         //show the interface
         gui.setVisible(true);
-        
+
         //create map
         Map map = new Map("images/pics.txt");
-        
+
         // starting position -- how to input?
         LocationController c = new LocationController(gui, map, Caf1, N);
     }
