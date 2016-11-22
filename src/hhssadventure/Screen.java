@@ -32,6 +32,7 @@ public class Screen {
     public Screen(Scanner input) {
         // scan in the image name
         String imageName = input.next();
+        //use the split to grab the image number
         String[] Split = imageName.split(" ");
 
         int IMGNum = Integer.parseInt(Split[1].substring(4, 8));
