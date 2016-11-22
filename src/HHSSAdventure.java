@@ -14,13 +14,18 @@ public class HHSSAdventure {
     
     
     
+    public HHSSAdventure(){
+    
+        
+        
+        
+}
     
     
     
     
     
-    
-    public static void main(String[] args) {
+    public void gg(String[] args) {
         
         
         
@@ -32,6 +37,8 @@ public class HHSSAdventure {
         //create the map
         Map map = new Map("images/pics.txt");
         
+        
+        
         //initial spawn of the game, sets coordinates, and calls the map as well as the GUI
         Controller c = new Controller(gui,map,currentPlace,currentDirection);
         
@@ -39,4 +46,5 @@ public class HHSSAdventure {
         
         
     }
+   
 }

@@ -22,8 +22,6 @@ public class Spawn {
         
         
         
-        System.out.println(currentPlace);
-        System.out.println(currentDirection);
     }
     
     public static void main(String[] args) {

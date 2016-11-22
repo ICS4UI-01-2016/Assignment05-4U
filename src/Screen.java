@@ -17,11 +17,12 @@ public class Screen {
 
     private String place;
     private String currentPlace;
-    private int currentDirection;
+ 
     private BufferedImage image;
     private String nextPlace;
     private String nextDirection;
     private String direction;
+    private String check;
     private boolean frontClear;
 
     /**
@@ -30,70 +31,45 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(Scanner input) {
-        
+
+        //scans in the direction
         direction = input.next();
-        
-        String[] split = direction.split("_");
-        
-         currentDirection = Integer.parseInt("322");
-        
-        
-        
-        
-        
-        
-        
-        
-         //checks if first word is more than 1 letter (because if it is, then that's where we need to call location) 
-        if(checkPlace.length() > 1){
-             place = checkPlace;
-            input.nextLine();
-        }else if (input.next() != null){
-         
-         currentDirection = input.next();
-        
-        
-        
-       
- 
-        // scan in the image name 
+
+        //scan in the image 
         String imageName = input.next();
 
-        String check2 = input.next();
-        
-      //checks if boolean is false or not
-        if (check2.equals("false")) {
+
+        //checks if boolean is false or not
+        if (check.equals("false")) {
             frontClear = false;
             nextPlace = input.next();
             nextDirection = input.next();
-            
-        }else{
+
+        } else {
             frontClear = true;
+            input.nextLine();
         }
-           
+
 
         //move to next line 
-        input.nextLine(); 
-        
-           
-         //load the image file 
+        input.nextLine();
+
+
+        //load the image file 
         try {
-            image = ImageIO.read(new File("images/" +  imageName + ".JPG"));
+            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        }else{
-           input.nextLine();
-       }
-       
-        
-       
 
 
-     
-        
-        }
-    
+
+
+
+
+
+
+    }
 
     /**
      * get row of the screen
@@ -101,27 +77,16 @@ public class Screen {
      * @return the row of screen
      */
 
-    public String spawn(Scanner input) {
-        //scan in spawn
-        String spawnPlace = input.nextLine();
-        String spawnDirection = input.nextLine();
-        return spawnPlace;
+    public String getDirection(){
+        return direction;
     }
-
-    public String getCurrentDirection() {
-        return currentDirection;
+    
+    public String getNextPlace(){
+        return nextPlace;
     }
 
     public String getCurrentPlace() {
         return currentPlace;
-    }
-
-    public String getNextDirection() {
-        return nextDirection;
-    }
-
-    public String getNextPlace() {
-        return nextPlace;
     }
 
     public BufferedImage getImage() {
@@ -132,9 +97,6 @@ public class Screen {
         return frontClear;
     }
 
-
     public static void main(String[] args) {
-        
     }
-
 }
