@@ -47,7 +47,7 @@ public class Map {
         //go through each screen
         for(Screen s: screens){
             // see if the row and column match
-            if(IMGNum == ){
+            if(s.getIMGNum == IMGNum){
                 return s;
             }
         }

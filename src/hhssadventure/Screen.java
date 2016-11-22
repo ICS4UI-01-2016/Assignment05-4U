@@ -9,7 +9,6 @@ import java.io.File;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
-
 /**
  *
  * @author moore3607
@@ -18,76 +17,90 @@ public class Screen {
 
     private BufferedImage image;
     public int IMGNum;
+    public String IMGDes;
+    public String IMGDirect;
     public boolean north;
     public boolean south;
     public boolean east;
     public boolean west;
-    
-    
+
     /**
      * Using a scanner to create a new screen
+     *
      * @param input A scanner containing screen info
      */
-    public Screen(Scanner input){
+    public Screen(Scanner input) {
         // scan in the image name
         String imageName = input.next();
         String[] Split = imageName.split(" ");
-        
-        int IMGNum = Integer.parseInt(Split[1].substring(1));
-        
-        
-        
-        
+
+        int IMGNum = Integer.parseInt(Split[1].substring(4, 8));
+        String IMGDes = Split[3].substring(0, Split[3].length());
+        String IMGDirect = Split[4].substring(0, Split[3].length());
+
+        this.IMGNum = IMGNum;
+        this.IMGDes = IMGDes;
+        this.IMGDirect = IMGDirect;
 
 
-        
+
+
+
         // loading the image file
-        try{
+        try {
             image = ImageIO.read(new File("images/" + imageName + ".JPG"));
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
+
+
         //get the possible directions
         north = input.nextBoolean();
-        south = input.nextBoolean();
         east = input.nextBoolean();
+        south = input.nextBoolean();
         west = input.nextBoolean();
-        
+
         //move to the next line
-            input.nextLine();   
-       }
+        input.nextLine();
+    }
     
-    
-        public int IMGNum(){
-            return IMGNum;
-        }
-        
-        public boolean canGoNorth(){
-            return north;
-        }
-        
-        public boolean canGoSouth(){
-            return south;
-        }
-        
-        public boolean canGoEast(){
-            return east;
-        }
-        
-        public boolean canGoWest(){
-            return west;
-        }
-        
-        public BufferedImage getImage(){
-            return image;
-        }
-        
-          public static void main(String[] args) {
+    public String IMGDirect(){
+        return IMGDirect;
+    }
+
+    public String IMGDes() {
+        return IMGDes;
+    }
+
+    public int IMGNum() {
+        return IMGNum;
+    }
+
+    public boolean canGoNorth() {
+        return north;
+    }
+
+    public boolean canGoSouth() {
+        return south;
+    }
+
+    public boolean canGoEast() {
+        return east;
+    }
+
+    public boolean canGoWest() {
+        return west;
+    }
+
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Screen s = new Screen(in);
         
+
 
         System.out.println(s.canGoNorth());
         System.out.println(s.canGoSouth());
@@ -96,4 +109,3 @@ public class Screen {
         System.out.println(s.getImage());
     }
 }
-
