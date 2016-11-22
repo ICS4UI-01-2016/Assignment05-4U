@@ -14,11 +14,14 @@ import java.util.Scanner;
  * @author yuk4142
  */
 public class Location {
-   private ArrayList<Screen> locationScreens;
+    
+    
+   private Screen[] locationScreens;
    private String locationName;
     public Location(String filename){
-        //initialize list
-        locationScreens = new ArrayList<>();
+        //initialize array
+        locationScreens = new Screen[4];
+        
         try {
             Scanner input = new Scanner(new File(filename));
             locationName = input.next();
@@ -26,7 +29,7 @@ public class Location {
             
             for(int i = 0; i < 4; i++){
                 Screen s = new Screen(input);
-                locationScreens.add(s);
+                locationScreens[i] = s;
             }
         
         }catch (FileNotFoundException ex) {
@@ -34,9 +37,9 @@ public class Location {
         }
     }
     public String getLocationName(){
-        return locationName;
+        return this.locationName;
     }
-    public boolean canMoveForward(){
-        
+    public boolean canMoveForward(String direction){
+        if()
     }
 }
