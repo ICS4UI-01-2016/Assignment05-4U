@@ -58,10 +58,11 @@ public class Screen {
         try {
             northImage = ImageIO.read(new File("images/" + northImageName));
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
+        
         // scan in whether you can move North
-        if(input.nextBoolean()){
+        if(input.next().equals("false")){
             //store connect name
             northConnectName = input.next();
             //store connect direction
@@ -69,19 +70,18 @@ public class Screen {
         }
         // move to next line
         input.nextLine(); 
-
         // skip direction
         input.next();
         // scan in the east image name
-        eastImageName = input.next();
+        this.eastImageName = input.next();
         // load the east image file
         try {
-            eastImage = ImageIO.read(new File("images/" + eastImageName));
+            this.eastImage = ImageIO.read(new File("images/" + this.eastImageName));
         } catch (Exception e) {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        if(input.nextBoolean()){
+        if(input.next().equals("false")){
             //store connect name
             eastConnectName = input.next();
             //store move dir
@@ -101,7 +101,7 @@ public class Screen {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        if(input.nextBoolean()){
+        if(input.next().equals("false")){
             //store connect name
             southConnectName = input.next();
             //store move direction
@@ -121,7 +121,7 @@ public class Screen {
             e.printStackTrace();
         }
         // scan in whether you can move forwards
-        if(input.nextBoolean()){
+        if(input.next().equals("false")){
             //store connect name
             westConnectName = input.next();
             //store move direction
