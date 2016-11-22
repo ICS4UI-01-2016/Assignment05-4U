@@ -12,32 +12,29 @@ package hhssadventure;
 public class Controller {
     private GUI gui;
     private Map map;
-    private int row;
-    private int col;
+    private int IMGNum;
     
-    public Controller(GUI gui, Map map, int row, int col){
+    public Controller(GUI gui, Map map, int IMGNum){
         this.gui = gui;
         this.map = map;
-        this.row = row;
-        this.col = col;
-        
+        this.IMGNum = IMGNum;
         //make sure the GUI can talk to you
         gui.setControler(this);
         
         // set the starting image
-        Screen start = map.getScreen(row, col);
+        Screen start = map.getScreen(IMGNum);
         gui.setImage(start.getImage());
     }
     
     public void goNorth(){
         // get the screen we are on right now
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(IMGNum);
         //ask if we can move north
         if(current.canGoNorth()){
             // move up a row
             row--;
             // get the new screen
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(IMGNum);
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -45,13 +42,13 @@ public class Controller {
     
     public void goSouth(){
         // get the screen we are on right now
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(IMGNum);
         //ask if we can move south
         if(current.canGoSouth()){
             // move down a row
             row++;
             // get the new screen
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(IMGNum);
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -59,13 +56,13 @@ public class Controller {
     
     public void goEast(){
         // get the screen we are on right now
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(IMGNum);
         //ask if we can move east
         if(current.canGoEast()){
             // move to the right column
             row--;
             // get the new screen
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(IMGNum);
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -73,13 +70,13 @@ public class Controller {
     
     public void goWest(){
         // get the screen we are on right now
-        Screen current = map.getScreen(row, col);
+        Screen current = map.getScreen(IMGNum);
         //ask if we can move west
         if(current.canGoWest()){
             // move to the left column
             row--;
             // get the new screen
-            Screen newScreen = map.getScreen(row, col);
+            Screen newScreen = map.getScreen(IMGNum);
             // set the image
             gui.setImage(newScreen.getImage());
         }

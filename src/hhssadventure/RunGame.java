@@ -26,6 +26,6 @@ public class RunGame {
         //create the map
         Map map = new Map("tiles.txt");
         // create the game controller
-        Controller c = new Controller(gui, map, 8, 8);
+        Controller c = new Controller(gui, map, 83);
     }
 }

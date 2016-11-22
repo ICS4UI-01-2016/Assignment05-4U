@@ -31,8 +31,9 @@ public class Screen {
     public Screen(Scanner input){
         // scan in the image name
         String imageName = input.next();
+        //use the split to grab the image number
         String[] Split = imageName.split(" ");
-        
+        //puts the image number into a substring
         int IMGNum = Integer.parseInt(Split[1].substring(1));
         
         
@@ -60,7 +61,7 @@ public class Screen {
        }
     
     
-        public int IMGNum(){
+        public int getIMGNum(){
             return IMGNum;
         }
         

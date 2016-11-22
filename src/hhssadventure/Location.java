@@ -9,5 +9,5 @@ package hhssadventure;
  * @author moore3607
  */
 public class Location {
-    
+
 }
