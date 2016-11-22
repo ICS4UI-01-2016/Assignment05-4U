@@ -37,6 +37,8 @@ public class Controller {
         current = map.getScreen(location, direction);
         // set the image
         gui.setImage(current.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(current.isBlocked());
     }
     
 //    public void goNorth() {
@@ -64,6 +66,8 @@ public class Controller {
         current = map.getScreen(location, direction);
         // set the image
         gui.setImage(current.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(current.isBlocked());
     }
     
 //    public void goEast() {
@@ -90,6 +94,8 @@ public class Controller {
         current = map.getScreen(location, direction);
         // set the image
         gui.setImage(current.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(current.isBlocked());
     }
     
 //    public void goSouth() {
@@ -116,6 +122,8 @@ public class Controller {
         current = map.getScreen(location, direction);
         // set the image
         gui.setImage(current.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(current.isBlocked());
     }
     
 //    public void goWest() {
@@ -148,6 +156,8 @@ public class Controller {
         
         // set the image
         gui.setImage(current.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(current.isBlocked());
     }
     
     
