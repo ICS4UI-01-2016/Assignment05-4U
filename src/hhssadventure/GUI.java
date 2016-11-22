@@ -108,17 +108,20 @@ public class GUI extends javax.swing.JFrame {
     //Front Button
     private void frontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frontActionPerformed
         map.move();
+        imageComponent1.setImage(map.getImage());
     }//GEN-LAST:event_frontActionPerformed
 
     
     //Right Button
     private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
         map.turnRight();
+        imageComponent1.setImage(map.getImage());
     }//GEN-LAST:event_rightActionPerformed
 
     //Left Button
     private void leftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftActionPerformed
         map.turnLeft();
+        imageComponent1.setImage(map.getImage());
     }//GEN-LAST:event_leftActionPerformed
 
 
