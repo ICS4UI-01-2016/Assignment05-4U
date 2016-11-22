@@ -18,13 +18,18 @@ public class Location {
     private String name;
     private ArrayList<Screen> screens;
 
+    /**
+     * Scanner created to pass through the image's information
+     *
+     * @param input used to read the information concerning the images
+     */
     public Location(Scanner input) {
         // Initialize the list of screens for this location
         screens = new ArrayList<>();
 
-        //read the location name
+        // Read in the location name
         name = input.nextLine();
-        // read the 4 screens for this location (N,E,S,W)
+        // Read in the 4 screens for this location (N,E,S,W)
         for (int i = 0; i < 4; i++) {
             Screen s = new Screen(input);
 
@@ -33,10 +38,22 @@ public class Location {
         }
     }
 
+    /**
+     * Method used to return the images current location name
+     *
+     * @return the current location name concerning the image
+     */
     public String getName() {
+        // Return the current location name of the image
         return name;
     }
 
+    /**
+     * Method used to get the screens direction **********************************
+     *
+     * @param findDirection string that is used to display
+     * @return the direction of the current screen
+     */
     public Screen getScreen(String findDirection) {
         // now loop through the 4 screens/direction for this location
         for (Screen scn : screens) {

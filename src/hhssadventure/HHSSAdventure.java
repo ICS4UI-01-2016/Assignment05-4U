@@ -18,19 +18,16 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-
-
-        // create the interface
+        // Create the interface
         GUI gui = new GUI();
 
-        // show the interface
+        // Show the interface
         gui.setVisible(true);
 
-        // create the map
+        // Create the map and grab images from the "images" folder
         Map map = new Map("images/pics.txt");
 
-        // create the game controller
+        // Create the game controller and connect it to both the GUI and the map
         Controller c = new Controller(gui, map);
     }
 }

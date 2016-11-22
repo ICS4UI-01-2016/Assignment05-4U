@@ -12,23 +12,34 @@ import javax.swing.JComponent;
  *
  * @author richj0985
  */
-public class ImageComponent extends JComponent{
+public class ImageComponent extends JComponent {
+
+    // Creating the constant to be used
     private BufferedImage image;
-    
-    public ImageComponent(){
+
+    /**
+     * Constructor for the image
+     */
+    public ImageComponent() {
         image = null;
     }
-    
+
     @Override
-    public void paintComponent(Graphics g){
-        if(image != null){
-            g.drawImage(image, 0, 0, 
+    public void paintComponent(Graphics g) {
+        if (image != null) {
+            g.drawImage(image, 0, 0,
                     this.getWidth(), this.getHeight(), null);
         }
     }
-    
-    public void setImage(BufferedImage img){
+
+    /**
+     * Method to set the image onto the screen
+     *
+     * @param img Setting image to the image from text file to be passed in
+     */
+    public void setImage(BufferedImage img) {
         image = img;
-        repaint(); // so we see the change being made
+        // So we see the change being made
+        repaint();
     }
 }
