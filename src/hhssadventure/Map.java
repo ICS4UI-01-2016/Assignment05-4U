@@ -34,6 +34,7 @@ public class Map {
             fileCreate.nextLine();
             //read start direction
             this.direction = fileCreate.next();
+            fileCreate.nextLine();
             //loop to make arraylist of screens
             while(fileCreate.hasNext()){
                 //make a new screen
