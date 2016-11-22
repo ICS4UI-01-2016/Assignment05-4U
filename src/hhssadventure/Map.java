@@ -45,7 +45,9 @@ public class Map {
          //go through each screen
          for(screen s: screens){
           // checks if everything matches
-              
+          if(s.getDirection().equals(Direction) && s.getLocation().equals(Location)){
+              return s;
+          }    
          }
          return null;
      }

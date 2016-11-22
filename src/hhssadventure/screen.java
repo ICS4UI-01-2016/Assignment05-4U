@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
 public class screen {
    
     private String Direction;
-    private String Location;
+    private int Location;
     private BufferedImage image;
     private String curLocation;
     private String curDirection;
@@ -31,6 +31,10 @@ public class screen {
         //scan int image name
      String imageName = input.next();  
    
+     String[] split = imageName.split("_");
+     Location = Integer.parseInt(split[1].substring(1));
+     
+     
      //load in the image file
      try{
          image = ImageIO.read(new File("IMG_" + imageName + ".JPG"));

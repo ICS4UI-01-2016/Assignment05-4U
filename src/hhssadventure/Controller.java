@@ -27,13 +27,8 @@ public class Controller {
         gui.setController(this);
         
         
+      
     }
-
-    Controller(GUI gui, Map map, String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
     
     
     }
