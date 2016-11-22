@@ -26,7 +26,7 @@ public class Screen {
      *
      * @param input A scanner containing screen info
      */
-    public Screen(String name, Scanner input) {
+    public Screen(String area, String direction, BufferedImage image, boolean isBlocked, String nextArea, String nextDirection, Scanner input) {
              
         // load the image
         try {
@@ -56,7 +56,7 @@ public class Screen {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // creates new screen
-        Screen s = new Screen("", in);
+        Screen s = new Screen("", "", image, false, "", "", in);
         
         // display image
         System.out.println(s.getImage());
