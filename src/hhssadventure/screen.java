@@ -17,14 +17,11 @@ import javax.imageio.ImageIO;
  */
 public class screen {
    
-    private int row;
+    private String Direction;
+    private String Location;
     private BufferedImage image;
-    private String direction;
-    private boolean north;
-    private boolean east;
-    private boolean west;
-    private boolean turnLeft;
-    private boolean turnRight;
+    private String curLocation;
+    private String curDirection;
     private String isBlocked;
     private boolean blocked;
     private String nextLocation;
@@ -51,27 +48,26 @@ public class screen {
             input.nextLine();
         }
         
-      //get the possible directions
-     north = input.nextBoolean();
-     east = input.nextBoolean();
-     west = input.nextBoolean();
+  
+
      
      //move to next line
      input.nextLine();
     }  
-    
-    public int getRow(){
-        return row;
-    }
+  
     
     public String getDirection() {
-        return this.direction;
+        return this.curDirection;
+    }
+    
+    public String getLocation() {
+        return this.curLocation;
     }
 
     public boolean isBlocked() {
         return this.blocked;
     }
-
+    
     public String getNextLocation() {
         return this.nextLocation;
     }
@@ -80,39 +76,13 @@ public class screen {
         return this.nextDirection;
     }
     
-    
-    public boolean canTurnRight(){
-        return turnRight;
-    }
-    
-    public boolean canTurnLeft(){
-        return turnLeft;
-    }
-    
-    public boolean canGoNorth(){
-        return north;
-    }
-    
-   
-    
-    public boolean canGoEast(){
-        return east;
-    }
-    
-    public boolean canGoWest(){
-        return west;
-    }
-    
+ 
     public BufferedImage getImage(){
         return image;
     }
           
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        screen s = new screen(in);
         
-        System.out.println(s.getRow());
-        System.out.println(s.canGoEast());
     }
 }
 

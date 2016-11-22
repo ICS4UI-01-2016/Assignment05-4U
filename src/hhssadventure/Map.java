@@ -18,6 +18,7 @@ import java.util.Scanner;
  */
 public class Map {
     private ArrayList<screen> screens;
+   
      
      public Map(String fileName){
        //initializ the list
@@ -39,20 +40,14 @@ public class Map {
          }
      }
      
-     /**
-      * Retrieve a specific screen from the map
-      * @param row the row which the screen appears
-      * @return the screen at (row,col) or null if not found
-      */
-     public screen getScreen(int row){
+    
+     public screen getScreen(String Location, String Direction){
          //go through each screen
          for(screen s: screens){
-          // see if the row and col match
-          if(s.getRow() == row){
-            return s;  
-          }
+          // checks if everything matches
+              
          }
-         //no screen found
          return null;
      }
+     
 }
