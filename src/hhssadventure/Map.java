@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class Map {
     private ArrayList<Screen> screens;
+    private String IMGDes;
     
     public Map(String fileName){
         // initialize the list
@@ -26,6 +27,7 @@ public class Map {
         try {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
+            if(input.nextLine() == IMGDes)
             
             while(input.hasNext()){
                 //creating a screen from the scanner
@@ -45,7 +47,7 @@ public class Map {
      */
     public Screen getScreen(int IMGNum){
         //go through each screen
-        for(Screen s: screens){
+        for(Screen s: screens){ //What is this even doing?
             // see if the image number matches
             if(s.getIMGNum() == IMGNum){
                 return s;

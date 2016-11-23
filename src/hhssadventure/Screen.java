@@ -37,7 +37,7 @@ public class Screen {
 
         int IMGNum = Integer.parseInt(Split[1].substring(4, 8));
         String IMGDes = Split[3].substring(0, Split[3].length());
-        String IMGDirect = Split[4].substring(0, Split[3].length());
+        String IMGDirect = Split[4].substring(0, Split[4].length());
 
         this.IMGNum = IMGNum;
         this.IMGDes = IMGDes;
@@ -65,15 +65,15 @@ public class Screen {
         input.nextLine();
     }
     
-    public String IMGDirect(){
+    public String getIMGDirect(){
         return IMGDirect;
     }
 
-    public String IMGDes() {
+    public String getIMGDes() {
         return IMGDes;
     }
 
-    public int IMGNum() {
+    public int getIMGNum() {
         return IMGNum;
     }
 

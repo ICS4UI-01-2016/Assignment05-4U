@@ -44,7 +44,7 @@ public class GUI extends javax.swing.JFrame {
         WestButton = new javax.swing.JButton();
         EastButton = new javax.swing.JButton();
         SouthButton = new javax.swing.JButton();
-        ImagePanel = new org.netbeans.modules.form.InvalidComponent();
+        ImagePanel = new hhssadventure.ImageComponent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,17 +61,12 @@ public class GUI extends javax.swing.JFrame {
 
         SouthButton.setText("South");
 
-        ImagePanel.setLayout(null);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(ImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(402, 402, 402)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,15 +78,18 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(64, 64, 64)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(SouthButton)
-                                    .addComponent(NorthButton))))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                                    .addComponent(NorthButton)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(ImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(ImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addComponent(ImagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(NorthButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -152,11 +150,11 @@ public class GUI extends javax.swing.JFrame {
             public void run() {
                 new GUI().setVisible(true);
             }
-        });
+        }); 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EastButton;
-    private org.netbeans.modules.form.InvalidComponent ImagePanel;
+    private hhssadventure.ImageComponent ImagePanel;
     private javax.swing.JButton NorthButton;
     private javax.swing.JButton SouthButton;
     private javax.swing.JButton WestButton;
