@@ -75,11 +75,15 @@ public class Map {
                     }
                 }
             }
+            //set starting location
+            for(int i = 0; i<screens.size();i++){
+                if(screens.get(i).getName().equals(start)){
+                    location = screens.get(i);
+                }
+            }
         } catch(FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        
-        
     }
     /**
      * Convert directions from strings to integer
@@ -109,12 +113,16 @@ public class Map {
         switch(dir(this.direction)){
             case 0:
                 this.direction = "W";
+                break;
             case 1:
                 this.direction = "N";
+                break;
             case 2:
                 this.direction = "E";
+                break;
             case 3:
                 this.direction = "S";
+                break;
             default:
                 break;
         }
@@ -123,15 +131,20 @@ public class Map {
      * changes direction to turn right
      */
     public void turnRight(){
+        System.out.println("Turn right");
         switch(dir(this.direction)){
             case 0:
                 this.direction = "E";
+                break;
             case 1:
                 this.direction = "S";
+                break;
             case 2:
                 this.direction = "W";
+                break;
             case 3:
                 this.direction = "N";
+                break;
             default:
                 break;
         }
