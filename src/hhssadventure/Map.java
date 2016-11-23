@@ -159,21 +159,25 @@ public class Map {
                     this.direction = this.location.getNorthMoveDir();
                     this.location = this.location.getNorthConnect();
                 }
+                break;
             case 1:
                 if(this.location.getEastConnect() != null){
                     this.direction = this.location.getEastMoveDir();
                     this.location = this.location.getEastConnect();
                 }
+                break;
             case 2:
                 if(this.location.getSouthConnect() != null){
                     this.direction = this.location.getSouthMoveDir();
                     this.location = this.location.getSouthConnect();
                 }
+                break;
             case 3:
                 if(this.location.getWestConnect() != null){
                     this.direction = this.location.getWestMoveDir();
                     this.location = this.location.getWestConnect();
                 }
+                break;
             default:
                 break;
         }
