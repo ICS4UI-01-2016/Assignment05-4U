@@ -13,11 +13,13 @@ public class Controller {
     private GUI gui;
     private Map map;
     private int IMGNum;
+    private String IMGDes;
     
-    public Controller(GUI gui, Map map, int IMGNum){
+    public Controller(GUI gui, Map map, int IMGNum, String IMGDes){
         this.gui = gui;
         this.map = map;
         this.IMGNum = IMGNum;
+        this.IMGDes = IMGDes;
         
         //make sure the GUI can talk to you
         gui.setControler(this);
@@ -33,9 +35,9 @@ public class Controller {
         //ask if we can move north
         if(current.canGoNorth()){
             // move up a row
-            row--; //need new location
+            //need new location
             // get the new screen
-            Screen newScreen = map.getScreen(IMGNum);
+            Screen newScreen = map.getScreen(IMGDes);
             // set the image
             gui.setImage(newScreen.getImage());
         }
