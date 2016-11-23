@@ -1,9 +1,9 @@
 Caf1
 N
 Upstairs1
-N IMG_0045.JPG false Dowstairs S
-E IMG_0046.JPG true
-S IMG_0047.JPG false Upstairs2 S
+N IMG_0045.JPG false Dowstairs S 
+E IMG_0046.JPG true 
+S IMG_0047.JPG false Upstairs2 S 
 W IMG_0049.JPG true
 Upstairs2
 N IMG_0050.JPG false Upstairs1 N
@@ -97,7 +97,7 @@ W IMG_0117.JPG true
 N IMG_0118.JPG false Art1 N
 Science2
 N IMG_0123.JPG true
-E IMG_0119.JPG false Science1 
+E IMG_0119.JPG false Science1 E
 S IMG_0120.JPG true
 W IMG_0121.JPG false Art2 W
 Science1

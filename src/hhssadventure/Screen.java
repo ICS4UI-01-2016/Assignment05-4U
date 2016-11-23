@@ -3,7 +3,10 @@ package hhssadventure;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /*
@@ -54,11 +57,12 @@ public class Screen {
         input.next();
         // scan in the north image name
         northImageName = input.next();
+        System.out.println(northImageName);
         // load the north image file
         try {
             northImage = ImageIO.read(new File("images/" + northImageName));
         } catch (Exception e) {
-            
+            e.printStackTrace();
         }
         
         // scan in whether you can move North
@@ -74,6 +78,7 @@ public class Screen {
         input.next();
         // scan in the east image name
         this.eastImageName = input.next();
+        System.out.println(eastImageName);
         // load the east image file
         try {
             this.eastImage = ImageIO.read(new File("images/" + this.eastImageName));
@@ -94,6 +99,7 @@ public class Screen {
         input.next();
         // scan in the south image name
         southImageName = input.next();
+        System.out.println(southImageName);
         // load the east image file
         try {
             southImage = ImageIO.read(new File("images/" + southImageName));
@@ -114,6 +120,7 @@ public class Screen {
         input.next();
         // scan in the west image name
         westImageName = input.next();
+        System.out.println(westImageName);
         // load the east image file
         try {
             westImage = ImageIO.read(new File("images/" + westImageName));
@@ -128,8 +135,9 @@ public class Screen {
             westMoveDir = input.next();
         }
         // move to next line
-        input.nextLine(); 
-
+        
+            input.nextLine(); 
+        
         
         // set all to null - so no error codes for now
         northConnect = null;
@@ -309,5 +317,16 @@ public class Screen {
      */
     public BufferedImage getWestImage() {
         return westImage;
+    }
+    public static void main(String[] args) {
+        Scanner fileCreate = null;
+        try {
+            fileCreate = new Scanner(new File("images/pics.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        fileCreate.nextLine();
+        fileCreate.nextLine();
+        Screen s = new Screen(fileCreate);
     }
 }

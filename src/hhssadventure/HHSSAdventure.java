@@ -19,7 +19,8 @@ public class HHSSAdventure {
         Map map = new Map("images/pics.txt");
         
         // create the interface
-        GUI gui = new GUI(map);
+        GUI gui = new GUI();
+        gui.setMap(map);
         
         // show the interface
         gui.setVisible(true);
