@@ -37,7 +37,7 @@ public class Controller {
             // move up a row
             //need new location
             // get the new screen
-            Screen newScreen = map.getScreen(IMGDes);
+            Screen newScreen = map.getScreen(IMGNum);
             // set the image
             gui.setImage(newScreen.getImage());
         }

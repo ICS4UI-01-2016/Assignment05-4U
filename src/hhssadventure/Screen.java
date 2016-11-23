@@ -36,12 +36,14 @@ public class Screen {
         String[] Split = imageName.split(" ");
 
         int IMGNum = Integer.parseInt(Split[1].substring(4, 8));
+        String IMGDirect = Split[0].substring(0, Split[0].length());
+        String IMGBool = Split[2].substring(0, Split[2].length());
         String IMGDes = Split[3].substring(0, Split[3].length());
-        String IMGDirect = Split[4].substring(0, Split[4].length());
+        String IMGDirect2 = Split[4].substring(0, Split[4].length());
 
         this.IMGNum = IMGNum;
         this.IMGDes = IMGDes;
-        this.IMGDirect = IMGDirect;
+        this.IMGDirect = IMGDirect2;
 
 
 
@@ -56,10 +58,26 @@ public class Screen {
 
 
         //get the possible directions
-        north = input.nextBoolean();
-        east = input.nextBoolean();
-        south = input.nextBoolean();
-        west = input.nextBoolean();
+        if(IMGDirect.equals("N") && IMGBool.equals("true")){
+            north = false;
+        }else{
+            north = true;
+        }
+        if(IMGDirect.equals("E") && IMGBool.equals("true")){
+            east = false;
+        }else{
+            east = true;
+        }
+        if(IMGDirect.equals("S") && IMGBool.equals("true")){
+            south = false;
+        }else{
+            south = true;
+        }
+        if(IMGDirect.equals("W") && IMGBool.equals("true")){
+            west = false;
+        }else{
+            west = true;
+        }
 
         //move to the next line
         input.nextLine();
