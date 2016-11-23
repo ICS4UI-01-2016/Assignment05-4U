@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class Location {
 
+    // Create constant to be used (instance variable)
     private String name;
     private ArrayList<Screen> screens;
 
@@ -49,13 +50,15 @@ public class Location {
     }
 
     /**
-     * Method used to get the screens direction **********************************
+     * Method used to get the screens direction
+     * **********************************
+     *
      *
      * @param findDirection string that is used to display
      * @return the direction of the current screen
      */
     public Screen getScreen(String findDirection) {
-        // now loop through the 4 screens/direction for this location
+        // Now loop through the 4 screens/direction for this location
         for (Screen scn : screens) {
             // See if we have a direction match
             if (scn.getDirection().equals(findDirection)) {
@@ -63,6 +66,7 @@ public class Location {
                 return scn;
             }
         }
+        // Return nothing if no screen was found
         return null;
     }
 }

@@ -21,34 +21,33 @@ public class Screen {
     private String imageName;
     private BufferedImage image;
     private boolean blockedMovement;
-    private String  newImageName;
-    private String  newDirection;
-/*
-    private boolean east;
-    private boolean south;
-    private boolean west;
-    public static final int NORTH = 0;
-    public static final int EAST = 1;
-    public static final int SOUTH = 2;
-    public static final int WEST = 3;
-*/
-    
-/*
-    Upstairs1
-    N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
-    E IMG_0046.JPG true
-    S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
-    W IMG_0049.JPG true
-*/
-    
+    private String newImageName;
+    private String newDirection;
+    /*
+     private boolean east;
+     private boolean south;
+     private boolean west;
+     public static final int NORTH = 0;
+     public static final int EAST = 1;
+     public static final int SOUTH = 2;
+     public static final int WEST = 3;
+     */
+
+    /*
+     Upstairs1
+     N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
+     E IMG_0046.JPG true
+     S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)
+     W IMG_0049.JPG true
+     */
     /**
      * Scans in all of the information for each screen from the text file
+     *
      * @param input scanner for the text to be scanned into
      */
     public Screen(Scanner input) {
 
         // Read a line from the file of the form
-        // N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
         String line = "";
         try {
             line = input.nextLine();
@@ -59,16 +58,16 @@ public class Screen {
         // Split the line into it's pieces
         String[] split = line.split(" ");
 
-        // load up the locations object variables
+        // Grab the specific locations object variables
         direction = split[0];
         imageName = split[1];
         blockedMovement = Boolean.parseBoolean(split[2]);
 
-        // if this direction is not blocked than there will be a 
-        // new location and direction
+        // If this direction is not blocked than there will be a new location and direction
         if (!blockedMovement) {
+            // Grab new image
             newImageName = split[3];
-
+            // Grab the direction of the new image
             newDirection = split[4].substring(0, 1);
         }
 
@@ -83,49 +82,62 @@ public class Screen {
 
     /*
      *
-     * Acknowledging the direction of the user
+     * Method that acknowledges the direction of the user
      *
      * @return the current direction of the user
      */
     public String getDirection() {
+        // Return the direction of the image
         return direction;
     }
 
     /**
-     * Acknowledging the location of the user
+     * Method that acknowledges the location of the user
      *
      * @return the current location of the user
      */
     public String getImageName() {
+        // Return the image name
         return imageName;
     }
-    
+
     /**
-     * Acknowledging the new location of the user
-     * @return 
+     * Method that acknowledges the new location of the user
+     *
+     * @return the new location of the user
      */
-    public String getNewImageName(){
+    public String getNewImageName() {
+        // Return the new location
         return newImageName;
     }
-    
-    public String getNewDirection(){
+
+    /**
+     * Method that acknowledges the new direction of the user
+     *
+     * @return the new direction of the image
+     */
+    public String getNewDirection() {
+        // Return the new direction of the user
         return newDirection;
     }
-    
+
     /**
-     * Acknowledging if the direction one is choosing is blocked 
-     * @return 
+     * Acknowledging if the direction one is choosing is blocked
+     *
+     * @return whether or not the movement is blocked
      */
-    public boolean isBlocked(){
+    public boolean isBlocked() {
+        // Return whether or not the user can move
         return blockedMovement;
     }
 
     /**
-     * Load in the image of the adventure
+     * Load in the images of the HHSS adventure game
      *
      * @return the image needed to be used
      */
     public BufferedImage getImage() {
+        // Return the image needed to be used
         return image;
     }
 }

@@ -10,6 +10,7 @@ package hhssadventure;
  */
 public class Controller {
 
+    // Create constants to be used (instance variables)
     private GUI gui;
     private Map map;
     String location;
@@ -21,9 +22,9 @@ public class Controller {
         this.location = map.getInitialLocation();
         this.direction = map.getInitialDirection();
 
-        // make sure the GUI can talk to you
+        // Make sure the GUI can talk to you
         gui.setController(this);
-        // set the starting image
+        // Set the starting image
         Screen start = map.getScreen(location, direction);
         gui.setImage(start.getImage());
         gui.setDirection(direction);
@@ -31,7 +32,7 @@ public class Controller {
     }
 
     public void turnNorth() {
-        // get the screen we are on right now
+        // Get the screen we are on right now
         // Set direction to equal W
         // Print screen
         Screen current = map.getScreen(location, direction);
@@ -42,7 +43,7 @@ public class Controller {
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
     }
-    
+
 //    public void goNorth() {
 //        // get the screen we are on right now
 //        Screen current = map.getScreen(location, direction);
@@ -58,9 +59,8 @@ public class Controller {
 //        gui.setImage(current.getImage());
 //        
 //    }
-
     public void turnEast() {
-        // get the screen we are on right now
+        // Get the screen we are on right now
         // Set direction to equal W
         // Print screen
         Screen current = map.getScreen(location, direction);
@@ -71,7 +71,7 @@ public class Controller {
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
     }
-    
+
 //    public void goEast() {
 //        // get the screen we are on right now
 //        Screen current = map.getScreen(location, direction);
@@ -86,9 +86,8 @@ public class Controller {
 //        gui.setImage(current.getImage());
 //        
 //    }
-
     public void turnSouth() {
-        // get the screen we are on right now
+        // Get the screen we are on right now
         // Set direction to equal W
         // Print screen
         Screen current = map.getScreen(location, direction);
@@ -99,7 +98,7 @@ public class Controller {
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
     }
-    
+
 //    public void goSouth() {
 //        // get the screen we are on right now
 //        Screen current = map.getScreen(location, direction);
@@ -114,9 +113,8 @@ public class Controller {
 //        // set the image
 //        gui.setImage(current.getImage());
 //    }
-
     public void turnWest() {
-        // get the screen we are on right now
+        // Get the screen we are on right now
         // Set direction to equal W
         // Print screen
         Screen current = map.getScreen(location, direction);
@@ -127,7 +125,7 @@ public class Controller {
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
     }
-    
+
 //    public void goWest() {
 //        // get the screen we are on right now
 //        Screen current = map.getScreen(location, direction);
@@ -143,24 +141,22 @@ public class Controller {
 //        // set the image
 //        gui.setImage(current.getImage());
 //    }
-    
     public void goForward() {
-        // get the screen we are on right now
+        // Get the screen we are on right now
         Screen current = map.getScreen(location, direction);
-        
+
         // Swtiching direction to face the new direction which was clicked
-        // ask if we can move west
+        // Ask if we can move west
         if (current.isBlocked() == false) {
             location = current.getNewImageName();
             direction = current.getNewDirection();
             current = map.getScreen(location, direction);
         }
-        
-        // set the image
+
+        // Set the image
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
     }
-    
-    
+
 }

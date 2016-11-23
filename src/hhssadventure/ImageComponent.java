@@ -21,6 +21,7 @@ public class ImageComponent extends JComponent {
      * Constructor for the image
      */
     public ImageComponent() {
+        // Create image to be nothing
         image = null;
     }
 

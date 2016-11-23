@@ -31,8 +31,8 @@ public class HHSSAdventure {
         Controller c = new Controller(gui, map);
 
         // Creating new sound (Used to grab the audio file we have)
-        Sound music = new Sound("Martin garrix - Oops (Original Mix) (FREE DOWNLOAD).wav");
-        // Start the music
+        Sound music = new Sound("Imagined_Herbal_Flows_-_Departure.wav");
+        // Start the music 
         music.loop();
     }
 }

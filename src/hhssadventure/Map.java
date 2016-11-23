@@ -51,7 +51,7 @@ public class Map {
             // Make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
 
-            // read the initial location and direction from the config file
+            // Read the initial location and direction from the config file
             initialLocation = input.nextLine();
             initialDirection = input.nextLine();
 
@@ -73,11 +73,24 @@ public class Map {
         }
     }
 
+    /**
+     * Method acknowledges the initial location of the user when the game starts
+     *
+     * @return the initial location of the user
+     */
     public String getInitialLocation() {
+        // Return the initial location of the user
         return initialLocation;
     }
 
+    /**
+     * Method acknowledges the initial direction of the user when the game
+     * starts
+     *
+     * @return the initial direction of user
+     */
     public String getInitialDirection() {
+        // Return the initial direction of the user
         return initialDirection;
     }
 
@@ -86,7 +99,7 @@ public class Map {
         for (Location loc : this.locations) {
 
             if (loc.getName().equals(findLocation)) {
-                // found the location 
+                // Found the location 
                 return loc.getScreen(findDirection);
             }
         }
