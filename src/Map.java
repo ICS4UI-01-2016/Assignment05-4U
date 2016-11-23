@@ -18,11 +18,11 @@ import java.util.logging.Logger;
 public class Map {
     
     private ArrayList<Location> locations;
+    private ArrayList<Screen> directions;
     
     
     public Map(String fileName){
         //initialize the list 
-        screens = new ArrayList<>();
         locations = new ArrayList<>();
         try {
             
@@ -32,11 +32,21 @@ public class Map {
             //loop to the end of the file
             while(input.hasNext()){
                 // creating a screen from the scanner
-                Screen s = new Screen(input);
+                Location s = new Location(input);
+                 Screen k = new Screen(input);
                  // added the created screen to the list
                 locations.add(s);
                 
             }
+            
+              while(input.hasNext()){
+                // creating a screen from the scanner
+                Screen s = new Screen(input);
+                 // added the created screen to the list
+                directions.add(s);
+                
+            }
+            
             
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
@@ -48,11 +58,12 @@ public class Map {
      * @param direction the col which the screen appears 
      * @return the screen at (place) or null if not found
      */
-    public Screen getScreen(String place, String direction){
+    public Screen getLocation(String place, String direction){
         //go through each screen 
-        for(Screen s: locations){
+        
+        for(Location s: locations){
             // see if place and direction match
-            if(s.getCurrentPlace().equals(place) && s.getCurrentDirection().equals(direction)){
+            if(s.getLocationName()&& ().equals(direction)){
                 //I found the screen
                 System.out.println("Test "  + s.getCurrentDirection()+ " " + s.getCurrentPlace() );
                 return s;

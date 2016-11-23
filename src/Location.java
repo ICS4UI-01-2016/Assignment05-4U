@@ -26,7 +26,7 @@ public class Location {
    //direction is stored as an integer so that it can be easily manipulated 
    private int currentDirection;
    
-    public Location(String filename){
+    public Location(Scanner input){
         //initialize array, since there are 4 lines, and 4 directions
         locationScreens = new Screen[4];
         
@@ -37,8 +37,8 @@ public class Location {
         directions[3] = "W";
         
         //using try incase an error is thrown at us 
-        try {
-            Scanner input = new Scanner(new File(filename));
+     
+            
             locationName = input.next();
             
 
@@ -49,9 +49,7 @@ public class Location {
                 locationScreens[i] = s;
             }
         
-        }catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
+        
     }
     
     
@@ -93,7 +91,7 @@ public class Location {
                 currentDirection = i;
             }
         }
-        return locationScreens[currentDirection].getImage();
+        return locationScreens[currentDirection].getImageName();
     }
             
             
@@ -119,4 +117,10 @@ public class Location {
                 
                 return locationScreens[currentDirection].getNextDirection();
             }
+         
+            public int getCurrentDirection(String direction){
+                return currentDirection;
+            }
+            
+           
 }

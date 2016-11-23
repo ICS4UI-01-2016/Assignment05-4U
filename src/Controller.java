@@ -25,19 +25,19 @@ public class Controller {
         gui.setController(this);
         
         //set starting image 
-        Screen start = map.getScreen(place,direction);
+        Screen start = map.getScreen(currentPlace,currentDirection);
         gui.setImage(start.getImage());
     }
     
     public void goForward(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(place, direction);
+        Screen current = map.getScreen(currentPlace, currentDirection);
         
         //if we can move north
         if(current.isFrontClear()){
-            place = current.getNextPlace();
+            currentPlace = current.getNextPlace();
             
-            //Get new screen, set at next place according 
+            //Get new screen, set at next place according  to "getNextPlace"
             Screen newScreen = map.getScreen(current.getNextPlace(), current.getNextDirection());
             newScreen.getNextPlace();
 
@@ -49,15 +49,11 @@ public class Controller {
     
    
        public void lookNorth(){
-        //get the screen we are on right now 
-        Screen current = map.getScreen(place, direction);
-        
- 
-       
+
             // move up a row
-            direction = "N"; 
+            currentDirection = "N"; 
             //Get new screen 
-            Screen newScreen = map.getScreen(place, direction);
+            Screen newScreen = map.getScreen(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
         }
@@ -67,14 +63,11 @@ public class Controller {
     
 
     public void lookSouth(){
-        //get the screen we are on right now 
-        Screen current = map.getScreen(place, direction);
-        
-        
-    
-           direction = "S";
+      
+
+           currentDirection = "S";
             //Get new screen 
-            Screen newScreen = map.getScreen(place, direction);
+            Screen newScreen = map.getScreen(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
         
@@ -84,29 +77,29 @@ public class Controller {
     
 }
          public void lookWest(){
-        //get the screen we are on right now 
-        Screen current = map.getScreen(place, direction);
+       
+       
         
         //ask if we can move north
       
-            direction = "W";
+            currentDirection = "W";
          
             //Get new screen 
-            Screen newScreen = map.getScreen(place, direction);
+            Screen newScreen = map.getScreen(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
         
 }
            public void lookEast(){
-        //get the screen we are on right now 
-        Screen current = map.getScreen(place, direction);
+        
+       
         
         //ask if we can move north
         
-            direction = "E";
+            currentDirection = "E";
             
             //Get new screen 
-            Screen newScreen = map.getScreen(place, direction);
+            Screen newScreen = map.getScreen(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
         

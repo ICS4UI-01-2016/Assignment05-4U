@@ -90,7 +90,11 @@ public class Screen {
         return nextDirection;
     }
 
-    public String getImage() {
+    public BufferedImage getImage() {
+        return image;
+    }
+    
+     public String getImageName(){
         return imageName;
     }
 
