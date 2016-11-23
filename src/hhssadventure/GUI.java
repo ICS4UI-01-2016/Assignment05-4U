@@ -19,8 +19,6 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
-        labelDirection.setText("NORTH");
-        labelBlocked.setText("BLOCKED!");
     }
 
     public void setController(Controller c) {
@@ -61,57 +59,18 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonNorth = new javax.swing.JButton();
-        buttonWest = new javax.swing.JButton();
-        buttonEast = new javax.swing.JButton();
-        buttonSouth = new javax.swing.JButton();
-        imagePanel = new hhssadventure.ImageComponent();
         buttonForward = new javax.swing.JButton();
+        buttonLeft = new javax.swing.JButton();
+        buttonRight = new javax.swing.JButton();
+        buttonBackwards = new javax.swing.JButton();
+        imagePanel = new hhssadventure.ImageComponent();
         labelBlocked = new javax.swing.JTextField();
         labelDirection = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        buttonNorth.setBackground(new java.awt.Color(0, 0, 0));
-        buttonNorth.setForeground(new java.awt.Color(255, 255, 255));
-        buttonNorth.setText("NORTH");
-        buttonNorth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonNorthActionPerformed(evt);
-            }
-        });
-
-        buttonWest.setBackground(new java.awt.Color(0, 0, 0));
-        buttonWest.setForeground(new java.awt.Color(255, 255, 255));
-        buttonWest.setText("WEST");
-        buttonWest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonWestActionPerformed(evt);
-            }
-        });
-
-        buttonEast.setBackground(new java.awt.Color(0, 0, 0));
-        buttonEast.setForeground(new java.awt.Color(255, 255, 255));
-        buttonEast.setText("EAST");
-        buttonEast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEastActionPerformed(evt);
-            }
-        });
-
-        buttonSouth.setBackground(new java.awt.Color(0, 0, 0));
-        buttonSouth.setForeground(new java.awt.Color(255, 255, 255));
-        buttonSouth.setText("SOUTH");
-        buttonSouth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSouthActionPerformed(evt);
-            }
-        });
-
-        imagePanel.setToolTipText("");
-
-        buttonForward.setBackground(new java.awt.Color(204, 0, 204));
+        buttonForward.setBackground(new java.awt.Color(0, 0, 0));
         buttonForward.setForeground(new java.awt.Color(255, 255, 255));
         buttonForward.setText("FORWARD");
         buttonForward.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +78,35 @@ public class GUI extends javax.swing.JFrame {
                 buttonForwardActionPerformed(evt);
             }
         });
+
+        buttonLeft.setBackground(new java.awt.Color(0, 0, 0));
+        buttonLeft.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLeft.setText("LEFT");
+        buttonLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLeftActionPerformed(evt);
+            }
+        });
+
+        buttonRight.setBackground(new java.awt.Color(0, 0, 0));
+        buttonRight.setForeground(new java.awt.Color(255, 255, 255));
+        buttonRight.setText("RIGHT");
+        buttonRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRightActionPerformed(evt);
+            }
+        });
+
+        buttonBackwards.setBackground(new java.awt.Color(0, 0, 0));
+        buttonBackwards.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBackwards.setText("BACKWARDS");
+        buttonBackwards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackwardsActionPerformed(evt);
+            }
+        });
+
+        imagePanel.setToolTipText("");
 
         labelBlocked.setEditable(false);
         labelBlocked.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
@@ -158,22 +146,20 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(labelDirection, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonWest, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(buttonForward, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(buttonEast, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelBlocked, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                                    .addComponent(buttonNorth, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(129, 129, 129)
+                                        .addComponent(buttonRight, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(buttonForward, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelBlocked, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                                 .addContainerGap())
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonSouth, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonBackwards, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -188,24 +174,27 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonNorth, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonForward)
-                    .addComponent(buttonEast)
-                    .addComponent(buttonWest)
-                    .addComponent(labelDirection, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelBlocked, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addComponent(buttonSouth, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonRight)
+                            .addComponent(buttonLeft)
+                            .addComponent(labelDirection, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelBlocked, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(buttonForward, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonBackwards, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonNorthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNorthActionPerformed
+    private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
         // Go North!
 //        System.out.println("Direction: " + controller.direction);
 //        System.out.println("Location: " + controller.location);
@@ -219,12 +208,13 @@ public class GUI extends javax.swing.JFrame {
 //            
 //        }
 //        System.out.println("");
-
-        controller.turnNorth();
+//        controller.turnNorth();
 //        labelDirection.setText("NORTH");
-    }//GEN-LAST:event_buttonNorthActionPerformed
+        // Go forwards!
+        controller.goForward();
+    }//GEN-LAST:event_buttonForwardActionPerformed
 
-    private void buttonEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEastActionPerformed
+    private void buttonRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRightActionPerformed
         // Go East!
 //        System.out.println("Direction: " + controller.direction);
 //        System.out.println("Location: " + controller.location);
@@ -239,11 +229,21 @@ public class GUI extends javax.swing.JFrame {
 //        }
 //        System.out.println("");
         
-        controller.turnEast();
+        if(controller.direction.equals("N")){
+            controller.turnEast();
+        } else if(controller.direction.equals("S")){
+            controller.turnWest();
+        } else if(controller.direction.equals("E")){
+            controller.turnSouth();
+        } else if(controller.direction.equals("W")){
+            controller.turnNorth();
+        }
+        
+//        controller.turnEast();
 //        labelDirection.setText("EAST");
-    }//GEN-LAST:event_buttonEastActionPerformed
+    }//GEN-LAST:event_buttonRightActionPerformed
 
-    private void buttonSouthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSouthActionPerformed
+    private void buttonBackwardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackwardsActionPerformed
         // Go South!
 //        System.out.println("Direction: " + controller.direction);
 //        System.out.println("Location: " + controller.location);
@@ -257,12 +257,20 @@ public class GUI extends javax.swing.JFrame {
 //            
 //        }
 //        System.out.println("");
-        
-        controller.turnSouth();
+        if(controller.direction.equals("N")){
+            controller.turnSouth();
+        } else if(controller.direction.equals("S")){
+            controller.turnNorth();
+        } else if(controller.direction.equals("E")){
+            controller.turnWest();
+        } else if(controller.direction.equals("W")){
+            controller.turnEast();
+        }
+//        controller.turnSouth();
 //        labelDirection.setText("SOUTH");
-    }//GEN-LAST:event_buttonSouthActionPerformed
+    }//GEN-LAST:event_buttonBackwardsActionPerformed
 
-    private void buttonWestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWestActionPerformed
+    private void buttonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLeftActionPerformed
 //        // Go West!
 //        System.out.println("Direction: " + controller.direction);
 //        System.out.println("Location: " + controller.location);
@@ -278,15 +286,19 @@ public class GUI extends javax.swing.JFrame {
 //            
 //        }
 //        System.out.println("");
-        controller.turnWest();
+        
+        if(controller.direction.equals("N")){
+            controller.turnWest();
+        } else if(controller.direction.equals("S")){
+            controller.turnEast();
+        } else if(controller.direction.equals("E")){
+            controller.turnNorth();
+        } else if(controller.direction.equals("W")){
+            controller.turnSouth();
+        }
+//        controller.turnWest();
 //        labelDirection.setText("WEST");
-    }//GEN-LAST:event_buttonWestActionPerformed
-
-    private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
-        // Go forwards!
-        controller.goForward();
-
-    }//GEN-LAST:event_buttonForwardActionPerformed
+    }//GEN-LAST:event_buttonLeftActionPerformed
 
     private void labelDirectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelDirectionActionPerformed
         
@@ -331,11 +343,10 @@ public class GUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonEast;
+    private javax.swing.JButton buttonBackwards;
     private javax.swing.JButton buttonForward;
-    private javax.swing.JButton buttonNorth;
-    private javax.swing.JButton buttonSouth;
-    private javax.swing.JButton buttonWest;
+    private javax.swing.JButton buttonLeft;
+    private javax.swing.JButton buttonRight;
     private hhssadventure.ImageComponent imagePanel;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField labelBlocked;

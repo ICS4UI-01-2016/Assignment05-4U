@@ -26,6 +26,8 @@ public class Controller {
         // set the starting image
         Screen start = map.getScreen(location, direction);
         gui.setImage(start.getImage());
+        gui.setDirection(direction);
+        gui.setBlocked(start.isBlocked());
     }
 
     public void turnNorth() {

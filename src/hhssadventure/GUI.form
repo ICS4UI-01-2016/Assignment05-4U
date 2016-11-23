@@ -30,25 +30,23 @@
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Component id="labelDirection" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="buttonWest" min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="buttonLeft" min="-2" pref="78" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                      <Component id="buttonForward" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="buttonEast" min="-2" pref="77" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="labelBlocked" pref="121" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                                      <Component id="buttonRight" min="-2" pref="77" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="buttonNorth" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="buttonForward" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelBlocked" pref="121" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="buttonSouth" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="buttonBackwards" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -71,25 +69,31 @@
               <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="imagePanel" min="-2" pref="315" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="buttonNorth" min="-2" pref="23" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buttonForward" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonEast" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonWest" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelDirection" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="labelBlocked" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="buttonRight" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonLeft" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDirection" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="labelBlocked" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="buttonForward" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="buttonBackwards" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Component id="buttonSouth" min="-2" pref="23" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="buttonNorth">
+    <Component class="javax.swing.JButton" name="buttonForward">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -97,13 +101,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="NORTH"/>
+        <Property name="text" type="java.lang.String" value="FORWARD"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNorthActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonForwardActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonWest">
+    <Component class="javax.swing.JButton" name="buttonLeft">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -111,13 +115,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="WEST"/>
+        <Property name="text" type="java.lang.String" value="LEFT"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonWestActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLeftActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonEast">
+    <Component class="javax.swing.JButton" name="buttonRight">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -125,13 +129,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="EAST"/>
+        <Property name="text" type="java.lang.String" value="RIGHT"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEastActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRightActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonSouth">
+    <Component class="javax.swing.JButton" name="buttonBackwards">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -139,10 +143,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="SOUTH"/>
+        <Property name="text" type="java.lang.String" value="BACKWARDS"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSouthActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBackwardsActionPerformed"/>
       </Events>
     </Component>
     <Container class="hhssadventure.ImageComponent" name="imagePanel">
@@ -154,20 +158,6 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
-    <Component class="javax.swing.JButton" name="buttonForward">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="0" red="cc" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="FORWARD"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonForwardActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JTextField" name="labelBlocked">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
