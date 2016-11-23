@@ -54,4 +54,17 @@ public class Map {
             Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public Screen getScreen(int area, int direction) {
+        // go through each screen
+        for (Screen s : screens) {
+            // see if the row and col match
+            if (s.getArea() == area && s.getDirection() == direction) {
+                // I found the screen
+                return s;
+            }
+        }
+        // no screen found
+        return null;
+    }    
 }

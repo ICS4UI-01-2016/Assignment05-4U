@@ -54,6 +54,14 @@ public class Screen {
         return image;
     }
     
+    public String getArea() {
+        return area;
+    }
+    
+    public String getDirection() {
+        return direction;
+    }
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // creates new screen

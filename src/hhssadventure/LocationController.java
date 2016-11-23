@@ -33,11 +33,10 @@ public class LocationController {
     
     public void goNorth() {
         // get the screen we are on right now
-        Screen current = map.getScreen(area, direction);
-        if (current.canGoNorth()) {
-            
+        Screen current = Map.getScreen(area, direction);
+        if (current.canGoNorth()) {            
             // get the new screen
-            Screen newScreen = map.getScreen(area, direction);
+            Screen newScreen = Map.getScreen(area, direction);
             // set the image
             gui.setImage(newScreen.getImage());
         }
