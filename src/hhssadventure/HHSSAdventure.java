@@ -29,5 +29,10 @@ public class HHSSAdventure {
 
         // Create the game controller and connect it to both the GUI and the map
         Controller c = new Controller(gui, map);
+
+        // Creating new sound (Used to grab the audio file we have)
+        Sound music = new Sound("Martin garrix - Oops (Original Mix) (FREE DOWNLOAD).wav");
+        // Start the music
+        music.loop();
     }
 }
