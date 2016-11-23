@@ -16,8 +16,8 @@ import java.util.logging.Logger;
  * @author hadik9595
  */
 public class Map {
-    private ArrayList<Screen> screens;
-    private ArrayList<Spawn> locations;
+    
+    private ArrayList<Location> locations;
     
     
     public Map(String fileName){
@@ -34,7 +34,7 @@ public class Map {
                 // creating a screen from the scanner
                 Screen s = new Screen(input);
                  // added the created screen to the list
-                screens.add(s);
+                locations.add(s);
                 
             }
             
@@ -50,7 +50,7 @@ public class Map {
      */
     public Screen getScreen(String place, String direction){
         //go through each screen 
-        for(Screen s: screens){
+        for(Screen s: locations){
             // see if place and direction match
             if(s.getCurrentPlace().equals(place) && s.getCurrentDirection().equals(direction)){
                 //I found the screen

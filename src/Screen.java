@@ -18,6 +18,9 @@ public class Screen {
     private String place;
     private String currentPlace;
  
+    private String imageName;
+    
+    
     private BufferedImage image;
     private String nextPlace;
     private String nextDirection;
@@ -57,17 +60,11 @@ public class Screen {
 
         //load the image file 
         try {
+          
             image = ImageIO.read(new File("images/" + imageName + ".JPG"));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
-
 
     }
 
@@ -88,15 +85,20 @@ public class Screen {
     public String getCurrentPlace() {
         return currentPlace;
     }
+    
+    public String getNextDirection(){
+        return nextDirection;
+    }
 
-    public BufferedImage getImage() {
-        return image;
+    public String getImage() {
+        return imageName;
     }
 
     public boolean isFrontClear() {
         return frontClear;
     }
 
+    //I use psvm to repeatedly update this class because for some reason changes can not be applied unless this is played.
     public static void main(String[] args) {
     }
 }
