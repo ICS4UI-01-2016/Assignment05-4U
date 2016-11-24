@@ -27,17 +27,18 @@ public class LocationController {
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
-       Screen start = map.getScreen(area, direction);
-       gui.setImage(start.getImage());
+        Screen start = map.getScreen(area, direction);
+        gui.setImage(start.getImage());
     }
-    
+
     public void goNorth() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-        if (current.canGoNorth()) {            
+        if (current.canGoNorth()) {
             // get the new screen
             Screen newScreen = map.getScreen(area, direction);
             // set the image
             gui.setImage(newScreen.getImage());
         }
+    }
 }
