@@ -17,6 +17,8 @@ public class Controller {
     private String currentDirection;
     private ArrayList<Location> locations = new ArrayList<>();
     
+    private String[] directions;
+    
     
     
     public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
@@ -26,11 +28,16 @@ public class Controller {
         this.currentDirection = c;
         
         
+        directions[0] = "N";
+        directions[1] = "E";
+        directions[2] = "S";
+        directions[3] = "W";
+        
         //make sure the GUI can talk to you
         gui.setController(this);
         
         //set starting image 
-        Screen start = map.getScreen(currentPlace,currentDirection);
+        Screen start = map.getLocation(currentPlace,currentDirection);
         gui.setImage(start.getImage());
     }
     
@@ -53,40 +60,21 @@ public class Controller {
     }
     
    
-       public void lookNorth(){
-
-            // move up a row
-            currentDirection = "N"; 
-            //Get new screen 
-            Screen newScreen = map.getScreen(currentPlace, currentDirection);
-            // set the image
-            gui.setImage(newScreen.getImage());
-        }
+    
         
     
     
     
 
-    public void lookSouth(){
-      
-
-           currentDirection = "S";
-            //Get new screen 
-            Screen newScreen = map.getScreen(currentPlace, currentDirection);
-            // set the image
-            gui.setImage(newScreen.getImage());
-        
-        
-    
-    
-    
-}
-         public void lookWest(){
+  
+         public void turnLeft(){
        
        
         
         //ask if we can move north
-      
+             for (int i = 0; i < directions.length; i++) {
+                 if(currentDirection)
+             }
             currentDirection = "W";
          
             //Get new screen 
@@ -95,18 +83,16 @@ public class Controller {
             gui.setImage(newScreen.getImage());
         
 }
-           public void lookEast(){
-        
-       
-        
+           public void turnRight(){
+   
         //ask if we can move north
-        
             currentDirection = "E";
             
             //Get new screen 
             Screen newScreen = map.getScreen(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
+            gui.setPosition()
         
 }
            public static void main(String[] args) {
