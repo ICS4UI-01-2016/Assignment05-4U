@@ -19,6 +19,10 @@ public class Map {
 
     private ArrayList<Screen> screens;
 
+    
+    private String intArea;
+    private String intDirection;
+    
     public Map(String fileName) {
         //initialize the list
         screens = new ArrayList<>();
@@ -67,4 +71,12 @@ public class Map {
         // no screen found
         return null;
     }    
+    
+    public String getIntArea(){
+        return intArea;
+    }
+    
+    public String getIntDirection(){
+        return intDirection;
+    }
 }
