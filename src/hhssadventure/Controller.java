@@ -1,5 +1,7 @@
 package hhssadventure;
 
+import java.util.ArrayList;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,6 +16,9 @@ public class Controller {
     private Map map;
     private int IMGNum;
     private String IMGDes;
+    private String IMGDirect;
+    private String IMGBool;
+    private ArrayList<Screen> screens;
     
     public Controller(GUI gui, Map map, int IMGNum, String IMGDes){
         this.gui = gui;
@@ -35,6 +40,10 @@ public class Controller {
         //ask if we can move north
         if(current.canGoNorth()){
             // move up a row
+            if(IMGDirect.equals("N")){
+                
+    }
+            }
             //need new location
             // get the new screen
             Screen newScreen = map.getScreen(IMGNum);
