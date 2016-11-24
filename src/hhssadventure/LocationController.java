@@ -14,11 +14,11 @@ public class LocationController {
     private GUI gui;
     private Map map;
     // area name
-    private char area;
+    private String area;
     // direction facing
-    private char direction;
+    private String direction;
 
-    public LocationController(GUI gui, Map m, char area, char direction) {
+    public LocationController(GUI gui, Map m, String area, String direction) {
         this.gui = gui;
         this.map = map;
         this.area = area;
@@ -27,16 +27,16 @@ public class LocationController {
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
-       Screen start = map.getScreen(area, direction);
+       Screen start = map.getScreen(intArea, intDirection);
        gui.setImage(start.getImage());
     }
     
     public void goNorth() {
         // get the screen we are on right now
-        Screen current = Map.getScreen(area, direction);
+        Screen current = map.getScreen(area, direction);
         if (current.canGoNorth()) {            
             // get the new screen
-            Screen newScreen = Map.getScreen(area, direction);
+            Screen newScreen = map.getScreen(area, direction);
             // set the image
             gui.setImage(newScreen.getImage());
         }

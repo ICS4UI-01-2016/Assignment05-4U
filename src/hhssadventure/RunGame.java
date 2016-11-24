@@ -25,6 +25,6 @@ public class RunGame {
         Map map = new Map("images/pics.txt");
 
         // starting position -- how to input?
-        LocationController c = new LocationController(gui, map, Caf1, N);
+        LocationController c = new LocationController(gui, map, area, direction);
     }
 }
