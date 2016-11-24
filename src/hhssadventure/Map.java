@@ -22,6 +22,7 @@ public class Map {
     
     private String intArea;
     private String intDirection;
+    private boolean isBlocked;
     
     public Map(String fileName) {
         //initialize the list
@@ -78,5 +79,9 @@ public class Map {
     
     public String getIntDirection(){
         return intDirection;
+    }
+    
+    public boolean isBlocked(){
+        return isBlocked;
     }
 }
