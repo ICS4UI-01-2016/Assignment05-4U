@@ -109,8 +109,9 @@ public class GUI extends javax.swing.JFrame {
         imagePanel.setToolTipText("");
 
         labelBlocked.setEditable(false);
+        labelBlocked.setBackground(new java.awt.Color(204, 0, 204));
         labelBlocked.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
-        labelBlocked.setForeground(new java.awt.Color(204, 0, 204));
+        labelBlocked.setForeground(new java.awt.Color(255, 255, 255));
         labelBlocked.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         labelBlocked.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,8 +120,9 @@ public class GUI extends javax.swing.JFrame {
         });
 
         labelDirection.setEditable(false);
+        labelDirection.setBackground(new java.awt.Color(204, 0, 204));
         labelDirection.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
-        labelDirection.setForeground(new java.awt.Color(204, 0, 204));
+        labelDirection.setForeground(new java.awt.Color(255, 255, 255));
         labelDirection.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         labelDirection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
