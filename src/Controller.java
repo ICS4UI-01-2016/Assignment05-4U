@@ -19,6 +19,8 @@ public class Controller {
     
     private String[] directions;
     
+    private Map currentLoc;
+    
     
     
     public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
@@ -73,9 +75,19 @@ public class Controller {
         
         //ask if we can move north
              for (int i = 0; i < directions.length; i++) {
-                 if(currentDirection)
+                 if(currentDirection.equals("N")){
+                       currentDirection = "W";
+                       break;
+                       
+                 }else{
+                     currentDirection = directions[i-1];
+                     break;
+                 }
+                 
+                 gui.setImage(current);
+                 
              }
-            currentDirection = "W";
+          
          
             //Get new screen 
             Screen newScreen = map.getScreen(currentPlace, currentDirection);

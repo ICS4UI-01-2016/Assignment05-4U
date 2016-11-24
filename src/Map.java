@@ -63,7 +63,7 @@ public class Map {
             
             
             // see if place and direction match
-            if(s.getCurrentDirection() == s.getNextDirection(direction)){
+            if(currentLoca){
                 //I found the screen
                 return s;                                                                                                                                       
             }
