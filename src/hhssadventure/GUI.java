@@ -29,27 +29,28 @@ public class GUI extends javax.swing.JFrame {
         // the image panel sets its image
         imagePanel.setImage(img);
     }
-    
-    public void setDirection(String direction){
-        if(direction.equals("N")){
+
+    public void setDirection(String direction) {
+        if (direction.equals("N")) {
             labelDirection.setText("NORTH");
-        } else if(direction.equals("S")){
+        } else if (direction.equals("S")) {
             labelDirection.setText("SOUTH");
-        } else if(direction.equals("E")){
+        } else if (direction.equals("E")) {
             labelDirection.setText("EAST");
-        } else if (direction.equals("W")){
+        } else if (direction.equals("W")) {
             labelDirection.setText("WEST");
         }
     }
-    
-    public void setBlocked(boolean blocked){
-        if(blocked){
+
+    public void setBlocked(boolean blocked) {
+        if (blocked) {
             labelBlocked.setText("BLOCKED!");
-        } else{
+        } else {
             labelBlocked.setText("GO!");
         }
-        
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -197,117 +198,59 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
-        // Go North!
-//        System.out.println("Direction: " + controller.direction);
-//        System.out.println("Location: " + controller.location);
-//        if (controller.direction.equals("N")) {
-//            controller.goNorth();
-//        } else {
-//            controller.turnNorth();
-//            System.out.println("Direction After Turn: " + controller.direction);
-//            System.out.println("Location After Turn: " + controller.location);
-//            System.out.println(controller.direction.equals("N"));
-//            
-//        }
-//        System.out.println("");
-//        controller.turnNorth();
-//        labelDirection.setText("NORTH");
         // Go forwards!
         controller.goForward();
     }//GEN-LAST:event_buttonForwardActionPerformed
 
     private void buttonRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRightActionPerformed
-        // Go East!
-//        System.out.println("Direction: " + controller.direction);
-//        System.out.println("Location: " + controller.location);
-//        if (controller.direction.equals("E")) {
-//            controller.goEast();
-//        } else {
-//            controller.turnEast();
-//            System.out.println("Direction After Turn: " + controller.direction);
-//            System.out.println("Location After Turn: " + controller.location);
-//            System.out.println(controller.direction.equals("E"));
-//            
-//        }
-//        System.out.println("");
-        
-        if(controller.direction.equals("N")){
+        // If the user is facing north, its right direction is east
+        if (controller.direction.equals("N")) {
             controller.turnEast();
-        } else if(controller.direction.equals("S")){
+            // If the user is facing south, the direction to the right is west
+        } else if (controller.direction.equals("S")) {
             controller.turnWest();
-        } else if(controller.direction.equals("E")){
+            // If the user is facing E, the direction to the right is south
+        } else if (controller.direction.equals("E")) {
             controller.turnSouth();
-        } else if(controller.direction.equals("W")){
+            // If the user is facing west, the direction to the right is north
+        } else if (controller.direction.equals("W")) {
             controller.turnNorth();
         }
-        
+
 //        controller.turnEast();
 //        labelDirection.setText("EAST");
     }//GEN-LAST:event_buttonRightActionPerformed
 
     private void buttonBackwardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackwardsActionPerformed
-        // Go South!
-//        System.out.println("Direction: " + controller.direction);
-//        System.out.println("Location: " + controller.location);
-//        if (controller.direction.equals("S")) {
-//            controller.goSouth();
-//        } else {
-//            controller.turnSouth();
-//            System.out.println("Direction After Turn: " + controller.direction);
-//            System.out.println("Location After Turn: " + controller.location);
-//            System.out.println(controller.direction.equals("S"));
-//            
-//        }
-//        System.out.println("");
-        if(controller.direction.equals("N")){
+        //
+        if (controller.direction.equals("N")) {
             controller.turnSouth();
-        } else if(controller.direction.equals("S")){
+        } else if (controller.direction.equals("S")) {
             controller.turnNorth();
-        } else if(controller.direction.equals("E")){
+        } else if (controller.direction.equals("E")) {
             controller.turnWest();
-        } else if(controller.direction.equals("W")){
+        } else if (controller.direction.equals("W")) {
             controller.turnEast();
         }
-//        controller.turnSouth();
-//        labelDirection.setText("SOUTH");
     }//GEN-LAST:event_buttonBackwardsActionPerformed
 
     private void buttonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLeftActionPerformed
-//        // Go West!
-//        System.out.println("Direction: " + controller.direction);
-//        System.out.println("Location: " + controller.location);
-//        
-//        if (controller.direction.equals("W")) {
-//            controller.goWest();
-//        } else {
-//            // Controller will turn west
-//            controller.turnWest();
-//            System.out.println("Direction After Turn: " + controller.direction);
-//            System.out.println("Location After Turn: " + controller.location);
-//            System.out.println(controller.direction.equals("W"));
-//            
-//        }
-//        System.out.println("");
-        
-        if(controller.direction.equals("N")){
+        //
+        if (controller.direction.equals("N")) {
             controller.turnWest();
-        } else if(controller.direction.equals("S")){
+        } else if (controller.direction.equals("S")) {
             controller.turnEast();
-        } else if(controller.direction.equals("E")){
+        } else if (controller.direction.equals("E")) {
             controller.turnNorth();
-        } else if(controller.direction.equals("W")){
+        } else if (controller.direction.equals("W")) {
             controller.turnSouth();
         }
-//        controller.turnWest();
-//        labelDirection.setText("WEST");
     }//GEN-LAST:event_buttonLeftActionPerformed
 
     private void labelDirectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelDirectionActionPerformed
-        
     }//GEN-LAST:event_labelDirectionActionPerformed
 
     private void labelBlockedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelBlockedActionPerformed
-        
     }//GEN-LAST:event_labelBlockedActionPerformed
 
     /**

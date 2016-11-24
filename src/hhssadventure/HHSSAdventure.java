@@ -31,8 +31,9 @@ public class HHSSAdventure {
         Controller c = new Controller(gui, map);
 
         // Creating new sound (Used to grab the audio file we have)
-        Sound music = new Sound("Imagined_Herbal_Flows_-_Departure.wav");
+        Sound music = new Sound("IHF-Departure.mp3");
         // Start the music 
-        music.loop();
+        music.setLoop(true);
+        music.play();
     }
 }

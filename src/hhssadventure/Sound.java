@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+import jaco.mp3.player.MP3Player;
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -15,42 +16,45 @@ import javax.sound.sampled.Clip;
  */
 public class Sound {
 
-    private Clip sound;
+    // Create constant to be used
+    private MP3Player sound;
 
+    /**
+     * Constructor for the sound (audio file)
+     *
+     * @param name the name of the rack to be used
+     */
     public Sound(String name) {
         try {
             // Allows for the audio clip (the song) to be passed through into the game
-            AudioInputStream in = AudioSystem.getAudioInputStream(new File(name));
-            sound = AudioSystem.getClip();
-            sound.open(in);
+            sound = new MP3Player(new File(name));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Method that plays the audio file
+     */
     public void play() {
-        new Thread(new Runnable() {
-            public void run() {
-                // Starts the sound (audio file) to be played for the enjoyment of the player ;)
-                sound.setFramePosition(0);
-                sound.start();
-            }
-        }).start();
+        sound.play();
     }
 
+    /**
+     * Method that stops the audio file
+     */
     public void stop() {
         // Stops the sound (audio file)
         sound.stop();
-        sound.setFramePosition(0);
+
     }
 
-    public void loop() {
-        new Thread(new Runnable() {
-            public void run() {
-                // Makes the song loop while game is open
-                sound.setFramePosition(0);
-                sound.loop(Clip.LOOP_CONTINUOUSLY);
-            }
-        }).start();
+    /**
+     * Method that has the song to loop
+     *
+     * @param loop repeats the song in a loop
+     */
+    public void setLoop(boolean loop) {
+        sound.setRepeat(loop);
     }
 }

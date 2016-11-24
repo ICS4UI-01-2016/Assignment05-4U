@@ -23,15 +23,6 @@ public class Screen {
     private boolean blockedMovement;
     private String newImageName;
     private String newDirection;
-    /*
-     private boolean east;
-     private boolean south;
-     private boolean west;
-     public static final int NORTH = 0;
-     public static final int EAST = 1;
-     public static final int SOUTH = 2;
-     public static final int WEST = 3;
-     */
 
     /*
      Upstairs1
