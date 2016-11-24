@@ -16,7 +16,7 @@ public class Controller {
     private String currentPlace;
     private String currentDirection;
     private ArrayList<Location> locations = new ArrayList<>();
-    
+    private Location test;
     private String[] directions;
     
     private Map currentLoc;
@@ -45,7 +45,8 @@ public class Controller {
     
     public void goForward(){
         //get the screen we are on right now 
-        Screen current = map.getScreen(currentPlace, currentDirection);
+        Screen current = map.getLocation(currentPlace, currentDirection);
+        String destination = test.getNextLocation(currentPlace);
         
         //if we can move north
         if(current.isFrontClear()){
@@ -95,22 +96,33 @@ public class Controller {
             gui.setImage(newScreen.getImage());
         
 }
+         
+         
+         
            public void turnRight(){
    
-        //ask if we can move north
-            currentDirection = "E";
+               Screen current = map.getLocation(currentPlace, currentDirection);
+               for (int i = 0; i < directions.length; i++) {
+                 if(currentDirection.equals("W")){
+                       currentDirection = "N";
+                       break;
+                 }else{
+                     currentDirection = directions[i+1];
+                     break;
+                 }
+        
+            
             
             //Get new screen 
-            Screen newScreen = map.getScreen(currentPlace, currentDirection);
+            Screen newScreen = map.getLocation(currentPlace, currentDirection);
             // set the image
             gui.setImage(newScreen.getImage());
             gui.setPosition()
         
 }
-           public static void main(String[] args) {
-   
-              
-               
+
 }
 }
+
+
 

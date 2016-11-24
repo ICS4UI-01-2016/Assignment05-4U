@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class HHSSAdventure {
     
         private String currentPlace;
-    private String currentDirection;
-     private Location currentLoc;
+        private String currentDirection;
+     
     
     
     public HHSSAdventure(Scanner input){
     
         currentPlace = input.nextLine();
-         currentDirection = input.nextLine();
+        currentDirection = input.nextLine();
         
         
 }
@@ -44,7 +44,7 @@ public class HHSSAdventure {
         
         
         //initial spawn of the game, sets coordinates, and calls the map as well as the GUI
-        Controller c = new Controller(gui,map, );
+        Controller c = new Controller(gui,map,currentPlace, currentDirection);
         
         
         

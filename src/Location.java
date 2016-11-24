@@ -118,9 +118,7 @@ public class Location {
                 return locationScreens[currentDirection].getNextDirection();
             }
          
-            public int getCurrentDirection(){
-                return currentDirection;
-            }
+           
             
            
 }
