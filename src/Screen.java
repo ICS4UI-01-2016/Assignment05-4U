@@ -25,7 +25,7 @@ public class Screen {
     private String nextPlace;
     private String nextDirection;
     private String direction;
-    private String check;
+    
     private boolean frontClear;
 
     /**
@@ -40,6 +40,8 @@ public class Screen {
 
         //scan in the image 
         String imageName = input.next();
+        
+        String check = input.next();
 
 
         //checks if boolean is false or not

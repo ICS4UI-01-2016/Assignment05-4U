@@ -33,19 +33,13 @@ public class Map {
             while(input.hasNext()){
                 // creating a screen from the scanner
                 Location s = new Location(input);
-                 Screen k = new Screen(input);
+                
                  // added the created screen to the list
                 locations.add(s);
                 
             }
             
-              while(input.hasNext()){
-                // creating a screen from the scanner
-                Screen s = new Screen(input);
-                 // added the created screen to the list
-                directions.add(s);
-                
-            }
+          
             
             
         } catch (FileNotFoundException ex) {
@@ -65,7 +59,6 @@ public class Map {
             // see if place and direction match
             if(s.getLocationName()&& ().equals(direction)){
                 //I found the screen
-                System.out.println("Test "  + s.getCurrentDirection()+ " " + s.getCurrentPlace() );
                 return s;
             }
             

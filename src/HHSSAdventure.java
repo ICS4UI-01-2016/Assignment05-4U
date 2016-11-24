@@ -14,7 +14,7 @@ public class HHSSAdventure {
     
         private String currentPlace;
     private String currentDirection;
-    
+     private Location currentLoc;
     
     
     public HHSSAdventure(Scanner input){

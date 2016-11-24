@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -12,6 +15,8 @@ public class Controller {
     private Map map;
     private String currentPlace;
     private String currentDirection;
+    private ArrayList<Location> locations = new ArrayList<>();
+    
     
     
     public Controller(HHSSAdventureFrame gui, Map m, String word, String c){
