@@ -27,7 +27,7 @@ public class LocationController {
         // make sure GUI can communicate
         gui.setController(this);
         // set starting image
-       Screen start = map.getScreen(intArea, intDirection);
+       Screen start = map.getScreen(area, direction);
        gui.setImage(start.getImage());
     }
     

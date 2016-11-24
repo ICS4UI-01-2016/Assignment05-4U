@@ -55,7 +55,7 @@ public class Map {
         }
     }
     
-    public Screen getScreen(int area, int direction) {
+    public Screen getScreen(String area, String direction) {
         // go through each screen
         for (Screen s : screens) {
             // see if the row and col match
