@@ -19,11 +19,17 @@ public class Map {
     
     private ArrayList<Location> locations;
     private ArrayList<Screen> directions;
-    
+    private String[] direction;
     
     public Map(String fileName){
         //initialize the list 
         locations = new ArrayList<>();
+        
+        // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
+        direction[0] = "N";
+        direction[1] = "E";
+        direction[2] = "S";
+        direction[3] = "W";
         try {
             
             //make the scanner for the text file
@@ -57,9 +63,9 @@ public class Map {
         
         for(Location s: locations){
             // see if place and direction match
-            if(s.getLocationName()&& ().equals(direction)){
+            if(s.getCurrentDirection() == s.getNextDirection(direction)){
                 //I found the screen
-                return s;
+                return s;                                                                                                                                       
             }
             
         }

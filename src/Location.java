@@ -118,7 +118,7 @@ public class Location {
                 return locationScreens[currentDirection].getNextDirection();
             }
          
-            public int getCurrentDirection(String direction){
+            public int getCurrentDirection(){
                 return currentDirection;
             }
             
