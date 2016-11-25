@@ -21,6 +21,10 @@ public class Screen {
     private boolean isBlocked;
     private String nextArea;
     private String nextDirection;
+    private boolean north;
+    private boolean east;
+    private boolean south;
+    private boolean west;
 
     /**
      * Using a scanner to create new screen
@@ -60,6 +64,22 @@ public class Screen {
     
     public String getDirection() {
         return direction;
+    }
+    
+    public boolean canGoNorth(){
+        return north;
+    }
+    
+    public boolean canGoEast(){
+        return east;
+    }
+    
+    public boolean canGoSouth(){
+        return south;
+    }
+    
+    public boolean canGoWest(){
+        return west;
     }
     
     public static void main(String[] args) {
