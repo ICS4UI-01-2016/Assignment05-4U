@@ -44,7 +44,7 @@ public class Screen {
         
         
         String check = input.next();
-        System.out.println(check);
+        System.out.println(imageName);
         
 
         //checks if boolean is false or not
@@ -52,22 +52,22 @@ public class Screen {
             frontClear = false;
             nextPlace = input.next();
             nextDirection = input.nextLine();
-            
-
         } else {
             frontClear = true;
             input.nextLine();
         }
         
         
-
-
-        //move to next line 
       
    
 
         //load the image file 
-       
+         try{
+            image = ImageIO.read(new File("images/" + imageName));
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(0);
+        }
 
     }
 
