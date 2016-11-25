@@ -35,7 +35,7 @@ public class Screen {
              
         // load the image
         try {
-            this.image = ImageIO.read(new File("pics/" + image));
+            this.image = ImageIO.read(new File("images/" + image));
         } catch (Exception e) {
             e.printStackTrace();
         }

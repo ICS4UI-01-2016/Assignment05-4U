@@ -42,6 +42,7 @@ public class Map {
                 for (int i = 0; i < 4; i++) {
                     String direction = input.next();
                     String imageName = input.next();
+                    System.out.println(imageName);
                     boolean isBlocked = input.nextBoolean();
                     if (isBlocked == false) {
                         String nextArea = input.next();
@@ -53,6 +54,7 @@ public class Map {
                     }
                     i++;
                 }
+                input.nextLine();
             }
 
         } catch (FileNotFoundException ex) {
