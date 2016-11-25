@@ -11,12 +11,7 @@ import java.util.Scanner;
  * @author hadik9595
  */
 public class HHSSAdventure {
-    
-    
-     
-    
 
-    
     
     
   

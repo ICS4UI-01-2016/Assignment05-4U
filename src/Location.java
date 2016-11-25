@@ -114,8 +114,13 @@ public class Location {
             }
             
         
+            
+            
             public Screen getScreen(String direction) {
+                 System.out.println("HELLO WHY");
         for (Screen s : screens) {
+            
+           
             //Checks if there is a match for the screen and direction
             if (s.getDirection().equals(direction)) {
                 // Finds the image and returns it

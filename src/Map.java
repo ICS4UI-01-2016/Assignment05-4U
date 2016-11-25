@@ -67,13 +67,13 @@ public class Map {
      */
     public Screen getLocation(String place, String direction){
         //go through each screen 
-        System.out.println("TEST");
+        
         for(Location s: locations){
             
             // see if place and direction match
             if(s.getLocationName().equals(place)){
                 
-                System.out.println(direction);
+                System.out.println("TEST");
                 //I found the screen
                 return s.getScreen(direction);  
                 

@@ -44,7 +44,7 @@ public class Screen {
         
         
         String check = input.next();
-        System.out.println(imageName);
+        
         
 
         //checks if boolean is false or not
