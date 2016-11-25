@@ -39,22 +39,28 @@ public class Map {
             while (input.hasNext()) {
                 String area = input.nextLine();
 
-                for (int i = 0; i < 4; i++) {
+                for (int i = 0; i < 5; i++) {
                     String direction = input.next();
+                    // print out what i gottt
+                    System.out.println("Direction: " + direction);
                     String imageName = input.next();
+                    // testing print out
                     System.out.println(imageName);
                     boolean isBlocked = input.nextBoolean();
+                    // test what variable holds
+                    System.out.println("Blocked? " + isBlocked);
                     if (isBlocked == false) {
                         String nextArea = input.next();
                         String nextDirection = input.next();
                         Screen s = new Screen(area, direction, imageName, false, nextArea, nextDirection);
                         screens.add(s);
                     } else {
+                        
                         Screen s = new Screen(area, direction, imageName, true, null, null);
+                         input.nextLine();
                     }
                     i++;
                 }
-                input.nextLine();
             }
 
         } catch (FileNotFoundException ex) {
@@ -85,5 +91,8 @@ public class Map {
     
     public boolean isBlocked(){
         return isBlocked;
+    }
+    public static void main(String[] args) {
+        
     }
 }
