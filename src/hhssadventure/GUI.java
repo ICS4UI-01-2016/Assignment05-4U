@@ -27,6 +27,7 @@ public class GUI extends javax.swing.JFrame {
     
     public void setMap(Map m){
         this.map = m;
+        imageComponent1.setImage(map.getImage());
     }
     
     /**

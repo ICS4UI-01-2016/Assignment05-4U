@@ -49,29 +49,39 @@ public class Map {
             for(int i = 0; i < screens.size(); i++){
                 System.out.println(screens.get(i).getName());
                 //connect north
-                
-                for(int ii = 0;screens.get(i).getNorthConnect()==null && ii != screens.size()-1;ii++){
-                    if(screens.get(ii).getName().equals(screens.get(i).getNorthConnectName())){
-                        screens.get(i).setNorthConnect(screens.get(ii));
+                if(screens.get(i).getNorthConnectName() != null){
+                    for(int ii = 0;screens.get(i).getNorthConnect()==null && ii != screens.size();ii++){
+                        System.out.println(ii);
+                        if(screens.get(ii).getName().equals(screens.get(i).getNorthConnectName())){
+                            screens.get(i).setNorthConnect(screens.get(ii));
+                        }
                     }
                 }
                 //connect east
-                for(int ii = 0;screens.get(i).getEastConnect()==null && ii != screens.size()-1;ii++){
-                    System.out.println(ii);
-                    if(screens.get(ii).getName().equals(screens.get(i).getEastConnectName())){
-                        screens.get(i).setEastConnect(screens.get(ii));
+                if(screens.get(i).getEastConnectName() != null){
+                    for(int ii = 0;screens.get(i).getEastConnect()==null && ii != screens.size();ii++){
+                        System.out.println(ii);
+                        if(screens.get(ii).getName().equals(screens.get(i).getEastConnectName())){
+                            screens.get(i).setEastConnect(screens.get(ii));
+                        }
                     }
                 }
                 //connect south
-                for(int ii = 0;screens.get(i).getSouthConnect()==null && ii != screens.size()-1;ii++){
-                    if(screens.get(ii).getName().equals(screens.get(i).getSouthConnectName())){
-                        screens.get(i).setSouthConnect(screens.get(ii));
+                if(screens.get(i).getSouthConnectName() != null){
+                    for(int ii = 0;screens.get(i).getSouthConnect()==null && ii != screens.size();ii++){
+                        System.out.println(ii);
+                        if(screens.get(ii).getName().equals(screens.get(i).getSouthConnectName())){
+                            screens.get(i).setSouthConnect(screens.get(ii));
+                        }
                     }
                 }
                 //connect west
-                for(int ii = 0;screens.get(i).getWestConnect()==null && ii != screens.size()-1;ii++){
-                    if(screens.get(ii).getName().equals(screens.get(i).getWestConnectName())){
-                        screens.get(i).setWestConnect(screens.get(ii));
+                if(screens.get(i).getWestConnectName() != null){
+                    for(int ii = 0;screens.get(i).getWestConnect()==null && ii != screens.size();ii++){
+                        System.out.println(ii);
+                       if(screens.get(ii).getName().equals(screens.get(i).getWestConnectName())){
+                            screens.get(i).setWestConnect(screens.get(ii));
+                        }
                     }
                 }
             }
@@ -131,7 +141,6 @@ public class Map {
      * changes direction to turn right
      */
     public void turnRight(){
-        System.out.println("Turn right");
         switch(dir(this.direction)){
             case 0:
                 this.direction = "E";

@@ -26,7 +26,6 @@ public class HHSSAdventure {
         gui.setVisible(true);
         
         
-        
     }
     
 }

@@ -71,6 +71,8 @@ public class Screen {
             northConnectName = input.next();
             //store connect direction
             northMoveDir = input.next();
+        }else{
+            northConnectName = null;
         }
         // move to next line
         input.nextLine(); 
@@ -91,6 +93,8 @@ public class Screen {
             eastConnectName = input.next();
             //store move dir
             eastMoveDir = input.next();
+        }else{
+            eastConnectName = null;
         }
         // move to next line
         input.nextLine(); 
@@ -112,6 +116,8 @@ public class Screen {
             southConnectName = input.next();
             //store move direction
             southMoveDir = input.next();
+        }else{
+            southConnectName = null;
         }
         // move to next line
         input.nextLine(); 
@@ -133,6 +139,8 @@ public class Screen {
             westConnectName = input.next();
             //store move direction
             westMoveDir = input.next();
+        }else{
+            westConnectName = null;
         }
         // move to next line
         
@@ -200,6 +208,7 @@ public class Screen {
      * @return the north connection 
      */
     public Screen getNorthConnect(){
+        
         return this.northConnect;
     }
     

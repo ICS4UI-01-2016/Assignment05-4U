@@ -16,7 +16,7 @@ E IMG_0055.JPG false Glass E
 S IMG_0056.JPG true
 W IMG_0057.JPG false Math1 W
 Math1 
-N IMG_0058.JPG true
+N IMG_0058.JPG false Tech3 N
 E IMG_0059.JPG false Upstairs3 E
 S IMG_0060.JPG true
 W IMG_0062.JPG false Math2 W
@@ -59,7 +59,7 @@ Caf3
 N IMG_0091.JPG true
 E IMG_0092.JPG false Gym E
 S IMG_0093.JPG true
-W IMG_0094.JPG false Caf2 W
+W IMG_0094.JPG false Caf1 W
 Gym
 N IMG_0095.JPG false Music1 N
 E IMG_0096.JPG true
@@ -85,16 +85,26 @@ N IMG_0140.JPG false Science1 S
 E IMG_0141.JPG true
 S IMG_0142.JPG true
 W IMG_0143.JPG false Tech1 W
+Tech3
+N IMG_0144.JPG true
+E IMG_0145.JPG true
+S IMG_0146.JPG true
+W IMG_0147.JPG false Art3 W
 Art1
 N IMG_0111.JPG true
 E IMG_0112.JPG true
 S IMG_0113.JPG false Art2 S
-W IMG_0114.JPG false Music1 E
+W IMG_0114.JPG false Music2 E
 Art2
+N IMG_0118.JPG false Art1 N
 E IMG_0115.JPG false Science2 E
 S IMG_0116.JPG false Staff S
 W IMG_0117.JPG true
-N IMG_0118.JPG false Art1 N
+Art3
+N IMG_0150.JPG true
+E IMG_0149.JPG false Science3 E
+S IMG_0151.JPG true
+W IMG_0148.JPG true
 Science2
 N IMG_0123.JPG true
 E IMG_0119.JPG false Science1 E
@@ -105,6 +115,11 @@ N IMG_0127.JPG false Tech2 S
 E IMG_0124.JPG true
 S IMG_0125.JPG true
 W IMG_0126.JPG false Science2 W
+Science3
+N IMG_0153.JPG true
+E IMG_0145.JPG true
+S IMG_0154.JPG true
+W IMG_0152.JPG false Math1 S
 Staff
 N IMG_0128.JPG false Art2 N
 E IMG_0129.JPG true
