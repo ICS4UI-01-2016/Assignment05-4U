@@ -38,9 +38,7 @@ public class Location {
         // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
        
         
-        //using try incase an error is thrown at us 
-     
-            System.out.println(locationName);
+       
            
          
 

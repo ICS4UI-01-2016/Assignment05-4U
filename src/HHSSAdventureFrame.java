@@ -1,5 +1,7 @@
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 /*
  * To change this template, choose Tools | Templates
@@ -38,8 +40,12 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
      */
     public void setImage(BufferedImage img) {
         // the image panel sets its image
+        
+      
         imagePanel.setImage(img);
     }
+    
+    
     
      public void checkFront(boolean isBlocked){
         if(isBlocked){
