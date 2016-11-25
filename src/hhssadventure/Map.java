@@ -18,7 +18,8 @@ import java.util.logging.Logger;
  * @author moore3607
  */
 public class Map {
-    private ArrayList<Screen> screens;
+    public ArrayList<Screen> screens;
+    public ArrayList<Screen> miniscreens;
     private String IMGDes;
     private String North;
     private String East;
@@ -28,6 +29,7 @@ public class Map {
     public Map(String fileName){
         // initialize the list
         screens = new ArrayList<>();
+        miniscreens = new ArrayList<>();
         try {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
@@ -57,6 +59,24 @@ public class Map {
             if(s.getIMGNum() == IMGNum){
                 return s;
                                 
+            }
+        }
+        // no screen found
+        return null;
+    }
+    
+    public Screen findScreen(String IMGDes, String IMGDirect2){
+        
+        for(Screen s: screens){
+            
+            if(s.getIMGDirect().equals(IMGDes)){
+                Scanner input = new Scanner(new File(fileName));
+                for(int i = 0; i < 4; i++){
+                    Screen t = new Screen(input);
+                }
+                
+                return s;
+                
             }
         }
         // no screen found
