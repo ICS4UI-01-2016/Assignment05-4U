@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Sound Class holds all of the audio information and how it runs within the 
+ * game loop.
  */
 package hhssadventure;
 
@@ -11,8 +11,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 /**
- *
- * @author tatad6701
+ * Sound Class
+ * @author richj0985, starwarslover1998, and tatad6701
  */
 public class Sound {
 

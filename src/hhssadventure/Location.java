@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Location Class Stores all Of the information of a specific location within
+ * the map (Map --> Location --> Screen).
  */
 package hhssadventure;
 
@@ -9,14 +9,27 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+EXAMPLE OF HOW USER MOVES THROUGH LOCATION, AND SCREEN
++ Location 1
+ |    |  Upstairs1  
+ |    |  N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)  <- Screen N
+ |    |  E IMG_0046.JPG true                              <- Screen E
+ |    |  S IMG_0047.JPG false Upstairs2 S(IMG_0052.JPG)   <- Screen S
+ |    |  W IMG_0049.JPG true                              <- Screen W
+
+*/
+
 /**
  *
- * @author richj0985
+ * @author richj0985, starwarslover1998, and tatad6701
  */
 public class Location {
 
     // Create constant to be used (instance variable)
     private String name;
+    
+    // Creates a array of the different screens within the location
     private ArrayList<Screen> screens;
 
     /**
@@ -51,10 +64,8 @@ public class Location {
 
     /**
      * Method used to get the screens direction
-     * **********************************
      *
-     *
-     * @param findDirection string that is used to display
+     * @param findDirection the direction that it is trying to find within the location
      * @return the direction of the current screen
      */
     public Screen getScreen(String findDirection) {

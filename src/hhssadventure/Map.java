@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Map Class Stores all Of the information of the total map within
+ * the Text File (Map --> Location --> Screen).
  */
 package hhssadventure;
 
@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-/*  +--Map
+/*
+ EXAMPLE OF HOW USER MOVES THROUGH MAP, LOCATION, AND SCREEN
+ +--Map
  |    + Location 1
  |    |  Upstairs1  
  |    |  N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)  <- Screen N
@@ -36,14 +38,22 @@ import java.util.Scanner;
  */
 /**
  *
- * @author richj0985
+ * @author richj0985, starwarslover1998, and tatad6701
  */
 public class Map {
-
+    
+    // Strings to hold the initial location and direction of the user
+    // Caf1, N
     String initialLocation;
     String initialDirection;
+    
+    // Array of all of the locations within the map
     private ArrayList<Location> locations;
-
+    
+    /**
+     * Runs through the total map of the text file and scans the various locations
+     * @param fileName the scanner for the text file
+     */
     public Map(String fileName) {
         // Initialize the list
         locations = new ArrayList<>();
@@ -93,13 +103,20 @@ public class Map {
         // Return the initial direction of the user
         return initialDirection;
     }
-
+    
+    /**
+     * Method that searches through the map to find a specific location
+     * @param findLocation The Location that you need to find
+     * @param findDirection The Direction that you need to find
+     * @return The location found and calls to find the specific direction
+     */
     public Screen getScreen(String findLocation, String findDirection) {
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
-
+            // asks if the location name that you are trying to find is the same as
+            // the index location 
             if (loc.getName().equals(findLocation)) {
-                // Found the location 
+                // Found the location now find the direction
                 return loc.getScreen(findDirection);
             }
         }

@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Screem Class Stores all Of the information of a specific screen within
+ * the location (Map --> Location --> Screen).
  */
 package hhssadventure;
 
@@ -10,10 +10,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
+/*
+ EXAMPLE OF HOW USER MOVES THROUGH SCREEN
+ N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)  <- Screen N
+ */
+
 /**
  *
- * @author tatad6701
- */
+ * @author richj0985, starwarslover1998, and tatad6701
+*/
 public class Screen {
 
     // Creating the constants to be used (instance variables)
@@ -49,9 +54,11 @@ public class Screen {
         // Split the line into it's pieces
         String[] split = line.split(" ");
 
-        // Grab the specific locations object variables
+        // Grab the specific direction
         direction = split[0];
+        // Grab the specific image name
         imageName = split[1];
+        // Grab the boolean if it is blocked or not
         blockedMovement = Boolean.parseBoolean(split[2]);
 
         // If this direction is not blocked than there will be a new location and direction
