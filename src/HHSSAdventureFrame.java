@@ -40,8 +40,7 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
      */
     public void setImage(BufferedImage img) {
         // the image panel sets its image
-        
-      
+ 
         imagePanel.setImage(img);
     }
     

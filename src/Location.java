@@ -37,11 +37,6 @@ public class Location {
         
         // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
        
-        
-       
-           
-         
-
             //make screens 4 times            
             for(int i = 0; i < 4; i++){
                 Screen s = new Screen(input);

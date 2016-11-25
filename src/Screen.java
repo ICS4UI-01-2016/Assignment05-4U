@@ -41,10 +41,10 @@ public class Screen {
         //scan in the image 
          imageName = input.next();
         
-        System.out.println(imageName);
+        
         
         String check = input.next();
-
+        System.out.println(check);
         
 
         //checks if boolean is false or not
@@ -58,15 +58,12 @@ public class Screen {
             frontClear = true;
             input.nextLine();
         }
+        
+        
 
 
         //move to next line 
-        try {
-          
-            image = ImageIO.read(new File("images/" + imageName + ".JPG"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+      
    
 
         //load the image file 

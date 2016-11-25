@@ -20,7 +20,7 @@ public class Map {
     private ArrayList<Location> locations;
     
     private String[] direction;
-    private Location currentDestination;
+    
     
     private String currentPlace;
     private String currentDirection;
@@ -52,7 +52,7 @@ public class Map {
                 
             }
             
-          
+        
             
             
         } catch (FileNotFoundException ex) {
