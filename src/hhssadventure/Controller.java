@@ -1,12 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Controller Class allows for the user to click on the buttons (which are interconnected to the GUI)
+ * and then move according to the directions. Methods of the directions are found here.
  */
 package hhssadventure;
 
 /**
  *
- * @author richj0985
+ * @author richj0985, starwarslover1998, tatad6701
  */
 public class Controller {
 
@@ -16,6 +16,12 @@ public class Controller {
     String location;
     String direction;
 
+    /**
+     * Constructor for the controller
+     *
+     * @param gui Interconnects the controller and GUI
+     * @param map Interconnects the controller and map
+     */
     public Controller(GUI gui, Map map) {
         this.gui = gui;
         this.map = map;
@@ -31,6 +37,9 @@ public class Controller {
         gui.setBlocked(start.isBlocked());
     }
 
+    /**
+     * Method that allows for the user to turn North
+     */
     public void turnNorth() {
         // Get the screen we are on right now
         // Set direction to equal W
@@ -44,6 +53,9 @@ public class Controller {
         gui.setBlocked(current.isBlocked());
     }
 
+    /**
+     * Method that allows the user to turn East
+     */
     public void turnEast() {
         // Get the screen we are on right now
         // Set direction to equal W
@@ -57,6 +69,9 @@ public class Controller {
         gui.setBlocked(current.isBlocked());
     }
 
+    /**
+     * Method that allows the user to turn South
+     */
     public void turnSouth() {
         // Get the screen we are on right now
         // Set direction to equal W
@@ -70,6 +85,9 @@ public class Controller {
         gui.setBlocked(current.isBlocked());
     }
 
+    /**
+     * Method that allows the user to turn West
+     */
     public void turnWest() {
         // Get the screen we are on right now
         // Set direction to equal W
@@ -83,6 +101,9 @@ public class Controller {
         gui.setBlocked(current.isBlocked());
     }
 
+    /**
+     * Method that allows the user to move forward
+     */
     public void goForward() {
         // Get the screen we are on right now
         Screen current = map.getScreen(location, direction);

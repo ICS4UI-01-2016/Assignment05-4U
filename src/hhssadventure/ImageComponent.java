@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * ImageComponent Class allows for the images within the "pics.txt." file to be used and
+ * printed on the screen where the user can see them and then make moves based off them. 
  */
 package hhssadventure;
 
@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author richj0985
+ * @author richj0985, starwarslover1998, tatad6701
  */
 public class ImageComponent extends JComponent {
 

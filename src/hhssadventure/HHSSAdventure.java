@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * HHSSAdventure class allows for the entire game to essentially run. This involves
+ * creating an interface (GUI), showing the interface, creating the map and using the images
+ * from the "images/pics.txt", creating a controller to connect with the GUI and map, and lastly
+ * creating a new sound to allow for the music to play and loops as the user is playing the game
  */
 package hhssadventure;
 
@@ -34,6 +35,7 @@ public class HHSSAdventure {
         Sound music = new Sound("IHF-Departure.mp3");
         // Start the music 
         music.setLoop(true);
+        // Play the music!
         music.play();
     }
 }

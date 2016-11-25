@@ -1,6 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * The GUI class allows for the buttons, the display of the direction, 
+ * and if the front is blocked to function within the interface. The GUI class is interconnected 
+ * to the controller, which the controller is interconnected with the location, map, and screen class.
  */
 package hhssadventure;
 
@@ -8,28 +9,45 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author richj0985
+ * @author richj0985, starwarslover1998, tatad6701
  */
 public class GUI extends javax.swing.JFrame {
 
+    // Create the constant to be used
     private Controller controller;
 
     /**
-     * Creates new form GUI
+     * Creating a new form GUI
      */
     public GUI() {
         initComponents();
     }
 
+    /**
+     * Method the essentially connects the controller to the GUI
+     *
+     * @param c The physical controller that is being interconnected
+     */
     public void setController(Controller c) {
         controller = c;
     }
 
+    /**
+     * Method that sets the images
+     *
+     * @param img Grabbing the physical image
+     */
     public void setImage(BufferedImage img) {
-        // the image panel sets its image
+        // The image panel sets its image
         imagePanel.setImage(img);
     }
 
+    /**
+     * Method that sets the direction of the user to the interface
+     *
+     * @param direction the physical direction of the user is then to be printed
+     * on the interface
+     */
     public void setDirection(String direction) {
         if (direction.equals("N")) {
             labelDirection.setText("NORTH");
