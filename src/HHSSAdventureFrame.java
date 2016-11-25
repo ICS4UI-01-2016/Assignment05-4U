@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 public class HHSSAdventureFrame extends javax.swing.JFrame {
 
     private Controller controller;
+    private boolean blocked;
 
     /**
      * Creates new form GUI
@@ -38,6 +39,14 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     public void setImage(BufferedImage img) {
         // the image panel sets its image
         imagePanel.setImage(img);
+    }
+    
+     public void checkFront(boolean isBlocked){
+        if(isBlocked){
+            blocked = true;
+        }else{
+            blocked = false;
+        }
     }
 
     /**
@@ -91,16 +100,16 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rightButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(288, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
-                .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
+                .addContainerGap(144, Short.MAX_VALUE)
+                .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftButton)
                     .addComponent(rightButton)

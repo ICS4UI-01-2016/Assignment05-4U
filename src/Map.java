@@ -18,9 +18,13 @@ import java.util.logging.Logger;
 public class Map {
     
     private ArrayList<Location> locations;
-    private ArrayList<Screen> directions;
-    private String[] direction;
     
+    private String[] direction;
+    private Location currentDestination;
+    
+    private String currentPlace;
+    private String currentDirection;
+   
     
     public Map(String fileName){
         //initialize the list 
@@ -32,9 +36,14 @@ public class Map {
             
             //make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
+            
+            currentPlace = input.next();
+            currentDirection = input.next();
+            
             //Make screens
             //loop to the end of the file
             while(input.hasNext()){
+                
                 // creating a screen from the scanner
                 Location s = new Location(input);
                 
@@ -61,17 +70,27 @@ public class Map {
         
         for(Location s: locations){
             
-            
             // see if place and direction match
-            if(currentLoca){
+            if(s.getLocationName().equals(s.getNextLocation(direction))){
                 //I found the screen
-                return s;                                                                                                                                       
+                return s.getScreen(direction);                                                                                                                                       
             }
             
         }
         // no screen found
         return null;
     }
+    
+    public String getStartingPlace(){
+        return currentPlace;
+    }
+    
+    public String getStartingDirection(){
+        return currentDirection;
+    }
+    
+    
+    
  
 }
 

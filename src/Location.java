@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author yuk4142
  */
 public class Location {
-    //
+    private ArrayList<Screen> screens;
     
    //A way to store all possible screens in an array 
    private Screen[] locationScreens;
@@ -28,19 +28,21 @@ public class Location {
    
     public Location(Scanner input){
         //initialize array, since there are 4 lines, and 4 directions
+        directions = new String[] {"N","E","S","W"};
+        locationName = input.next();
         locationScreens = new Screen[4];
         
+        
+         
+        
         // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
-        directions[0] = "N";
-        directions[1] = "E";
-        directions[2] = "S";
-        directions[3] = "W";
+       
         
         //using try incase an error is thrown at us 
      
-            
-            locationName = input.next();
-            
+            System.out.println(locationName);
+           
+         
 
             //make screens 4 times            
             for(int i = 0; i < 4; i++){
@@ -117,6 +119,25 @@ public class Location {
                 
                 return locationScreens[currentDirection].getNextDirection();
             }
+            
+        
+            public Screen getScreen(String direction) {
+        
+         
+        for (Screen s : screens) {
+            //Checks if there is a match for the screen and direction
+            if (s.getDirection().equals(direction)) {
+                // Finds the image and returns it
+                return s;
+            }
+        }
+        //no screen was found 
+        return null;
+    }
+        
+        public static void main(String[] args) {
+        
+    }
          
            
             

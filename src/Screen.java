@@ -39,7 +39,9 @@ public class Screen {
         direction = input.next();
 
         //scan in the image 
-        String imageName = input.next();
+         imageName = input.next();
+        
+        
         
         String check = input.next();
 
@@ -57,7 +59,7 @@ public class Screen {
 
 
         //move to next line 
-        input.nextLine();
+        String yo = input.nextLine();
 
 
         //load the image file 
