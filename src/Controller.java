@@ -29,7 +29,14 @@ public class Controller {
         this.currentDirection = map.getStartingDirection();
         
         
-        Screen start = map.getLocation(currentPlace, currentDirection);
+        System.out.println(this.currentDirection);
+        System.out.println(this.currentPlace);
+        
+        
+        //make sure the GUI can talk to you
+        gui.setController(this);
+        
+        Screen start = map.getLocation(this.currentPlace, this.currentDirection);
         
        gui.setImage(start.getImage());
         
@@ -42,8 +49,7 @@ public class Controller {
         directions[2] = "S";
         directions[3] = "W";
 
-        //make sure the GUI can talk to you
-        gui.setController(this);
+        
 
         //set starting image 
         
@@ -116,5 +122,9 @@ public class Controller {
         gui.setImage(newScreen.getImage());
         //updates if the front is blocked or not for the CURRENt position
         gui.checkFront(currentLoc.canMoveForward(currentDirection));
+    }
+    
+    public static void main(String[] args) {
+        
     }
 }
