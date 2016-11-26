@@ -49,6 +49,8 @@ public class GUI extends javax.swing.JFrame {
      * on the interface
      */
     public void setDirection(String direction) {
+        // Imports the direction into the GUI
+        // Displays the text corresponding to the direction
         if (direction.equals("N")) {
             labelDirection.setText("NORTH");
         } else if (direction.equals("S")) {
@@ -59,8 +61,15 @@ public class GUI extends javax.swing.JFrame {
             labelDirection.setText("WEST");
         }
     }
-
+    
+    /**
+     * Method that sets if blocked or not to the interface
+     * @param blocked whether the user is blocked or not is then to be printed
+     * on the interface
+     */
     public void setBlocked(boolean blocked) {
+        // Imports if the current direction is blocked or not into the GUI
+        // Diplays the text corresponding to if it is blocked or not
         if (blocked) {
             labelBlocked.setText("BLOCKED!");
         } else {
@@ -216,7 +225,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
-        // Go forwards!
+        // Go forward!
         controller.goForward();
     }//GEN-LAST:event_buttonForwardActionPerformed
 
@@ -234,40 +243,51 @@ public class GUI extends javax.swing.JFrame {
         } else if (controller.direction.equals("W")) {
             controller.turnNorth();
         }
-
-//        controller.turnEast();
-//        labelDirection.setText("EAST");
     }//GEN-LAST:event_buttonRightActionPerformed
 
     private void buttonBackwardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackwardsActionPerformed
-        //
+        // If the user is facing north, its bottom direction is south
         if (controller.direction.equals("N")) {
             controller.turnSouth();
+        // If the user is facing south, its bottom direction is north
         } else if (controller.direction.equals("S")) {
             controller.turnNorth();
+        // If the user is facing east, its bottom direction is west
         } else if (controller.direction.equals("E")) {
             controller.turnWest();
+        // If the user is facing west, its bottom direction is east
         } else if (controller.direction.equals("W")) {
             controller.turnEast();
         }
     }//GEN-LAST:event_buttonBackwardsActionPerformed
 
     private void buttonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLeftActionPerformed
-        //
+        // If the user is facing north, its bottom direction is west
         if (controller.direction.equals("N")) {
             controller.turnWest();
+        // If the user is facing south, its bottom direction is east
         } else if (controller.direction.equals("S")) {
             controller.turnEast();
+        // If the user is facing east, its bottom direction is north
         } else if (controller.direction.equals("E")) {
             controller.turnNorth();
+        // If the user is facing west, its bottom direction is south
         } else if (controller.direction.equals("W")) {
             controller.turnSouth();
         }
     }//GEN-LAST:event_buttonLeftActionPerformed
-
+    
+    /**
+     * Label for the direction the user is facing
+     * @param evt event performed
+     */
     private void labelDirectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelDirectionActionPerformed
     }//GEN-LAST:event_labelDirectionActionPerformed
-
+    
+    /**
+     * Label for if the users direction is blocked or not
+     * @param evt event performed
+     */
     private void labelBlockedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelBlockedActionPerformed
     }//GEN-LAST:event_labelBlockedActionPerformed
 

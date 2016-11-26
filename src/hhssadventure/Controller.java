@@ -11,9 +11,13 @@ package hhssadventure;
 public class Controller {
 
     // Create constants to be used (instance variables)
+    // Creates gui variable within controller
     private GUI gui;
+    // Creates map variable within controller
     private Map map;
+    // Location variable within controller
     String location;
+    // Direction variable within controller
     String direction;
 
     /**
@@ -23,15 +27,20 @@ public class Controller {
      * @param map Interconnects the controller and map
      */
     public Controller(GUI gui, Map map) {
+        // Sets instance varibales with constructor
         this.gui = gui;
         this.map = map;
+        // Sets initial location and direction
         this.location = map.getInitialLocation();
         this.direction = map.getInitialDirection();
 
         // Make sure the GUI can talk to you
         gui.setController(this);
+        
         // Set the starting image
         Screen start = map.getScreen(location, direction);
+        
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(start.getImage());
         gui.setDirection(direction);
         gui.setBlocked(start.isBlocked());
@@ -42,12 +51,13 @@ public class Controller {
      */
     public void turnNorth() {
         // Get the screen we are on right now
-        // Set direction to equal W
-        // Print screen
+        // Set direction to equal N
+        // find new screen
         Screen current = map.getScreen(location, direction);
         direction = "N";
         current = map.getScreen(location, direction);
-        // set the image
+        
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
@@ -58,12 +68,13 @@ public class Controller {
      */
     public void turnEast() {
         // Get the screen we are on right now
-        // Set direction to equal W
-        // Print screen
+        // Set direction to equal E
+        // find new screen
         Screen current = map.getScreen(location, direction);
         direction = "E";
         current = map.getScreen(location, direction);
-        // set the image
+        
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
@@ -74,12 +85,13 @@ public class Controller {
      */
     public void turnSouth() {
         // Get the screen we are on right now
-        // Set direction to equal W
-        // Print screen
+        // Set direction to equal S
+        // find new screen
         Screen current = map.getScreen(location, direction);
         direction = "S";
         current = map.getScreen(location, direction);
-        // set the image
+
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
@@ -90,12 +102,13 @@ public class Controller {
      */
     public void turnWest() {
         // Get the screen we are on right now
-        // Set direction to equal W
-        // Print screen
+        // Set direction to equal S
+        // find new screen
         Screen current = map.getScreen(location, direction);
         direction = "W";
         current = map.getScreen(location, direction);
-        // set the image
+
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());
@@ -109,14 +122,19 @@ public class Controller {
         Screen current = map.getScreen(location, direction);
 
         // Swtiching direction to face the new direction which was clicked
-        // Ask if we can move west
+        // Ask if we can move forward
         if (current.isBlocked() == false) {
+            // Set new location to the new Name
             location = current.getNewImageName();
+            
+            // Set new direction
             direction = current.getNewDirection();
+            
+            // Find new screen
             current = map.getScreen(location, direction);
         }
 
-        // Set the image
+        // Sets image, the direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
         gui.setDirection(direction);
         gui.setBlocked(current.isBlocked());

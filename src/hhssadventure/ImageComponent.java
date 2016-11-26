@@ -18,18 +18,22 @@ public class ImageComponent extends JComponent {
     private BufferedImage image;
 
     /**
-     * Constructor for the image
+     * Constructor for the image component
      */
     public ImageComponent() {
         // Create image to be nothing
         image = null;
     }
-
+    
+    /**
+     * Method for paint component
+     * @param g Graphics for paint component
+     */
     @Override
     public void paintComponent(Graphics g) {
+        // If there is an image than draw the image
         if (image != null) {
-            g.drawImage(image, 0, 0,
-                    this.getWidth(), this.getHeight(), null);
+            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 
@@ -39,6 +43,7 @@ public class ImageComponent extends JComponent {
      * @param img Setting image to the image from text file to be passed in
      */
     public void setImage(BufferedImage img) {
+        // Sets the image
         image = img;
         // So we see the change being made
         repaint();
