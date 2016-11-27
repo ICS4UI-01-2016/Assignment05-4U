@@ -224,12 +224,19 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    /**
+     * Button to Move Forward
+     * @param evt Action Performed
+     */
     private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
         // Go forward!
         controller.goForward();
     }//GEN-LAST:event_buttonForwardActionPerformed
-
+    
+    /**
+     * Button to Turn Right
+     * @param evt Action Performed
+     */
     private void buttonRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRightActionPerformed
         // If the user is facing North, its right direction is East
         if (controller.direction.equals("N")) {
@@ -245,7 +252,11 @@ public class GUI extends javax.swing.JFrame {
             controller.turnNorth();
         }
     }//GEN-LAST:event_buttonRightActionPerformed
-
+    
+    /**
+     * Button to Turn Backwards
+     * @param evt Action Performed
+     */
     private void buttonBackwardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackwardsActionPerformed
         // If the user is facing North, its opposite (bottom) direction is South
         if (controller.direction.equals("N")) {
@@ -262,6 +273,10 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonBackwardsActionPerformed
 
+    /**
+     * Button to Turn Left
+     * @param evt Action Performed
+     */
     private void buttonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLeftActionPerformed
         // If the user is facing North, its left direction is West
         if (controller.direction.equals("N")) {
@@ -281,7 +296,7 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Label for the direction the user is facing
      *
-     * @param evt event performed
+     * @param evt Action Performed
      */
     private void labelDirectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelDirectionActionPerformed
     }//GEN-LAST:event_labelDirectionActionPerformed
@@ -289,7 +304,7 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Label for if the users direction is blocked or not
      *
-     * @param evt event performed
+     * @param evt Action Performed
      */
     private void labelBlockedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelBlockedActionPerformed
     }//GEN-LAST:event_labelBlockedActionPerformed
