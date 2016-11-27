@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author richj0985, starwarslover1998, tatad6701
+ * @author richj0985, starwarslover1998, and tatad6701
  */
 public class ImageComponent extends JComponent {
 
@@ -24,15 +24,17 @@ public class ImageComponent extends JComponent {
         // Create image to be nothing
         image = null;
     }
-    
+
     /**
-     * Method for paint component
-     * @param g Graphics for paint component
+     * Method for the paint component
+     *
+     * @param g graphics for paint component
      */
     @Override
     public void paintComponent(Graphics g) {
-        // If there is an image than draw the image
+        // If there is an image than draw the image!
         if (image != null) {
+            // Drawing the image
             g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
@@ -40,12 +42,12 @@ public class ImageComponent extends JComponent {
     /**
      * Method to set the image onto the screen
      *
-     * @param img Setting image to the image from text file to be passed in
+     * @param img setting image to the image from text file to be passed in
      */
     public void setImage(BufferedImage img) {
         // Sets the image
         image = img;
-        // So we see the change being made
+        // So we see the change being made!
         repaint();
     }
 }

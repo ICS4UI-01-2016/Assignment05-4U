@@ -1,5 +1,5 @@
 /*
- * Screem Class Stores all Of the information of a specific screen within
+ * Screen Class stores all of the information of a specific screen within
  * the location (Map --> Location --> Screen).
  */
 package hhssadventure;
@@ -14,11 +14,10 @@ import javax.imageio.ImageIO;
  EXAMPLE OF HOW USER MOVES THROUGH SCREEN
  N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)  <- Screen N
  */
-
 /**
  *
  * @author richj0985, starwarslover1998, and tatad6701
-*/
+ */
 public class Screen {
 
     // Creating the constants to be used (instance variables)
@@ -30,6 +29,7 @@ public class Screen {
     private String newDirection;
 
     /*
+     EXAMPLE:
      Upstairs1
      N IMG_0045.JPG false Downstairs S(IMG_0138.JPG)
      E IMG_0046.JPG true
@@ -51,7 +51,7 @@ public class Screen {
             e.printStackTrace();
         }
 
-        // Split the line into it's pieces
+        // Split the line into it's pieces (within the "pics.txt" file)
         String[] split = line.split(" ");
 
         // Grab the specific direction
@@ -63,7 +63,7 @@ public class Screen {
 
         // If this direction is not blocked than there will be a new location and direction
         if (!blockedMovement) {
-            // Grab new image
+            // Grab new image (the location!)
             newImageName = split[3];
             // Grab the direction of the new image
             newDirection = split[4].substring(0, 1);
@@ -120,12 +120,12 @@ public class Screen {
     }
 
     /**
-     * Acknowledging if the direction one is choosing is blocked
+     * Method that acknowledges if the direction ahead is blocked
      *
-     * @return whether or not the movement is blocked
+     * @return whether or not the movement ahead is blocked
      */
     public boolean isBlocked() {
-        // Return whether or not the user can move
+        // Return whether or not the user can move ahead
         return blockedMovement;
     }
 

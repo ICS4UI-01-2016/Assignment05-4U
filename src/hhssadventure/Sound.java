@@ -11,7 +11,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 /**
- * Sound Class
+ *
  * @author richj0985, starwarslover1998, and tatad6701
  */
 public class Sound {
@@ -22,7 +22,7 @@ public class Sound {
     /**
      * Constructor for the sound (audio file)
      *
-     * @param name the name of the rack to be used
+     * @param name the name of the audio track to be used
      */
     public Sound(String name) {
         try {
@@ -37,6 +37,7 @@ public class Sound {
      * Method that plays the audio file
      */
     public void play() {
+        // Play the audio file!
         sound.play();
     }
 
@@ -55,6 +56,7 @@ public class Sound {
      * @param loop repeats the song in a loop
      */
     public void setLoop(boolean loop) {
+        // Repeat the song in a loop
         sound.setRepeat(loop);
     }
 }

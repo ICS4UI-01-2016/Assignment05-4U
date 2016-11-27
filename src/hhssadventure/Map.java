@@ -1,6 +1,6 @@
 /*
- * Map Class Stores all Of the information of the total map within
- * the Text File (Map --> Location --> Screen).
+ * Map Class stores all of the information of the total map within
+ * the text file (Map --> Location --> Screen).
  */
 package hhssadventure;
 
@@ -41,17 +41,18 @@ import java.util.Scanner;
  * @author richj0985, starwarslover1998, and tatad6701
  */
 public class Map {
-    
-    // Strings to hold the initial location and direction of the user
-    // Caf1, N
+
+    // Strings to hold the initial location and direction of the user (Caf1, N)
     String initialLocation;
     String initialDirection;
-    
+
     // Array of all of the locations within the map
     private ArrayList<Location> locations;
-    
+
     /**
-     * Runs through the total map of the text file and scans the various locations
+     * Runs through the total map of the text file and scans the various
+     * locations
+     *
      * @param fileName the scanner for the text file
      */
     public Map(String fileName) {
@@ -66,7 +67,7 @@ public class Map {
             initialDirection = input.nextLine();
 
             // Make screens
-            // Loop to the end of the file.  Check to see 
+            // Loop to the end of the file. Check to see 
             // if more lines available in the file (hasNext)
             while (input.hasNext()) {
                 // Creating a location object and pass it the scanner
@@ -77,7 +78,7 @@ public class Map {
                 // Added the created location to the list
                 locations.add(loc);
             }
-
+            // Print "FileNotFoundException" to the programmer if the file was not found
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
@@ -103,24 +104,25 @@ public class Map {
         // Return the initial direction of the user
         return initialDirection;
     }
-    
+
     /**
      * Method that searches through the map to find a specific location
-     * @param findLocation The Location that you need to find
-     * @param findDirection The Direction that you need to find
-     * @return The location found and calls to find the specific direction
+     *
+     * @param findLocation the location that you need to find
+     * @param findDirection the direction that you need to find
+     * @return the location found and calls to find the specific direction
      */
     public Screen getScreen(String findLocation, String findDirection) {
         // Loop through each of the locations in the list 
         for (Location loc : this.locations) {
-            // asks if the location name that you are trying to find is the same as
+            // Asks if the location name that you are trying to find is the same as
             // the index location 
             if (loc.getName().equals(findLocation)) {
-                // Found the location now find the direction
+                // Found the location, now find the direction
                 return loc.getScreen(findDirection);
             }
         }
-        // No screen found
+        // No screen found, return nothing!
         return null;
     }
 }
