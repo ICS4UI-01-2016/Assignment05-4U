@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class HHSSAdventure {
 
     public static void main(String[] args) {
-        // creat the interface
+        // create the interface
         HHSSAdventureFrame gui = new HHSSAdventureFrame();
         // show the interface
         gui.setVisible(true);

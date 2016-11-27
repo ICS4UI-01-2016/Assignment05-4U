@@ -13,18 +13,16 @@ import java.util.Scanner;
  * @author yuk4142
  */
 public class Location {
-
+    //Storing a list of all screens in the location in a private variable
     private ArrayList<Screen> screens;
-
     //A way to store all possible screens in an array in a private variable
     private Screen[] locationScreens;
     //String that stores the name of the place in private variable
     private String locationName;
     // contains all directions in a private variable
     private String[] directions;
-
-    //direction is stored as an integer so that it can be easily manipulated in a private variable
-    private int currentDirection;
+    //direction is stored as an integer so that it can be easily manipulated 
+    int currentDirection;
 
     /**
      * constructor for location that scans in all 4 corresponding screens

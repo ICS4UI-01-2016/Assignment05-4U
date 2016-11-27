@@ -18,27 +18,27 @@ import java.util.logging.Logger;
 public class Map {
     //create list of locations as a private variable
     private ArrayList<Location> locations;
-    
-     
-    
-    
+    //create current location/place name as a private variable
     private String currentPlace;
+    //create current direction as a private variable
     private String currentDirection;
-   
-      Location currentLoc = null;
-    String[] direction;
+    //create the private variable that stores the current location
+    Location currentLoc = null;
+    /**
+     * constructor for the map
+     * @param fileName the file to be scanned
+     */
     public Map(String fileName){
         //initialize the list 
         locations = new ArrayList<>();
-        
-        // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
-        
+
         try {
             
             //make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
-            
+            //initialize currrent place as the next "word"/position
             currentPlace = input.next();
+            //initialize currrent direction as the next "word"/position
             currentDirection = input.next();
             
             //Make screens
@@ -61,9 +61,8 @@ public class Map {
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        
+        //go through list of locations, and set the current location to the curresponding one in the list
         for(int i = 0; i < locations.size(); i++) {
-           
              if(currentPlace.equals(locations.get(i).getLocationName())){
                 currentLoc = locations.get(i);
             }
@@ -96,11 +95,17 @@ public class Map {
     
     
      
-    
+    /**
+     * Returns the name of the starting location
+     * @return the name of the starting location
+     */
     public String getStartingPlace(){
         return currentPlace;
     }
-    
+    /**
+     * Returns the starting direction
+     * @return the starting direction
+     */
     public String getStartingDirection(){
         return currentDirection;
     }
