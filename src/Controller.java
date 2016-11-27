@@ -74,7 +74,7 @@ public class Controller {
         
             
         }
-      Screen newScreen = map.getLocation(currentPlace, );
+      Screen newScreen = map.getLocation(currentPlace, currentDirection);
             
 
             // set the image
