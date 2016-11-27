@@ -14,10 +14,8 @@ import javax.imageio.ImageIO;
 public class HHSSAdventureFrame extends javax.swing.JFrame {
 
     //create a controller as private variable
-
     private Controller controller;
-    //boolean storing if front is blocked
-    boolean blocked;
+
 
     /**
      * Creates new form GUI
@@ -33,6 +31,7 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
      * @param c the controller to be initialized
      */
     public void setController(Controller c) {
+        //sets the controller to "c", essentially this is necessary in order to connect the Frame with the Controller class
         controller = c;
     }
 
@@ -42,21 +41,8 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
      * @param img the image the screen will be set to
      */
     public void setImage(BufferedImage img) {
-        // the image panel sets its image
+        // the image panel sets its image that is passed from controller
         imagePanel.setImage(img);
-    }
-
-    /**
-     * Set blocked variable to indicate if it is possible to move forward
-     *
-     * @param isBlocked the boolean that tells method if front is blocked
-     */
-    public void checkFront(boolean isBlocked) {
-        if (isBlocked) {
-            blocked = true;
-        } else {
-            blocked = false;
-        }
     }
 
     /**
@@ -112,12 +98,12 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(imagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -131,18 +117,19 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
-        // TODO add your handling code here:
+        //when the "left" button is pressed, controller calls the turnLeft method in order to turn left
         controller.turnLeft();
     }//GEN-LAST:event_leftButtonActionPerformed
 
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
-        // TODO adeastd your handling code here:
+         //when the "right" button is pressed, controller calls the turnRight method in order to turn right
         controller.turnRight();
     }//GEN-LAST:event_rightButtonActionPerformed
 
     private void moveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveButtonActionPerformed
-        // TODO add your handling code here:
+        //when the "move" button is pressed, controller calls the goForward method in order to move forward
         controller.goForward();
+        
     }//GEN-LAST:event_moveButtonActionPerformed
 
     /**

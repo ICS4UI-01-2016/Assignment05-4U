@@ -23,15 +23,14 @@ public class Map {
     //create current direction as a private variable
     private String currentDirection;
     //create the private variable that stores the current location
-    Location currentLoc = null;
+    
     /**
      * constructor for the map
      * @param fileName the file to be scanned
      */
     public Map(String fileName){
-        //initialize the list 
+        //initialize the array list 
         locations = new ArrayList<>();
-
         try {
             
             //make the scanner for the text file
@@ -52,44 +51,29 @@ public class Map {
                 locations.add(s);
                 
             }
-            
-            
-            
-        
-            
-            
+            //throws the error if file is not found (fileName)!!
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        //go through list of locations, and set the current location to the curresponding one in the list
-        for(int i = 0; i < locations.size(); i++) {
-             if(currentPlace.equals(locations.get(i).getLocationName())){
-                currentLoc = locations.get(i);
-            }
-    }
+   
     }
     /**
-     * Retrieve specific screen from the map
-     * @param place the row which the screen appears 
-     * @param direction the col which the screen appears 
-     * @return the screen at (place) or null if not found
+     * The method that is used to match the currentLocation with location we want 
+     * @param place the current place that is being passed in
+     * @param direction the current direction that is being passed in
+     * @return the screen at (place then passes it to another method to get the right direction) or null if not found
      */
     public Screen getLocation(String place, String direction){
         //go through each screen 
-        
-        for(Location s: locations){
-            
-            // see if place and direction match
+        for(Location s: locations){   
+            //sees if location name matches the location from the parameters 
             if(s.getLocationName().equals(place)){
-              
-                
-                //I found the screen
+                //Found a match, then asks the method getScreen in order to see if there is a direction match
                 return s.getScreen(direction);  
                 
             }
-            
         }
-        // no screen found
+        // no match was found, returns nothing
         return null;
     }
     

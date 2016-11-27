@@ -17,7 +17,7 @@ public class HHSSAdventure {
         // show the interface
         gui.setVisible(true);
 
-        //create the map
+        //create the map by loading in the "images/pics.txt" in order to read coordinates
         Map map = new Map("images/pics.txt");
 
         //initial spawn of the game, sets coordinates, and calls the map as well as the GUI

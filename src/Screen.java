@@ -27,7 +27,7 @@ public class Screen {
     //create private variable that stores the current direction of the screen
     private String direction;
     //create private variable that stores if the front is clear
-    private boolean frontClear;
+    private boolean frontBlocked;
     
     /**
      * Using a scanner to create a new screen
@@ -45,22 +45,20 @@ public class Screen {
         //string that checks if it is possible to move forward
         String check = input.next();
 
-        //checks if boolean is false or not, and sets frontClear, nextPlace and nextDirection variable accordngly
+        //checks if boolean is false or not, and sets frontBlocked, nextPlace and nextDirection variable accordngly
         //if the front is not clear
         if (check.equals("false")) {
-            frontClear = false;
+            frontBlocked = false;
             nextPlace = input.next();
-            nextDirection = input.nextLine();
+            nextDirection = input.next();
+            input.nextLine();
             
             //else if front is not clear, go to the next line down to scan in the next screen
         } else {
-            frontClear = true;
+            frontBlocked = true;
             input.nextLine();
         }
         
-        
-      
-   
 
         //load the image file 
          try{
@@ -110,7 +108,7 @@ public class Screen {
      * @return if the front is clear
      */
     public boolean isFrontClear(String direction) {
-        return frontClear;
+        return frontBlocked;
     }
     
      

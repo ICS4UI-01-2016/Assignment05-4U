@@ -10,24 +10,22 @@ import java.util.Scanner;
  */
 /**
  *
- * @author yuk4142
+ * @author yuk4142 and KHALEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED (hadik9595)
  */
 public class Location {
     //Storing a list of all screens in the location in a private variable
     private ArrayList<Screen> screens;
-    //A way to store all possible screens in an array in a private variable
-    private Screen[] locationScreens;
     //String that stores the name of the place in private variable
     private String locationName;
     // contains all directions in a private variable
     private String[] directions;
-    //direction is stored as an integer so that it can be easily manipulated 
-    int currentDirection;
+    
+    
 
     /**
      * constructor for location that scans in all 4 corresponding screens
      *
-     * @param input the input used to read in the images
+     * @param input the input that is the text file used to read in the locations
      */
     public Location(Scanner input) {
         //initialize array, since there are 4 lines, and 4 directions
@@ -35,8 +33,7 @@ public class Location {
         directions = new String[]{"N", "E", "S", "W"};
         //initialize variable that stores location name
         locationName = input.next();
-        //initialize location array to store 4 screens
-        locationScreens = new Screen[4];
+       
         //initialize list to store screens
         screens = new ArrayList<>();
 
@@ -60,8 +57,8 @@ public class Location {
 
     /**
      * Returns screen corresponding to the direction
-     * @param direction the current direction
-     * @return the screen corresponding to the direction
+     * @param direction the current direction that is being passed in
+     * @return the screen corresponding to the direction which is connected to the location
      */
     public Screen getScreen(String direction) {
         //go through the list of screens
@@ -71,9 +68,11 @@ public class Location {
                 return s;
             }
         }
+        //no match to return a screen
         return null;
     }
 
+    //having a psvm is a way to refresh and update a class that has changes made to it
     public static void main(String[] args) {
 
     }
