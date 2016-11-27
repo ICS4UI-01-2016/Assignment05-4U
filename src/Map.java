@@ -16,17 +16,17 @@ import java.util.logging.Logger;
  * @author hadik9595
  */
 public class Map {
-    
+    //create list of locations as a private variable
     private ArrayList<Location> locations;
     
-    private String[] direction;
+     
     
     
     private String currentPlace;
     private String currentDirection;
    
-     private Location currentLoc = null;
-    
+      Location currentLoc = null;
+    String[] direction;
     public Map(String fileName){
         //initialize the list 
         locations = new ArrayList<>();

@@ -7,16 +7,17 @@ import javax.imageio.ImageIO;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author hadik9595
  */
 public class HHSSAdventureFrame extends javax.swing.JFrame {
 
+    //create a controller as private variable
+
     private Controller controller;
-    private boolean blocked;
+    //boolean storing if front is blocked
+    boolean blocked;
 
     /**
      * Creates new form GUI
@@ -26,8 +27,9 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     }
 
     /**
-     * 
-     *Sets the controller
+     *
+     * Sets the controller
+     *
      * @param c the controller to be initialized
      */
     public void setController(Controller c) {
@@ -35,20 +37,24 @@ public class HHSSAdventureFrame extends javax.swing.JFrame {
     }
 
     /**
-     *Use image panel to set image 
+     * Use image panel to set image
+     *
      * @param img the image the screen will be set to
      */
     public void setImage(BufferedImage img) {
         // the image panel sets its image
         imagePanel.setImage(img);
     }
-    
-    
-    
-     public void checkFront(boolean isBlocked){
-        if(isBlocked){
+
+    /**
+     * Set blocked variable to indicate if it is possible to move forward
+     *
+     * @param isBlocked the boolean that tells method if front is blocked
+     */
+    public void checkFront(boolean isBlocked) {
+        if (isBlocked) {
             blocked = true;
-        }else{
+        } else {
             blocked = false;
         }
     }
