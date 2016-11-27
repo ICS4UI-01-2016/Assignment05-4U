@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author yuk4142
  */
 public class Location {
-    private ArrayList<Screen> screens;
+   private ArrayList<Screen> screens;
     
    //A way to store all possible screens in an array 
    private Screen[] locationScreens;
@@ -26,12 +26,15 @@ public class Location {
    //direction is stored as an integer so that it can be easily manipulated 
    private int currentDirection;
    
+   
+   
+   
     public Location(Scanner input){
         //initialize array, since there are 4 lines, and 4 directions
         directions = new String[] {"N","E","S","W"};
         locationName = input.next();
         locationScreens = new Screen[4];
-        
+        screens = new ArrayList<>();
         
          
         
@@ -41,7 +44,7 @@ public class Location {
             for(int i = 0; i < 4; i++){
                 Screen s = new Screen(input);
                 // each slot of an array represents direction, each direction is given a screen
-                locationScreens[i] = s;
+                screens.add(s);
             }
         
         
@@ -68,7 +71,7 @@ public class Location {
             }
          }
                 
-          return locationScreens[currentDirection].isFrontClear();
+          return locationScreens[currentDirection].isFrontClear(direction);
         
        
   
@@ -113,23 +116,21 @@ public class Location {
                 return locationScreens[currentDirection].getNextDirection();
             }
             
-        
+                
             
-            
-            public Screen getScreen(String direction) {
-                 System.out.println("HELLO WHY");
-        for (Screen s : screens) {
-            
-           
-            //Checks if there is a match for the screen and direction
-            if (s.getDirection().equals(direction)) {
-                // Finds the image and returns it
+            public Screen getScreen(String direction){
+              
+                for(Screen s : screens){
+                  
+                    if (s.getDirection().equals(direction)) {
+                
                 return s;
+                }
+  
             }
-        }
-        //no screen was found 
-        return null;
-    }
+                return null;
+            }
+     
         
         public static void main(String[] args) {
         

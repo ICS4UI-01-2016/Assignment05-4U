@@ -25,6 +25,7 @@ public class Map {
     private String currentPlace;
     private String currentDirection;
    
+     private Location currentLoc = null;
     
     public Map(String fileName){
         //initialize the list 
@@ -52,12 +53,21 @@ public class Map {
                 
             }
             
+            
+            
         
             
             
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
+        
+        for(int i = 0; i < locations.size(); i++) {
+           
+             if(currentPlace.equals(locations.get(i).getLocationName())){
+                currentLoc = locations.get(i);
+            }
+    }
     }
     /**
      * Retrieve specific screen from the map
@@ -72,8 +82,8 @@ public class Map {
             
             // see if place and direction match
             if(s.getLocationName().equals(place)){
+              
                 
-                System.out.println("TEST");
                 //I found the screen
                 return s.getScreen(direction);  
                 
@@ -83,6 +93,9 @@ public class Map {
         // no screen found
         return null;
     }
+    
+    
+     
     
     public String getStartingPlace(){
         return currentPlace;

@@ -1,6 +1,7 @@
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
@@ -15,10 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Screen {
 
-    private String place;
-    private String currentPlace;
+
+    
  
     private String imageName;
+    
     
     
     private BufferedImage image;
@@ -27,6 +29,8 @@ public class Screen {
     private String direction;
     
     private boolean frontClear;
+    
+   
 
     /**
      * Using a scanner to create a new screen
@@ -41,7 +45,7 @@ public class Screen {
         //scan in the image 
          imageName = input.next();
         
-        
+       
         
         String check = input.next();
         
@@ -52,6 +56,8 @@ public class Screen {
             frontClear = false;
             nextPlace = input.next();
             nextDirection = input.nextLine();
+            
+            System.out.println(nextDirection);
         } else {
             frontClear = true;
             input.nextLine();
@@ -85,10 +91,6 @@ public class Screen {
         return nextPlace;
     }
 
-    public String getCurrentPlace() {
-        return currentPlace;
-    }
-    
     public String getNextDirection(){
         return nextDirection;
     }
@@ -101,9 +103,11 @@ public class Screen {
         return imageName;
     }
 
-    public boolean isFrontClear() {
+    public boolean isFrontClear(String direction) {
         return frontClear;
     }
+    
+     
 
     //I use psvm to repeatedly update this class because for some reason changes can not be applied unless this is played.
     public static void main(String[] args) {

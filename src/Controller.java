@@ -28,29 +28,32 @@ public class Controller {
         this.currentPlace = map.getStartingPlace();
         this.currentDirection = map.getStartingDirection();
         
-        
-        System.out.println(this.currentDirection);
         System.out.println(this.currentPlace);
+        System.out.println(this.currentDirection);
         
+        directions = new String[] {"N","E","S","W"};
         
         //make sure the GUI can talk to you
         gui.setController(this);
         
         Screen start = map.getLocation(this.currentPlace, this.currentDirection);
         
+        
        gui.setImage(start.getImage());
         
-        gui.checkFront(start.isFrontClear());
+        gui.checkFront(start.isFrontClear(currentDirection));
         
        
 
-        directions[0] = "N";
-        directions[1] = "E";
-        directions[2] = "S";
-        directions[3] = "W";
+     
 
+        for(int i = 0; i < locations.size(); i++) {
+           
+             if(currentPlace.equals(locations.get(i).getLocationName())){
+                currentLoc = locations.get(i);
+            }
         
-
+        }
         //set starting image 
         
     }
@@ -58,39 +61,49 @@ public class Controller {
     public void goForward() {
         //get the screen we are on right now 
         Screen current = map.getLocation(currentPlace, currentDirection);
+
+        System.out.println(currentDirection);
         
 
         //if we can move north
-        if (current.isFrontClear()) {
+        if (!current.isFrontClear(currentDirection)) {
+            
             currentPlace = current.getNextPlace();
-
-            //Get new screen, set at next place according  to "getNextPlace"
-            Screen newScreen = map.getLocation(current.getNextPlace(), current.getNextDirection());
-            newScreen.getNextPlace();
+            currentDirection = current.getNextDirection();
+       
+        
+            
+        }
+      Screen newScreen = map.getLocation(currentPlace, );
+            
 
             // set the image
             gui.setImage(newScreen.getImage());
-        }
-        
-         gui.checkFront(currentLoc.canMoveForward(currentDirection));
+           
+              gui.checkFront(newScreen.isFrontClear(currentDirection));
+
+         
 
     }
 
     public void turnLeft() {
 
-        Screen current = map.getLocation(currentPlace, currentDirection);
+     
+        
         //ask if we can move north
+        
         for (int i = 0; i < directions.length; i++) {
+          if(currentDirection.equals(directions[i])){
             if (currentDirection.equals("N")) {
                 currentDirection = "W";
                 break;
 
             } else {
-                currentDirection = directions[i - 1];
+                currentDirection = directions[i-1];
                 break;
             }
 
-           
+             }
 
         }
 
@@ -98,15 +111,16 @@ public class Controller {
         Screen newScreen = map.getLocation(currentPlace, currentDirection);
         // set the image
        gui.setImage(newScreen.getImage());
-        //updates if the front is blocked or not for the CURRENt position
-        gui.checkFront(currentLoc.canMoveForward(currentDirection));
+      
+        
 
     }
 
     public void turnRight() {
 
-        Screen current = map.getLocation(currentPlace, currentDirection);
+        
         for (int i = 0; i < directions.length; i++) {
+             if(currentDirection.equals(directions[i])){
             if (currentDirection.equals("W")) {
                 currentDirection = "N";
                 break;
@@ -114,14 +128,14 @@ public class Controller {
                 currentDirection = directions[i + 1];
                 break;
             }
-
+             }
         }
         //Get new screen 
         Screen newScreen = map.getLocation(currentPlace, currentDirection);
         // set the image
         gui.setImage(newScreen.getImage());
         //updates if the front is blocked or not for the CURRENt position
-        gui.checkFront(currentLoc.canMoveForward(currentDirection));
+        
     }
     
     public static void main(String[] args) {
