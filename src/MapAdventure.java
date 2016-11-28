@@ -14,21 +14,24 @@ import java.util.Scanner;
  */
 public class MapAdventure {
 
-    private ArrayList<ScreenAdventure> screens;
-    private ArrayList<ScreenAdventure> location;
-
+    private ArrayList<LocationAdventure> locations;
+    private String location;
+    private String direction;
+    
     public MapAdventure(String fileName) {
-        // initialize the list
-        screens = new ArrayList<>();
-        location = new ArrayList<>();
+
+        locations = new ArrayList<>();
         try {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
+            location = input.next();
+            direction = input.next();
+            
             // Make screens
             // loop to the end of the file
             while (input.hasNext()) {
                 // creating a screen from the scanner
-                ScreenAdventure scrn = new ScreenAdventure(input);
+                LocationAdventure scrn = new LocationAdventure(input);
                 // added the created screen to the list
                 location.add(scrn);
             }
