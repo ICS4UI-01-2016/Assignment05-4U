@@ -8,36 +8,138 @@
  * @author guanv6321
  */
 public class ControllerAdventure {
+
+   public class Controller {
+
     private GUIAdventure gui;
     private MapAdventure map;
-    private String direction;
     private String location;
-    
-    public ControllerAdventure(GUIAdventure gui, MapAdventure map, String direction, String location){
+    private String direction;
+
+    public Controller(GUIAdventure gui, MapAdventure map, String location, String direction) {
         this.gui = gui;
         this.map = map;
-        this.direction = direction;
         this.location = location;
-        
+        this.direction = direction;
+
         // make sure the GUI can talk to you
-        gui.setController(this); 
+        gui.setController(this);
+        // set the starting image
+        ScreenAdventure start = map.getScreen(location, direction);
+        gui.setImage(start.getImage());
         
-        // set starting image
-        ScreenAdventure start = map.getScreen(direction, location);
-        gui.setImage(start.getImage()); 
     }
-    
-    public void lookNorth(){
+
+    public void turnNorth() {
         // get the screen we are on right now
-        ScreenAdventure current = map.getScreen(direction, location);
-        // ask if we can move north
-        direction = "north";
-            // move up a row
-            
-            // get the new screen 
-            ScreenAdventure newScreen = map.getScreen(direction, location);
-            // set the image
-            gui.setImage(newScreen.getImage());       
+        // Set direction to equal W
+        // Print screen
+        ScreenAdventure current = map.(location, direction);
+        if(current.equals("true")){
+            location = current.getNewLocation();
+            //Get new screen, set at next place according  to "getNextPlace"
+            ScreenAdventure newScreen = map.getLocation(current.getNewLocation(), current.getDirection());
+        }
+        direction = "N";
+        current = map.getScreen(location, direction);
+        // set the image
+        gui.setImage(current.getImage());
     }
     
+    public void goNorth() {
+        // get the screen we are on right now
+        ScreenAdventure current = map.getScreen(location, direction);
+        // Swtiching direction to face the new direction which was clicked
+        // ask if we can move west
+        if (current.clear() == false) {
+            location = current.getNewLocation();
+            direction = current.getDirection();
+            current = map.getScreen(location, direction);
+
+        }
+        // set the image
+        gui.setImage(current.getImage());
+        
+    }
+
+    public void turnEast() {
+        // get the screen we are on right now
+        // Set direction to equal W
+        // Print screen
+        ScreenAdventure current = map.getScreen(location, direction);
+        direction = "E";
+        current = map.getScreen(location, direction);
+        // set the image
+        gui.setImage(current.getImage());
+    }
+    
+    public void goEast() {
+        // get the screen we are on right now
+        ScreenAdventure current = map.getScreen(location, direction);
+        // Swtiching direction to face the new direction which was clicked
+        // ask if we can move west
+        if (current.clear() == false) {
+            location = current.getNewLocation();
+            direction = current.getDirection();
+            current = map.getScreen(location, direction);
+        }
+        // set the image
+        gui.setImage(current.getImage());
+        
+    }
+
+    public void turnSouth() {
+        // get the screen we are on right now
+        // Set direction to equal W
+        // Print screen
+        ScreenAdventure current = map.getScreen(location, direction);
+        direction = "S";
+        current = map.getScreen(location, direction);
+        // set the image
+        gui.setImage(current.getImage());
+    }
+    
+    public void goSouth() {
+        // get the screen we are on right now
+        ScreenAdventure current = map.getScreen(location, direction);
+        // Swtiching direction to face the new direction which was clicked
+        // ask if we can move west
+        if (current.clear() == false) {
+            location = current.getNewLocation();
+            direction = current.getDirection();
+            current = map.getScreen(location, direction);
+        }
+        
+        // set the image
+        gui.setImage(current.getImage());
+    }
+
+    public void turnWest() {
+        // get the screen we are on right now
+        // Set direction to equal W
+        // Print screen
+        ScreenAdventure current = map.getScreen(location, direction);
+        direction = "W";
+        current = map.getScreen(location, direction);
+        // set the image
+        gui.setImage(current.getImage());
+    }
+    
+    public void goWest() {
+        // get the screen we are on right now
+        ScreenAdventure current = map.getScreen(location, direction);
+        
+        // Swtiching direction to face the new direction which was clicked
+        // ask if we can move west
+        if (current.clear() == false) {
+            location = current.getNewLocation();
+            direction = current.getDirection();
+            current = map.getScreen(location, direction);
+        }
+        
+        // set the image
+        gui.setImage(current.getImage());
+    }
+    
+   }   
 }

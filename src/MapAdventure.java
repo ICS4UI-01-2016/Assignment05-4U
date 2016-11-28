@@ -15,10 +15,12 @@ import java.util.Scanner;
 public class MapAdventure {
 
     private ArrayList<ScreenAdventure> screens;
+    private ArrayList<ScreenAdventure> location;
 
     public MapAdventure(String fileName) {
         // initialize the list
         screens = new ArrayList<>();
+        location = new ArrayList<>();
         try {
             // make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
@@ -26,27 +28,16 @@ public class MapAdventure {
             // loop to the end of the file
             while (input.hasNext()) {
                 // creating a screen from the scanner
-                ScreenAdventure s = new ScreenAdventure(input);
+                ScreenAdventure scrn = new ScreenAdventure(input);
                 // added the created screen to the list
-                screens.add(s);
+                location.add(scrn);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(); 
         }
 
     }
 
     
-    public ScreenAdventure getScreen(String direction, String location) {
-        // go through each screen
-        for (ScreenAdventure scrn : screens) {
-            // see if the row and col match
-            if (scrn.getCurrentLocation() == direction && scrn.getCurrentDirection() == location) {
-                // found the screen
-                return scrn;
-            }
-        }
-        // no screen found
-        return null;
-    }
+   
 }
