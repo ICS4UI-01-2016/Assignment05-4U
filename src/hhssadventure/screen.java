@@ -23,6 +23,8 @@ public class screen {
     private boolean blocked;
     private String nextDirection;
     private String newimg;
+    private String Location;
+    private String nextLocation;
             
     screen(Scanner input){
         //scan int image name
@@ -39,13 +41,13 @@ public class screen {
      blocked = Boolean.parseBoolean(split[2]);
      
      if(!blocked){
-         newimg = split[3];
+         nextLocation = split[3];
          nextDirection = split[4];
      }
      
      //load in the image file
      try{
-         image = ImageIO.read(new File("images/" + imageName ));
+         image = ImageIO.read(new File("images/" + img ));
      }catch(Exception e){
          e.printStackTrace();
      }
@@ -53,6 +55,14 @@ public class screen {
   
     public String Direction(){
         return this.Direction;
+    }
+    
+    public String Location(){
+        return this.Location;
+    }
+   
+    public String nextLocation(){
+        return this.nextLocation;
     }
     
     public String getimg() {
