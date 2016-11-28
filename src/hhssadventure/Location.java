@@ -6,7 +6,9 @@
 
 package hhssadventure;
 
+import java.io.File;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -15,48 +17,51 @@ import java.util.Scanner;
  * @author Ajay
  */
 public class Location {
-     private screen[] scenes;
     private String name;
+    private ArrayList<screen> screens;
 
     public Location(Scanner input) {
+        // Initialize the list of screens for this location
+        screens = new ArrayList<>();
 
-        scenes = new screen[4];
-
+        // Read in the location name
         name = input.nextLine();
+        // Read in the 4 screens for this location (N,E,S,W)
         for (int i = 0; i < 4; i++) {
             screen s = new screen(input);
-            scenes[i] = s;
+
+            // Added the created screen to the list
+            screens.add(s);
         }
-    
-}
-    //checks if the front is blocked
-    public boolean isFrontBlocked(String dir) {
-        for (int i = 0; i < 4; i++) {
-            if (scenes[i].getDirection().equals(dir)) {
-                return scenes[i].isBlocked();
-            }
-          }
-       return true; 
-  }
-    //this will get the next location if the front is not blocked
-    public String getNextLocation(String dir) {
-        for (int i = 0; i < 4; i++) {
-            if (scenes[i].getDirection().equals(dir)) {
-                return scenes[i].getNextLocation();
-            }
-        }
-        return null;
     }
-    // this grabs the current image the user is facing 
-    public BufferedImage getImage(String dir) {
-        for (int i = 0; i < 4; i++) {
-            if (scenes[i].getDirection().equals(dir)) {
-                return scenes[i].getImage();
-            }
-        }
-        return null;
-    }
+
+    /**
+     * Method used to return the images current location name
+     *
+     * @return the current location name concerning the image
+     */
     public String getName() {
-        return this.name;
+        // Return the current location name of the image
+        return name;
+    }
+
+    /**
+     * Method used to get the screens direction
+     *
+     * @param findDirection the direction that it is trying to find within the
+     * location
+     * @return the direction of the current screen
+     */
+    public screen getScreen(String findDirection) {
+        // Now loop through the 4 screens/direction for this location
+        for (screen scn : screens) {
+            // See if we have a direction match
+            if (scn.getNextDirection().equals(findDirection)) {
+                // Finding the image
+                return scn;
+            }
+        }
+        // Return nothing if no screen was found
+        return null;
     }
 }

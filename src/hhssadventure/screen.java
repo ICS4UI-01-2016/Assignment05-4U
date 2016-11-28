@@ -18,64 +18,55 @@ import javax.imageio.ImageIO;
 public class screen {
    
     private String Direction;
-    private int Location;
     private BufferedImage image;
-    private String curLocation;
-    private String curDirection;
-    private String isBlocked;
+    private String img;
     private boolean blocked;
-    private String nextLocation;
     private String nextDirection;
+    private String newimg;
             
     screen(Scanner input){
         //scan int image name
-     String imageName = input.next();  
+     String imageName = "";  
+     try {
+            imageName = input.nextLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
    
-     String[] split = imageName.split("_");
-     Location = Integer.parseInt(split[1].substring(1));
+     String[] split = imageName.split(" ");
+     Direction = split[0];
+     img = split [1];
+     blocked = Boolean.parseBoolean(split[2]);
      
+     if(!blocked){
+         newimg = split[3];
+         nextDirection = split[4];
+     }
      
      //load in the image file
      try{
-         image = ImageIO.read(new File("IMG_" + imageName + ".JPG"));
+         image = ImageIO.read(new File("images/" + imageName ));
      }catch(Exception e){
          e.printStackTrace();
      }
-     
-     isBlocked = input.next();
-        if (isBlocked.equals("true")) {
-            blocked = true;
-            input.nextLine();
-        } else {
-            nextLocation = input.next();
-            nextDirection = input.next();
-            input.nextLine();
-        }
-        
-  
-
-     
-     //move to next line
-     input.nextLine();
     }  
   
-    
-    public String getDirection() {
-        return this.curDirection;
+    public String Direction(){
+        return this.Direction;
     }
     
-    public String getLocation() {
-        return this.curLocation;
+    public String getimg() {
+        return this.img;
     }
-
+    
+     public String getnewimg() {
+        return this.newimg;
+    }
+    
     public boolean isBlocked() {
         return this.blocked;
     }
     
-    public String getNextLocation() {
-        return this.nextLocation;
-    }
-
     public String getNextDirection() {
         return this.nextDirection;
     }
@@ -83,10 +74,6 @@ public class screen {
  
     public BufferedImage getImage(){
         return image;
-    }
-          
-    public static void main(String[] args){
-        
-    }
+    }          
 }
 

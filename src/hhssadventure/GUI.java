@@ -31,6 +31,25 @@ public class GUI extends javax.swing.JFrame {
         // the image panel sets its image
     Image.setImage(img);
     }
+    public void Direction(String direction){
+        if(direction.equals("N")){
+           
+        } else if(direction.equals("S")){
+            
+        } else if(direction.equals("E")){
+            
+        } else if (direction.equals("W")){
+            
+        }
+    }
+        public void isBlocked(boolean blocked){
+        if(blocked){
+         
+        } else{
+            
+        }
+    }
+
 
         // make sure the GUI can talk to you
      
@@ -47,6 +66,8 @@ public class GUI extends javax.swing.JFrame {
         west = new javax.swing.JButton();
         east = new javax.swing.JButton();
         Image = new hhssadventure.ImageCompontent();
+        south = new javax.swing.JButton();
+        forward = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +77,20 @@ public class GUI extends javax.swing.JFrame {
 
         east.setText("east");
 
+        south.setText("south");
+        south.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                southActionPerformed(evt);
+            }
+        });
+
+        forward.setText("forward");
+        forward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forwardActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,16 +98,23 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(west)
-                        .addGap(58, 58, 58)
-                        .addComponent(east))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(322, 322, 322)
                         .addComponent(north))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
-                        .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(268, 268, 268)
+                                .addComponent(west)
+                                .addGap(58, 58, 58)
+                                .addComponent(east))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(323, 323, 323)
+                                .addComponent(south)))
+                        .addGap(31, 31, 31)
+                        .addComponent(forward)))
                 .addContainerGap(231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -85,12 +127,23 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(west)
-                    .addComponent(east))
-                .addGap(101, 101, 101))
+                    .addComponent(east)
+                    .addComponent(forward))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(south)
+                .addGap(72, 72, 72))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void southActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_southActionPerformed
+
+    private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_forwardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,7 +183,11 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private hhssadventure.ImageCompontent Image;
     private javax.swing.JButton east;
+    private javax.swing.JButton forward;
     private javax.swing.JButton north;
+    private javax.swing.JButton south;
     private javax.swing.JButton west;
     // End of variables declaration//GEN-END:variables
+
+    
 }

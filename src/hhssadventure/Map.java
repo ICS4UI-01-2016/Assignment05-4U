@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javafx.stage.Screen;
+
 
 
 /**
@@ -17,39 +19,50 @@ import java.util.Scanner;
  * @author Ajay
  */
 public class Map {
-    private ArrayList<screen> screens;
-   
-     
-     public Map(String fileName){
-       //initializ the list
-         screens = new ArrayList<>();
-         try {
-             //make the scanner
-             Scanner input = new Scanner (new File(fileName));
-             //make screens
-             //loop to the end of file
-             while(input.hasNext()){
-              //creating a screen from the scanner   
-              screen s = new screen(input);   
-              //added the created screen from the listy
-              screens.add(s);
-             }
-         
-         } catch (FileNotFoundException ex) {
-             ex.printStackTrace();
-         }
-     }
-     
+
+    String StartLoc;
+    String StartDir;
+
+
+    private ArrayList<Location> locations;
+
+
+    public Map(String fileName) {
+        locations = new ArrayList<>();
+        try {
+            Scanner input = new Scanner(new File(fileName));
+
+            StartLoc  = input.nextLine();
+            StartDir = input.nextLine();
+
+            while (input.hasNext()) {
+                Location loc = new Location(input);
+
+                locations.add(loc);
+            }
     
-     public screen getScreen(String Location, String Direction){
-         //go through each screen
-         for(screen s: screens){
-          // checks if everything matches
-          if(s.getDirection().equals(Direction) && s.getLocation().equals(Location)){
-              return s;
-          }    
-         }
-         return null;
-     }
-     
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    public String getStartLoc() {
+        return StartDir;
+    }
+
+    public String getStartDir() {
+        return StartDir;
+    }
+    
+    public screen getScreen(String findLocation, String findDirection) {
+        for (Location loc : this.locations) {
+            if (loc.getName().equals(findLocation)) {
+                return loc.getScreen(findDirection);
+            }
+        }
+        // No screen found, return nothing!
+        return null;
+    }
 }
+
