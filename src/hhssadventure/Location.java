@@ -42,6 +42,7 @@ public class Location {
 
         // Read in the location name
         name = input.nextLine();
+        
         // Read in the 4 screens for this location (N,E,S,W)
         for (int i = 0; i < 4; i++) {
             Screen s = new Screen(input);

@@ -16,9 +16,9 @@ public class Controller {
     // Create map variable within controller
     private Map map;
     // Location variable within controller
-    String location;
+    private String location;
     // Direction variable within controller
-    String direction;
+    private String direction;
 
     /**
      * Constructor for the controller
@@ -30,6 +30,7 @@ public class Controller {
         // Set instance variables with constructor
         this.gui = gui;
         this.map = map;
+        
         // Set initial location and direction
         this.location = map.getInitialLocation();
         this.direction = map.getInitialDirection();
@@ -40,26 +41,41 @@ public class Controller {
         // Set the starting image
         Screen start = map.getScreen(location, direction);
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(start.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(start.isBlocked());
+    }
+
+    /**
+     * Method that allows GET of current location
+     */
+    public String getLocation() {
+        // return the current location
+        return location;
+    }
+
+    /**
+     * Method that allows GET of current direction
+     */
+    public String getDirection() {
+        // return the current direction
+        return direction;
     }
 
     /**
      * Method that allows for the user to turn North
      */
     public void turnNorth() {
-        // Get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
         // Set direction to equal N
         direction = "N";
+        
         // Find new screen
-        current = map.getScreen(location, direction);
+        Screen current = map.getScreen(location, direction);
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(current.isBlocked());
     }
 
@@ -67,16 +83,15 @@ public class Controller {
      * Method that allows the user to turn East
      */
     public void turnEast() {
-        // Get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
         // Set direction to equal E
         direction = "E";
+        
         // Find new screen
-        current = map.getScreen(location, direction);
+        Screen current = map.getScreen(location, direction);
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(current.isBlocked());
     }
 
@@ -84,16 +99,15 @@ public class Controller {
      * Method that allows the user to turn South
      */
     public void turnSouth() {
-        // Get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
         // Set direction to equal S
         direction = "S";
+        
         // Find new screen
-        current = map.getScreen(location, direction);
+        Screen current = map.getScreen(location, direction);
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(current.isBlocked());
     }
 
@@ -101,16 +115,15 @@ public class Controller {
      * Method that allows the user to turn West
      */
     public void turnWest() {
-        // Get the screen we are on right now
-        Screen current = map.getScreen(location, direction);
         // Set direction to equal W
         direction = "W";
+        
         // Find new screen
-        current = map.getScreen(location, direction);
+        Screen current = map.getScreen(location, direction);
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(current.isBlocked());
     }
 
@@ -134,9 +147,9 @@ public class Controller {
             current = map.getScreen(location, direction);
         }
 
-        // Sets image, the direction, and if it is blocked so it can be accessed in gui
+        // Sets image, the location/direction, and if it is blocked so it can be accessed in gui
         gui.setImage(current.getImage());
-        gui.setDirection(direction);
+        gui.setScreenLabel();
         gui.setBlocked(current.isBlocked());
     }
 }
