@@ -50,13 +50,13 @@ public class GUI extends javax.swing.JFrame {
         // Imports the direction into the GUI
         // Displays the text corresponding to the direction of the user
         if (controller.getDirection().equals("N")) {
-            labelScreen.setText( controller.getLocation().toUpperCase() +": NORTH");
+            labelScreen.setText(controller.getLocation().toUpperCase() + ": NORTH");
         } else if (controller.getDirection().equals("S")) {
-            labelScreen.setText( controller.getLocation().toUpperCase() + ": SOUTH");
+            labelScreen.setText(controller.getLocation().toUpperCase() + ": SOUTH");
         } else if (controller.getDirection().equals("E")) {
-            labelScreen.setText( controller.getLocation().toUpperCase() + ": EAST");
+            labelScreen.setText(controller.getLocation().toUpperCase() + ": EAST");
         } else if (controller.getDirection().equals("W")) {
-            labelScreen.setText( controller.getLocation().toUpperCase() + ": WEST");
+            labelScreen.setText(controller.getLocation().toUpperCase() + ": WEST");
         }
     }
 
@@ -71,10 +71,10 @@ public class GUI extends javax.swing.JFrame {
         // Diplays the text corresponding to if the front is blocked or not
         if (blocked) {
             buttonForward.setText("BLOCKED!");
-            buttonForward.setBackground( Color.RED );
+            buttonForward.setBackground(Color.RED);
         } else {
             buttonForward.setText("MOVE FORWARD");
-            buttonForward.setBackground( Color.GREEN );
+            buttonForward.setBackground(Color.GREEN);
         }
     }
 
@@ -204,15 +204,17 @@ public class GUI extends javax.swing.JFrame {
 
     /**
      * Button to Move Forward
+     *
      * @param evt Action Performed
      */
     private void buttonForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonForwardActionPerformed
         // Go forward!
         controller.goForward();
     }//GEN-LAST:event_buttonForwardActionPerformed
-    
+
     /**
      * Button to Turn Right
+     *
      * @param evt Action Performed
      */
     private void buttonRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRightActionPerformed
@@ -230,9 +232,10 @@ public class GUI extends javax.swing.JFrame {
             controller.turnNorth();
         }
     }//GEN-LAST:event_buttonRightActionPerformed
-    
+
     /**
      * Button to Turn Backwards
+     *
      * @param evt Action Performed
      */
     private void buttonBackwardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackwardsActionPerformed
@@ -253,6 +256,7 @@ public class GUI extends javax.swing.JFrame {
 
     /**
      * Button to Turn Left
+     *
      * @param evt Action Performed
      */
     private void buttonLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLeftActionPerformed
