@@ -38,28 +38,30 @@ public class Map {
             //rest of areas/directions
             while (input.hasNext()) {
                 String area = input.nextLine();
-
-                for (int i = 0; i < 5; i++) {
+                // System.out.println("AREA: " + area);
+                
+                for (int i = 0; i < 4; i++) {
                     String direction = input.next();
                     // print out what i gottt
-                    System.out.println("Direction: " + direction);
+                    // System.out.println("Direction: " + direction);
                     String imageName = input.next();
                     // testing print out
-                    System.out.println(imageName);
+                    // System.out.println("image: " + imageName);
                     boolean isBlocked = input.nextBoolean();
                     // test what variable holds
-                    System.out.println("Blocked? " + isBlocked);
+                    // System.out.println("Blocked? " + isBlocked);
                     if (isBlocked == false) {
                         String nextArea = input.next();
+                        // System.out.println("nextAREA: " + nextArea);
                         String nextDirection = input.next();
+                        // System.out.println("nextDirection: " + nextDirection);
                         Screen s = new Screen(area, direction, imageName, false, nextArea, nextDirection);
                         screens.add(s);
                     } else {
-                        
                         Screen s = new Screen(area, direction, imageName, true, null, null);
-                         input.nextLine();
+                        screens.add(s);
                     }
-                    i++;
+                    input.nextLine();
                 }
             }
 

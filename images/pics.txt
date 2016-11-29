@@ -95,16 +95,16 @@ E IMG_0115.JPG false Science2 E
 S IMG_0116.JPG false Staff S
 W IMG_0117.JPG true
 N IMG_0118.JPG false Art1 N
-Science2
-N IMG_0123.JPG true
-E IMG_0119.JPG false Science1 
-S IMG_0120.JPG true
-W IMG_0121.JPG false Art2 W
 Science1
 N IMG_0127.JPG false Tech2 S
 E IMG_0124.JPG true
 S IMG_0125.JPG true
 W IMG_0126.JPG false Science2 W
+Science2
+N IMG_0123.JPG true
+E IMG_0119.JPG false Science1 
+S IMG_0120.JPG true
+W IMG_0121.JPG false Art2 W
 Staff
 N IMG_0128.JPG false Art2 N
 E IMG_0129.JPG true
