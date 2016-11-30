@@ -33,8 +33,8 @@ public class Map {
 
             //for each area
             //first areas
-            String intArea = input.nextLine();
-            String intDirection = input.nextLine();
+            intArea = input.nextLine();
+            intDirection = input.nextLine();
             //rest of areas/directions
             while (input.hasNext()) {
                 String area = input.nextLine();
@@ -70,10 +70,11 @@ public class Map {
     }
     
     public Screen getScreen(String area, String direction) {
+        
         // go through each screen
         for (Screen s : screens) {
             // see if the row and col match
-            if (s.getArea() == area && s.getDirection() == direction) {
+            if (area.equals(s.getArea()) && direction.equals(s.getDirection())) {
                 // I found the screen
                 return s;
             }

@@ -34,7 +34,40 @@ public class LocationController {
     public void goNorth() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-        if (current.canGoNorth()) {
+        if (direction.equals("N")) {
+            // get the new screen
+            Screen newScreen = map.getScreen(area, direction);
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
+    }
+    
+    public void goEast() {
+        // get the screen we are on right now
+        Screen current = map.getScreen(area, direction);
+        if (current.canGoEast()) {
+            // get the new screen
+            Screen newScreen = map.getScreen(area, direction);
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
+    }
+    
+    public void goSouth() {
+        // get the screen we are on right now
+        Screen current = map.getScreen(area, direction);
+        if (current.canGoSouth()) {
+            // get the new screen
+            Screen newScreen = map.getScreen(area, direction);
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
+    }
+    
+    public void goWest() {
+        // get the screen we are on right now
+        Screen current = map.getScreen(area, direction);
+        if (current.canGoWest()) {
             // get the new screen
             Screen newScreen = map.getScreen(area, direction);
             // set the image
