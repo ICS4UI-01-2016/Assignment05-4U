@@ -33,12 +33,30 @@ public class MapAdventure {
                 // creating a screen from the scanner
                 LocationAdventure scrn = new LocationAdventure(input);
                 // added the created screen to the list
-                location.add(scrn);
+                locations.add(scrn);
             }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(); 
         }
 
+    }
+    
+    public ScreenAdventure getLocation(String location, String direction){
+        for(LocationAdventure scrn: locations){
+            if(scrn.getLocationName().equals(location)){
+                return scrn.getScreen(direction);
+            }
+            
+        }
+        return null;
+    }
+    
+    public String getStartLocation(){
+        return location;
+    }
+    
+    public String getStartDirection(){
+        return direction;
     }
 
     

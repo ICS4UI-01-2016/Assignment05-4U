@@ -135,9 +135,11 @@ public class GUIAdventure extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ImageComponentAdventure imagePanel;
     private javax.swing.JButton EastButton;
     private javax.swing.JButton NorthButton;
     private javax.swing.JButton SouthButton;
     private javax.swing.JButton WestButton;
+    
     // End of variables declaration//GEN-END:variables
 }
