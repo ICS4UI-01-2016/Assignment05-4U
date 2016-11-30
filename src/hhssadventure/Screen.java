@@ -79,4 +79,5 @@ public class Screen {
     public String getAftrDir() {
         return this.aftrDir;
     }
+    
 }

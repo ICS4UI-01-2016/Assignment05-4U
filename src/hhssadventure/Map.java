@@ -59,6 +59,10 @@ public class Map {
             this.screens = a.getScreens();
             for (Screen s : screens) {
                 // see if the row and col match
+                System.out.println("");
+                System.out.println(s.getArea());
+                System.out.println(s.getDirection());
+                System.out.println("");
                 if (s.getArea() == Area && s.getDirection() == Direction) {
                     // I found the screen
                     return s;
