@@ -50,13 +50,14 @@ public class Screen {
 
         System.out.println("area: " + this.areaName);
         System.out.println("direction: " + this.direction);
-        System.out.println("image: " + imageName);
+        System.out.println("imageName: " + imageName);
+        System.out.println("image: " + this.image);
         System.out.println("canMove: " + this.canMove);
         System.out.println("aftrArea: " + this.aftrArea);
         System.out.println("aftrDir: " + this.aftrDir);
     }
 
-    public String getArea() {
+    public String getAreaName() {
         return this.areaName;
     }
 

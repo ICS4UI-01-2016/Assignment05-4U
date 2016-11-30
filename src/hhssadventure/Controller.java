@@ -27,7 +27,8 @@ public class Controller {
 
         // set the starting image
         Screen current = map.getScreen(Area, Direction);
-        System.out.println(current.getArea());
+        System.out.println(current);
+        System.out.println(current.getAreaName());
         System.out.println(current.getDirection());
         System.out.println(current.getCanMove());
         gui.setImage(current.getImage());

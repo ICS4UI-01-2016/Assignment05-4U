@@ -29,6 +29,7 @@ public class Area {
         
         for(int i = 0; i <= 3; i++){
             Screen s = new Screen(areaName, in);
+            screens.add(s);
         }        
     }
     public ArrayList getScreens(){

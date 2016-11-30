@@ -29,7 +29,7 @@ public class GUI extends javax.swing.JFrame {
 
     public void setImage(BufferedImage img) {
         // the image panel sets its image
-        imagePanel.setImage(img);
+        imageComponent1.setImage(img);
     }
 
     /**

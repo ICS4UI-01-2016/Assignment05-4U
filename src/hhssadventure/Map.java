@@ -31,6 +31,7 @@ public class Map {
 
             this.startArea = in.next();
             this.startDirection = in.next();
+            
 
             // Make screens
             // loop to the end of the file
@@ -58,12 +59,7 @@ public class Map {
         for (Area a : areas) {
             this.screens = a.getScreens();
             for (Screen s : screens) {
-                // see if the row and col match
-                System.out.println("");
-                System.out.println(s.getArea());
-                System.out.println(s.getDirection());
-                System.out.println("");
-                if (s.getArea() == Area && s.getDirection() == Direction) {
+                if (s.getAreaName().equalsIgnoreCase(Area) && s.getDirection().equalsIgnoreCase(Direction)) {
                     // I found the screen
                     return s;
                 }
