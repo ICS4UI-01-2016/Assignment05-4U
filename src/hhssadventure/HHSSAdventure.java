@@ -5,17 +5,32 @@
  */
 package hhssadventure;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  *
- * @author lamon
+ * @author brayden
  */
 public class HHSSAdventure {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws FileNotFoundException {
+       // create the interface
+        GUI gui = new GUI();
+        // show the interface
+        gui.setVisible(true);
+        
+        // create the map
+        Map map = new Map("images/pics.txt");
+        
+        // create the game controller
+        Controller c = new Controller(gui, map, map.getStartArea(), map.getStartDirection());
+        
+        
     }
     
 }
