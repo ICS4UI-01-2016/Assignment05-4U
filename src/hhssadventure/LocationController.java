@@ -20,7 +20,7 @@ public class LocationController {
 
     public LocationController(GUI gui, Map m, String area, String direction) {
         this.gui = gui;
-        this.map = map;
+        this.map = m;
         this.area = area;
         this.direction = direction;
 
