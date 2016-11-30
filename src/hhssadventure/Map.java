@@ -19,7 +19,8 @@ public class Map {
 
     private ArrayList<Screen> screens;
 
-    
+    private String nextArea;
+    private String nextDirection;
     private String intArea;
     private String intDirection;
     private boolean isBlocked;
@@ -51,9 +52,9 @@ public class Map {
                     // test what variable holds
                     System.out.println("Blocked? " + isBlocked);
                     if (isBlocked == false) {
-                        String nextArea = input.next();
+                        nextArea = input.next();
                         System.out.println("nextAREA: " + nextArea);
-                        String nextDirection = input.next();
+                        nextDirection = input.next();
                         System.out.println("nextDirection: " + nextDirection);
                         Screen s = new Screen(area, direction, imageName, false, nextArea, nextDirection);
                         screens.add(s);
@@ -89,6 +90,14 @@ public class Map {
     
     public String getIntDirection(){
         return intDirection;
+    }
+    
+    public String getNextArea(){
+        return nextArea;
+    }
+    
+    public String getNextDirection(){
+        return nextDirection;
     }
     
     public boolean isBlocked(){
