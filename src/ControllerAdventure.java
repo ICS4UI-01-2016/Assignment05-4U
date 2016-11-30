@@ -9,6 +9,8 @@
  */
 public class ControllerAdventure {
 
+    
+
     public class Controller {
 
         private GUIAdventure gui;
@@ -22,7 +24,7 @@ public class ControllerAdventure {
             this.location = map.getStartLocation();
             this.direction = map.getStartDirection();
 
-            
+            gui.setController(this);
             // set the starting image
             ScreenAdventure start = map.getLocation(location, direction);
             gui.setImage(start.getImage());
