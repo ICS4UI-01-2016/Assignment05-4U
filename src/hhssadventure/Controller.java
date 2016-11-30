@@ -26,8 +26,8 @@ public class Controller {
         gui.setController(this);
         
         // set the starting image
-        Screen start = map.getScreen(Area, Direction);
-        gui.setImage(start.getImage());
+        Screen current = map.getScreen(Area, Direction);
+        gui.setImage(current.getImage());
     }
     
     public void turnNorth(){

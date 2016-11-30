@@ -27,8 +27,14 @@ public class HHSSAdventure {
         // create the map
         Map map = new Map("images/pics.txt");
         
+        String startArea = map.getStartArea();
+        
+        String startDirection = map.getStartDirection();
+        
+        System.out.println();
+        
         // create the game controller
-        Controller c = new Controller(gui, map, map.getStartArea(), map.getStartDirection());
+        Controller c = new Controller(gui, map, startArea, startDirection);
         
         
     }
