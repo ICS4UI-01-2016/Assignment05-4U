@@ -46,5 +46,25 @@ public class ControllerAdventure {
             
         }
         
+        public void lookEast(){
+            ScreenAdventure current = map.getLocation(location, direction);
+            direction = "East";
+            gui.setImage(current.getImage());
+            
+        }
+        
+        public void lookSouth(){
+            ScreenAdventure current = map.getLocation(location, direction);
+            direction = "South";
+            gui.setImage(current.getImage());
+            
+        }
+        
+        public void lookWest(){
+            ScreenAdventure current = map.getLocation(location, direction);
+            direction = "West";
+            gui.setImage(current.getImage());
+            
+        }
     }
 }
