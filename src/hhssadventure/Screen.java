@@ -47,14 +47,6 @@ public class Screen {
             this.aftrArea = in.next();
             this.aftrDir = in.next();
         }
-
-        System.out.println("area: " + this.areaName);
-        System.out.println("direction: " + this.direction);
-        System.out.println("imageName: " + imageName);
-        System.out.println("image: " + this.image);
-        System.out.println("canMove: " + this.canMove);
-        System.out.println("aftrArea: " + this.aftrArea);
-        System.out.println("aftrDir: " + this.aftrDir);
     }
 
     public String getAreaName() {
