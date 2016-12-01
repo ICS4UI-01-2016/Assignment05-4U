@@ -25,13 +25,21 @@ public class Area {
      */
     public Area(String areaName, Scanner in) {
         
+        //create the arraylist containing all of the screens for the given area
         screens = new ArrayList<>();
         
+        //make the 3 screens for the area
         for(int i = 0; i <= 3; i++){
+            //make a new screen with the area name and the scanner
             Screen s = new Screen(areaName, in);
+            //add the screen to the arrayList
             screens.add(s);
         }        
     }
+    /**
+     * return the arrayList
+     * @return the screens arrayList
+     */
     public ArrayList getScreens(){
         return screens;
     }

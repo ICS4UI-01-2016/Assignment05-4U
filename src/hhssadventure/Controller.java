@@ -11,11 +11,19 @@ package hhssadventure;
  */
 public class Controller {
 
+    //create the private variables
     private GUI gui;
     private Map map;
     private String Area;
     private String Direction;
 
+    /**
+     * the constructor for the controller
+     * @param gui graphics interface unit being used
+     * @param map
+     * @param Area
+     * @param Direction 
+     */
     public Controller(GUI gui, Map map, String Area, String Direction) {
         this.gui = gui;
         this.map = map;
