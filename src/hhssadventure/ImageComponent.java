@@ -18,18 +18,24 @@ import javax.swing.JComponent;
 public class ImageComponent extends JComponent{
     private BufferedImage image;
     
+    /**
+     * construct the image
+     */
     public ImageComponent(){
         image = null;
     }
     
     @Override
     public void paintComponent(Graphics g){
-        if(image != null){
-            g.drawImage(image, 0, 0, 
-                    this.getWidth(), this.getHeight(), null);
+        if(image != null){ //if the image is null
+            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null); //draw the image to the GUI
         }
     }
     
+    /**
+     * paint the image to the screen
+     * @param img the image being painted
+     */
     public void setImage(BufferedImage img){
         image = img;
         repaint(); // so we see the change being made

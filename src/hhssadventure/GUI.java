@@ -23,10 +23,18 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
 
+    /**
+     * set the controller
+     * @param c the controller
+     */
     public void setController(Controller c) {
         controller = c;
     }
 
+    /**
+     * set the image
+     * @param img the image
+     */
     public void setImage(BufferedImage img) {
         // the image panel sets its image
         imageComponent1.setImage(img);
@@ -128,23 +136,23 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void northButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_northButtonActionPerformed
-        controller.turnNorth();
+        controller.turnNorth(); //turn north
     }//GEN-LAST:event_northButtonActionPerformed
 
     private void westButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_westButtonActionPerformed
-        controller.turnWest();
+        controller.turnWest(); //turn west
     }//GEN-LAST:event_westButtonActionPerformed
 
     private void eastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eastButtonActionPerformed
-        controller.turnEast();
+        controller.turnEast(); //turn east
     }//GEN-LAST:event_eastButtonActionPerformed
 
     private void southButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_southButtonActionPerformed
-        controller.turnSouth();
+        controller.turnSouth(); //turn south
     }//GEN-LAST:event_southButtonActionPerformed
 
     private void AdvanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdvanceActionPerformed
-        controller.moveForwards();
+        controller.moveForwards(); //move forwards
     }//GEN-LAST:event_AdvanceActionPerformed
 
     /**
