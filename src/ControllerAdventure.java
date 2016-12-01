@@ -9,22 +9,18 @@
  */
 public class ControllerAdventure {
 
-    
-
-    public class Controller {
-
         private GUIAdventure gui;
         private MapAdventure map;
         private String location;
         private String direction;
 
-        public Controller(GUIAdventure gui, MapAdventure map, String location, String direction) {
+        public ControllerAdventure(GUIAdventure gui, MapAdventure map, String location, String direction) {
             this.gui = gui;
             this.map = map;
             this.location = map.getStartLocation();
             this.direction = map.getStartDirection();
 
-            gui.setController(this);
+            gui.setController(this); 
             // set the starting image
             ScreenAdventure start = map.getLocation(location, direction);
             gui.setImage(start.getImage());
@@ -69,4 +65,4 @@ public class ControllerAdventure {
             
         }
     }
-}
+

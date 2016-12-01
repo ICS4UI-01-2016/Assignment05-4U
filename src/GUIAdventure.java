@@ -116,7 +116,7 @@ public class GUIAdventure extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NorthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorthButtonActionPerformed
-        controller.lookNorth();
+        
     }//GEN-LAST:event_NorthButtonActionPerformed
 
     private void EastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EastButtonActionPerformed
