@@ -116,23 +116,23 @@ public class GUIAdventure extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NorthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorthButtonActionPerformed
-        
+        controller.lookNorth();
     }//GEN-LAST:event_NorthButtonActionPerformed
 
     private void EastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EastButtonActionPerformed
-        // TODO add your handling code here:
+        controller.lookEast();
     }//GEN-LAST:event_EastButtonActionPerformed
 
     private void SouthButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthButtonActionPerformed
-        // TODO add your handling code here:
+        controller.lookSouth();
     }//GEN-LAST:event_SouthButtonActionPerformed
 
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
-        // TODO add your handling code here:
+        controller.moveForward();
     }//GEN-LAST:event_ForwardButtonActionPerformed
 
     private void WestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WestButtonActionPerformed
-        // TODO add your handling code here:
+        controller.lookWest();
     }//GEN-LAST:event_WestButtonActionPerformed
 
     
