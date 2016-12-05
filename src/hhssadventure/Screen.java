@@ -1,6 +1,5 @@
 package hhssadventure;
 
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,6 +17,7 @@ import javax.imageio.ImageIO;
  * @author watsk8668
  */
 public class Screen {
+
     // instance variables
     //Connection screens
     private Screen northConnect;
@@ -52,210 +52,226 @@ public class Screen {
         name = input.next();
         // move to next line
         input.nextLine();
-        
-        // skip direction
-        input.next();
-        // scan in the north image name
-        northImageName = input.next();
-        System.out.println(northImageName);
-        // load the north image file
-        try {
-            northImage = ImageIO.read(new File("images/" + northImageName));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        // scan in whether you can move North
-        if(input.next().equals("false")){
-            //store connect name
-            northConnectName = input.next();
-            //store connect direction
-            northMoveDir = input.next();
-        }else{
-            northConnectName = null;
-        }
-        // move to next line
-        input.nextLine(); 
-        // skip direction
-        input.next();
-        // scan in the east image name
-        this.eastImageName = input.next();
-        System.out.println(eastImageName);
-        // load the east image file
-        try {
-            this.eastImage = ImageIO.read(new File("images/" + this.eastImageName));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // scan in whether you can move forwards
-        if(input.next().equals("false")){
-            //store connect name
-            eastConnectName = input.next();
-            //store move dir
-            eastMoveDir = input.next();
-        }else{
-            eastConnectName = null;
-        }
-        // move to next line
-        input.nextLine(); 
 
-        // skip direction
-        input.next();
-        // scan in the south image name
-        southImageName = input.next();
-        System.out.println(southImageName);
-        // load the east image file
-        try {
-            southImage = ImageIO.read(new File("images/" + southImageName));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // scan in whether you can move forwards
-        if(input.next().equals("false")){
-            //store connect name
-            southConnectName = input.next();
-            //store move direction
-            southMoveDir = input.next();
-        }else{
-            southConnectName = null;
-        }
-        // move to next line
-        input.nextLine(); 
+        while (northImageName == null || eastImageName == null || southImageName == null || westImageName == null) {
+            if (input.next().equals("N")) {
+                // skip direction
+                input.next();
+                // scan in the north image name
+                northImageName = input.next();
+                System.out.println(northImageName);
+                // load the north image file
+                try {
+                    northImage = ImageIO.read(new File("images/" + northImageName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-        // skip direction
-        input.next();
-        // scan in the west image name
-        westImageName = input.next();
-        System.out.println(westImageName);
-        // load the east image file
-        try {
-            westImage = ImageIO.read(new File("images/" + westImageName));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // scan in whether you can move forwards
-        if(input.next().equals("false")){
-            //store connect name
-            westConnectName = input.next();
-            //store move direction
-            westMoveDir = input.next();
-        }else{
-            westConnectName = null;
+                // scan in whether you can move North
+                if (input.next().equals("false")) {
+                    //store connect name
+                    northConnectName = input.next();
+                    //store connect direction
+                    northMoveDir = input.next();
+                } else {
+                    northConnectName = null;
+                }
+            }
+            // move to next line
+            input.nextLine();
+            if (input.next().equals("E")) {
+                // skip direction
+                input.next();
+                // scan in the east image name
+                this.eastImageName = input.next();
+                System.out.println(eastImageName);
+                // load the east image file
+                try {
+                    this.eastImage = ImageIO.read(new File("images/" + this.eastImageName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // scan in whether you can move forwards
+                if (input.next().equals("false")) {
+                    //store connect name
+                    eastConnectName = input.next();
+                    //store move dir
+                    eastMoveDir = input.next();
+                } else {
+                    eastConnectName = null;
+                }
+            }
+            // move to next line
+            input.nextLine();
+            if (input.next().equals("S")) {
+                // skip direction
+                input.next();
+                // scan in the south image name
+                southImageName = input.next();
+                System.out.println(southImageName);
+                // load the east image file
+                try {
+                    southImage = ImageIO.read(new File("images/" + southImageName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // scan in whether you can move forwards
+                if (input.next().equals("false")) {
+                    //store connect name
+                    southConnectName = input.next();
+                    //store move direction
+                    southMoveDir = input.next();
+                } else {
+                    southConnectName = null;
+                }
+            }
+            // move to next line
+            input.nextLine();
+            if (input.next().equals("W")) {
+                // skip direction
+                input.next();
+                // scan in the west image name
+                westImageName = input.next();
+                System.out.println(westImageName);
+                // load the east image file
+                try {
+                    westImage = ImageIO.read(new File("images/" + westImageName));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // scan in whether you can move forwards
+                if (input.next().equals("false")) {
+                    //store connect name
+                    westConnectName = input.next();
+                    //store move direction
+                    westMoveDir = input.next();
+                } else {
+                    westConnectName = null;
+                }
+            }
         }
         // move to next line
-        
-            input.nextLine(); 
-        
-        
+        input.nextLine();
+
         // set all to null - so no error codes for now
         northConnect = null;
         eastConnect = null;
         southConnect = null;
         westConnect = null;
-        
+
     }
 
     /**
      * Method to get whether you can move forward
-     * @return true if you can move forward, false if you 
+     *
+     * @return true if you can move forward, false if you
      */
-    public boolean canGoForward(){
+    public boolean canGoForward() {
         return false;
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
-    public String getName(){
+    public String getName() {
         return this.name;
     }
-    
+
     /**
      * Get the north connection name
+     *
      * @return the north connection name
      */
-    public String getNorthConnectName(){
+    public String getNorthConnectName() {
         return this.northConnectName;
     }
-    
+
     /**
      * Get the east connection name
+     *
      * @return the east connection name
      */
-    public String getEastConnectName(){
+    public String getEastConnectName() {
         return this.eastConnectName;
     }
-    
+
     /**
      * Get the south connection name
+     *
      * @return the south connection name
      */
-    public String getSouthConnectName(){
+    public String getSouthConnectName() {
         return this.southConnectName;
     }
-    
+
     /**
      * Get the west connection name
+     *
      * @return the west connection name
      */
-    public String getWestConnectName(){
+    public String getWestConnectName() {
         return this.westConnectName;
     }
-    
+
     /**
-     * Get the north connection 
-     * @return the north connection 
+     * Get the north connection
+     *
+     * @return the north connection
      */
-    public Screen getNorthConnect(){
-        
+    public Screen getNorthConnect() {
+
         return this.northConnect;
     }
-    
+
     /**
-     * Get the east connection 
-     * @return the east connection 
+     * Get the east connection
+     *
+     * @return the east connection
      */
-    public Screen getEastConnect(){
+    public Screen getEastConnect() {
         return this.eastConnect;
     }
-    
+
     /**
-     * Get the south connection 
-     * @return the south connection 
+     * Get the south connection
+     *
+     * @return the south connection
      */
-    public Screen getSouthConnect(){
+    public Screen getSouthConnect() {
         return this.southConnect;
     }
-    
+
     /**
-     * Get the west connection 
-     * @return the west connection 
+     * Get the west connection
+     *
+     * @return the west connection
      */
-    public Screen getWestConnect(){
+    public Screen getWestConnect() {
         return this.westConnect;
     }
-    
+
     /**
      * Get the north direction
+     *
      * @return the north direction
      */
-    public String getNorthMoveDir(){
+    public String getNorthMoveDir() {
         return this.northMoveDir;
     }
-    
-    public String getEastMoveDir(){
+
+    public String getEastMoveDir() {
         return this.eastMoveDir;
     }
-    
-    public String getSouthMoveDir(){
+
+    public String getSouthMoveDir() {
         return this.southMoveDir;
     }
-    
-    public String getWestMoveDir(){
+
+    public String getWestMoveDir() {
         return this.westMoveDir;
     }
-    
+
     /**
      * Connect to the north screen
      *
@@ -327,6 +343,7 @@ public class Screen {
     public BufferedImage getWestImage() {
         return westImage;
     }
+
     public static void main(String[] args) {
         Scanner fileCreate = null;
         try {

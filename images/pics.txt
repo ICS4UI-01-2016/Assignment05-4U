@@ -26,10 +26,10 @@ E IMG_0064.JPG false Math1 E
 S IMG_0065.JPG true
 W IMG_0066.JPG false Math3 W
 Math3
+W IMG_0070.JPG true
 N IMG_0067.JPG true
 E IMG_0068.JPG false Math2 E
 S IMG_0069.JPG false Eng1 N
-W IMG_0070.JPG true
 Eng1
 N IMG_0071.JPG true
 E IMG_0072.JPG false Eng2 E
