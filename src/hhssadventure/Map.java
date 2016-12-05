@@ -191,7 +191,10 @@ public class Map {
                 break;
         }
     }
-    
+    /**
+     * 
+     * @return the image based on the direction
+     */
     public BufferedImage getImage(){
         switch(this.direction){
             case "N":
