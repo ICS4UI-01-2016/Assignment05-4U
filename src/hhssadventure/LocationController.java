@@ -42,6 +42,8 @@ public class LocationController {
         }
     }
     
+    // MAKE THE NEXT AREA FED IN THE DIRECTION EQUAL TO THE DIRECTION PRESSED?
+    
     public void goEast() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
