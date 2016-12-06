@@ -63,7 +63,6 @@ public class Screen {
             if (in.equals("N")) {
                 // scan in the north image name
                 northImageName = input.next();
-                System.out.println(northImageName);
                 // load the north image file
                 try {
                     northImage = ImageIO.read(new File("images/" + northImageName));
@@ -89,7 +88,6 @@ public class Screen {
             if (in.equals("E")) {
                 // scan in the east image name
                 this.eastImageName = input.next();
-                System.out.println(eastImageName);
                 // load the east image file
                 try {
                     this.eastImage = ImageIO.read(new File("images/" + this.eastImageName));
@@ -114,7 +112,6 @@ public class Screen {
             if (in.equals("S")) {
                 // scan in the south image name
                 southImageName = input.next();
-                System.out.println(southImageName);
                 // load the east image file
                 try {
                     southImage = ImageIO.read(new File("images/" + southImageName));
@@ -140,7 +137,6 @@ public class Screen {
             if (in.equals("W")) {
                 // scan in the west image name
                 westImageName = input.next();
-                System.out.println(westImageName);
                 // load the east image file
                 try {
                     westImage = ImageIO.read(new File("images/" + westImageName));

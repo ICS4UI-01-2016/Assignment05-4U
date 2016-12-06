@@ -39,7 +39,6 @@ public class Map {
             while(fileCreate.hasNext()){
                 //make a new screen
                 Screen s = new Screen(fileCreate);
-                System.out.println(s.getName());
                 //add to list
                 screens.add(s);
             }
@@ -47,11 +46,9 @@ public class Map {
             fileCreate.close();
             //connect all of the nodes
             for(int i = 0; i < screens.size(); i++){
-                System.out.println(screens.get(i).getName());
                 //connect north
                 if(screens.get(i).getNorthConnectName() != null){
                     for(int ii = 0;screens.get(i).getNorthConnect()==null && ii != screens.size();ii++){
-                        System.out.println(ii);
                         if(screens.get(ii).getName().equals(screens.get(i).getNorthConnectName())){
                             screens.get(i).setNorthConnect(screens.get(ii));
                         }
@@ -60,7 +57,6 @@ public class Map {
                 //connect east
                 if(screens.get(i).getEastConnectName() != null){
                     for(int ii = 0;screens.get(i).getEastConnect()==null && ii != screens.size();ii++){
-                        System.out.println(ii);
                         if(screens.get(ii).getName().equals(screens.get(i).getEastConnectName())){
                             screens.get(i).setEastConnect(screens.get(ii));
                         }
@@ -69,7 +65,6 @@ public class Map {
                 //connect south
                 if(screens.get(i).getSouthConnectName() != null){
                     for(int ii = 0;screens.get(i).getSouthConnect()==null && ii != screens.size();ii++){
-                        System.out.println(ii);
                         if(screens.get(ii).getName().equals(screens.get(i).getSouthConnectName())){
                             screens.get(i).setSouthConnect(screens.get(ii));
                         }
@@ -78,7 +73,6 @@ public class Map {
                 //connect west
                 if(screens.get(i).getWestConnectName() != null){
                     for(int ii = 0;screens.get(i).getWestConnect()==null && ii != screens.size();ii++){
-                        System.out.println(ii);
                        if(screens.get(ii).getName().equals(screens.get(i).getWestConnectName())){
                             screens.get(i).setWestConnect(screens.get(ii));
                         }
