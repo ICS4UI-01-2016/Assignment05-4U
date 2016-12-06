@@ -46,17 +46,24 @@ public class Screen {
     private String westMoveDir;
     //name of this screen
     private String name;
-
+    
+    private boolean checkImgs(){
+        if(northImageName == null || eastImageName == null || southImageName == null || westImageName == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     public Screen(Scanner input) {
         // scan in the name of the location
         name = input.next();
         // move to next line
         input.nextLine();
-
-        while (northImageName == null || eastImageName == null || southImageName == null || westImageName == null) {
-            if (input.next().equals("N")) {
-                // skip direction
-                input.next();
+            String in = input.next();
+        while (checkImgs()){
+            
+            if (in.equals("N")) {
                 // scan in the north image name
                 northImageName = input.next();
                 System.out.println(northImageName);
@@ -76,12 +83,13 @@ public class Screen {
                 } else {
                     northConnectName = null;
                 }
+                // move to next line
+                input.nextLine();
+                if(checkImgs()){
+                    in = input.next();
+                }
             }
-            // move to next line
-            input.nextLine();
-            if (input.next().equals("E")) {
-                // skip direction
-                input.next();
+            if (in.equals("E")) {
                 // scan in the east image name
                 this.eastImageName = input.next();
                 System.out.println(eastImageName);
@@ -100,12 +108,13 @@ public class Screen {
                 } else {
                     eastConnectName = null;
                 }
+                // move to next line
+                input.nextLine();
+                if(checkImgs()){
+                    in = input.next();
+                }
             }
-            // move to next line
-            input.nextLine();
-            if (input.next().equals("S")) {
-                // skip direction
-                input.next();
+            if (in.equals("S")) {
                 // scan in the south image name
                 southImageName = input.next();
                 System.out.println(southImageName);
@@ -124,12 +133,14 @@ public class Screen {
                 } else {
                     southConnectName = null;
                 }
+                // move to next line
+                input.nextLine();
+                if(checkImgs()){
+                    in = input.next();
+                }
             }
-            // move to next line
-            input.nextLine();
-            if (input.next().equals("W")) {
-                // skip direction
-                input.next();
+
+            if (in.equals("W")) {
                 // scan in the west image name
                 westImageName = input.next();
                 System.out.println(westImageName);
@@ -148,10 +159,14 @@ public class Screen {
                 } else {
                     westConnectName = null;
                 }
+                // move to next line
+                input.nextLine();
+                if(checkImgs()){
+                    in = input.next();
+                }
             }
         }
-        // move to next line
-        input.nextLine();
+
 
         // set all to null - so no error codes for now
         northConnect = null;
@@ -342,17 +357,5 @@ public class Screen {
      */
     public BufferedImage getWestImage() {
         return westImage;
-    }
-
-    public static void main(String[] args) {
-        Scanner fileCreate = null;
-        try {
-            fileCreate = new Scanner(new File("images/pics.txt"));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        fileCreate.nextLine();
-        fileCreate.nextLine();
-        Screen s = new Screen(fileCreate);
     }
 }
