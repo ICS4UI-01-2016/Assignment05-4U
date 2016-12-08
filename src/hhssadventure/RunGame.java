@@ -24,7 +24,7 @@ public class RunGame {
         //create map
         Map map = new Map("images/pics.txt");
 
-        // starting position -- how to input?
+        // starting position
         LocationController c = new LocationController(gui, map, map.getIntArea(), map.getIntDirection());
     }
 }
