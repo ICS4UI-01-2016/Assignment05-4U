@@ -9,8 +9,7 @@ package hhssadventure;
  * @author halll7908
  */
 public class LocationController {
-    // scan in the 4 possible directions of where you could be facing for that spot
-
+    
     private GUI gui;
     private Map map;
     // area name
@@ -31,10 +30,11 @@ public class LocationController {
         gui.setImage(start.getImage());
     }
 
+    // MAKE THE NEXT AREA FED IN THE DIRECTION EQUAL TO THE DIRECTION PRESSED?
     public void goNorth() {
-        // get the screen we are on right now
+        // get the screen we are on right now - Do we need the current screen variables???
         Screen current = map.getScreen(area, direction);
-        if (direction.equals("N")) {
+        if (map.getNextDirection().equals("N")) {
             // get the new screen
             Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
             // set the image
@@ -42,12 +42,11 @@ public class LocationController {
         }
     }
     
-    // MAKE THE NEXT AREA FED IN THE DIRECTION EQUAL TO THE DIRECTION PRESSED?
     
     public void goEast() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-            if (direction.equals("E")) {
+            if (map.getNextDirection().equals("E")) {
             // get the new screen
             Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
             // set the image
@@ -58,7 +57,7 @@ public class LocationController {
     public void goSouth() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-        if (direction.equals("S")) {
+        if (map.getNextDirection().equals("S")) {
             // get the new screen
             Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
             // set the image
@@ -69,7 +68,7 @@ public class LocationController {
     public void goWest() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-        if (direction.equals("W")) {
+        if (map.getNextDirection().equals("W")) {
             // get the new screen
             Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
             // set the image
