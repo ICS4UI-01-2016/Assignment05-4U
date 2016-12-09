@@ -34,7 +34,7 @@ public class LocationController {
     public void goNorth() {
         // get the screen we are on right now - Do we need the current screen variables???
         Screen current = map.getScreen(area, direction);
-        if (map.getNextDirection().equals("N")) {
+        if (map.getNextDirection().equals(direction)) {
             // get the new screen
             Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
             // set the image

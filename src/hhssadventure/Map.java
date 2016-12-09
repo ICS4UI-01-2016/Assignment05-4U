@@ -43,7 +43,7 @@ public class Map {
                 
                 for (int i = 0; i < 4; i++) {
                     String direction = input.next();
-                    // print out what i gottt
+                    // print out what i got
                     System.out.println("Direction: " + direction);
                     String imageName = input.next();
                     // testing print out
