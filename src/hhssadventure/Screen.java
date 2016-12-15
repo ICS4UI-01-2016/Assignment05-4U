@@ -51,7 +51,7 @@ public class Screen {
 
     // automatically not blocked
     public boolean isBlocked() {
-        return false;
+        return isBlocked;
     }
 
     public BufferedImage getImage() {
@@ -80,6 +80,14 @@ public class Screen {
     
     public boolean canGoWest(){
         return west;
+    }
+    
+    public String getNextDirection(){
+        return nextDirection;
+    }
+    
+    public String getNextArea(){
+        return nextArea;
     }
     
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ package hhssadventure;
  * @author halll7908
  */
 public class LocationController {
-    
+
     private GUI gui;
     private Map map;
     // area name
@@ -30,47 +30,75 @@ public class LocationController {
         gui.setImage(start.getImage());
     }
 
-    // MAKE THE NEXT AREA FED IN THE DIRECTION EQUAL TO THE DIRECTION PRESSED?
     public void goNorth() {
-        // get the screen we are on right now - Do we need the current screen variables???
-        Screen current = map.getScreen(area, direction);
-        if (map.getNextDirection().equals(direction)) {
+        if (direction.equals("W")) {
+            moveForward();
+        } else {
+            // get the screen we are on right now
+            Screen current = map.getScreen(area, "W");
+
             // get the new screen
-            Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
+            Screen newScreen = map.getScreen(area, "W");
+            direction = "W";
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
-    
-    
+
     public void goEast() {
-        // get the screen we are on right now
-        Screen current = map.getScreen(area, direction);
-            if (map.getNextDirection().equals("E")) {
+        if (direction.equals("E")) {
+            moveForward();
+        } else {
+            // get the screen we are on right now
+            Screen current = map.getScreen(area, "E");
+
             // get the new screen
-            Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
+            Screen newScreen = map.getScreen(area, "E");
+            direction = "E";
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
-    
+
     public void goSouth() {
-        // get the screen we are on right now
-        Screen current = map.getScreen(area, direction);
-        if (map.getNextDirection().equals("S")) {
+        if (direction.equals("S")) {
+            moveForward();
+        } else {
+            // get the screen we are on right now
+            Screen current = map.getScreen(area, "S");
+
             // get the new screen
-            Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
+            Screen newScreen = map.getScreen(area, "S");
+            direction = "S";
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
-    
+
     public void goWest() {
+        if (direction.equals("W")) {
+            moveForward();
+        } else {
+            // get the screen we are on right now
+            Screen current = map.getScreen(area, "W");
+
+            // get the new screen
+            Screen newScreen = map.getScreen(area, "W");
+            direction = "W";
+            // set the image
+            gui.setImage(newScreen.getImage());
+        }
+    }
+
+    private void moveForward() {
         // get the screen we are on right now
         Screen current = map.getScreen(area, direction);
-        if (map.getNextDirection().equals("W")) {
+
+        if (!current.isBlocked()) {
             // get the new screen
-            Screen newScreen = map.getScreen(map.getNextArea(), map.getNextDirection());
+            Screen newScreen = map.getScreen(current.getNextArea(), current.getNextDirection());
+            area = current.getNextArea();
+            direction = current.getNextDirection();
             // set the image
             gui.setImage(newScreen.getImage());
         }

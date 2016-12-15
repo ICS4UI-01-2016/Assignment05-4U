@@ -18,13 +18,12 @@ import java.util.logging.Logger;
 public class Map {
 
     private ArrayList<Screen> screens;
-
     private String nextArea;
     private String nextDirection;
     private String intArea;
     private String intDirection;
     private boolean isBlocked;
-    
+
     public Map(String fileName) {
         //initialize the list
         screens = new ArrayList<>();
@@ -40,7 +39,7 @@ public class Map {
             while (input.hasNext()) {
                 String area = input.nextLine();
                 System.out.println("AREA: " + area);
-                
+
                 for (int i = 0; i < 4; i++) {
                     String direction = input.next();
                     // print out what i got
@@ -69,9 +68,9 @@ public class Map {
             Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public Screen getScreen(String area, String direction) {
-        
+
         // go through each screen
         for (Screen s : screens) {
             // see if the row and col match
@@ -82,28 +81,28 @@ public class Map {
         }
         // no screen found
         return null;
-    }    
-    
-    public String getIntArea(){
+    }
+
+    public String getIntArea() {
         return intArea;
     }
-    
-    public String getIntDirection(){
+
+    public String getIntDirection() {
         return intDirection;
     }
-    
-    public String getNextArea(){
+
+    public String getNextArea() {
         return nextArea;
     }
-    
-    public String getNextDirection(){
+
+    public String getNextDirection() {
         return nextDirection;
     }
-    
-    public boolean isBlocked(){
+
+    public boolean isBlocked() {
         return isBlocked;
     }
+
     public static void main(String[] args) {
-        
     }
 }
