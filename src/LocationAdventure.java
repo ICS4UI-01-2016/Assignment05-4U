@@ -26,10 +26,8 @@ public class LocationAdventure {
         //initialize array, since there are 4 lines, and 4 directions
 
         // Having directions coorelate to numbers make orientation much easier, each slot contains a corresponding direction
-        directions[0] = "north";
-        directions[1] = "east";
-        directions[2] = "south";
-        directions[3] = "west";
+        directions = new String[]{"N", "E", "S", "W"};
+        locationName = input.next();
         
         screens = new ArrayList<>();
         
@@ -41,7 +39,7 @@ public class LocationAdventure {
     }
     
     public String getLocationName(){
-        return locationName;
+        return this.locationName;
     }
     
     public ScreenAdventure getScreen(String direction){

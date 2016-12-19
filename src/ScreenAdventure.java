@@ -29,13 +29,14 @@ public class ScreenAdventure {
     public ScreenAdventure(Scanner input) {
        direction = input.next();
        imageName = input.next();
-       boolean check = input.nextBoolean();
+       String check = input.next();
        
 
-        if (check == false) {
+        if (check.equals("false")) { 
             clear = false;
             newLocation = input.next();
             newDirection = input.nextLine();
+            input.nextLine();
         } else {
             clear = true;
             input.nextLine();
@@ -56,27 +57,27 @@ public class ScreenAdventure {
     
     
     public String getDirection() {
-        return direction;
+        return this.direction;
     }
 
    
     public String getImageName() {
-        return imageName;
+        return this.imageName;
     }
 
     
     public String getNewLocation() {
-        return newLocation;
+        return this.newLocation;
     }
 
     public String getNewDirecton(){
-        return newDirection;
+        return this.newDirection;
     }
     
-    public boolean clear(){
-        return clear;
+    public boolean clear(String direction){
+        return this.clear;
     }
-    
+      
     
     public BufferedImage getImage() {
         return image;
