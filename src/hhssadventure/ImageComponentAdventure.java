@@ -1,3 +1,5 @@
+package hhssadventure;
+
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

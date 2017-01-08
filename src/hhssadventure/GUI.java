@@ -1,5 +1,7 @@
+package hhssadventure;
 
 import java.awt.image.BufferedImage;
+
 
 /*
  * To change this template, choose Tools | Templates
@@ -10,22 +12,23 @@ import java.awt.image.BufferedImage;
  *
  * @author guanv6321
  */
-public class GUIAdventure extends javax.swing.JFrame {
-    private ControllerAdventure controller;
+public class GUI extends javax.swing.JFrame {
+    private Controller controller;
+    private ImageComponentAdventure imagePanel;
     
     /**
      * Creates new form GUIAdventure
      */
-    public GUIAdventure() {
+    public GUI() {
         initComponents();
     }
 
-    public void setController(ControllerAdventure c){
+    public void setController(Controller c){
         controller = c;
     }     
    
     public void setImage(BufferedImage img){
-       imageComponentAdventure1.setImage(img); 
+       imageComponent1.setImage(img); 
     }
     
     @SuppressWarnings("unchecked")
@@ -37,7 +40,7 @@ public class GUIAdventure extends javax.swing.JFrame {
         WestButton = new javax.swing.JButton();
         SouthButton = new javax.swing.JButton();
         ForwardButton = new javax.swing.JButton();
-        imageComponentAdventure1 = new ImageComponentAdventure();
+        imageComponent1 = new ImageComponentAdventure();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,13 +100,13 @@ public class GUIAdventure extends javax.swing.JFrame {
                                 .addComponent(EastButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(imageComponentAdventure1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(imageComponent1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(imageComponentAdventure1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(NorthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,20 +162,21 @@ public class GUIAdventure extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIAdventure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIAdventure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIAdventure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIAdventure.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIAdventure().setVisible(true);
+                new GUI().setVisible(true);
             }
         });
     }
@@ -182,6 +186,6 @@ public class GUIAdventure extends javax.swing.JFrame {
     private javax.swing.JButton NorthButton;
     private javax.swing.JButton SouthButton;
     private javax.swing.JButton WestButton;
-    private ImageComponentAdventure imageComponentAdventure1;
+    private ImageComponentAdventure imageComponent1;
     // End of variables declaration//GEN-END:variables
 }
