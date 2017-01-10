@@ -57,7 +57,7 @@ public class Map {
         for(Location loc: locations){
             this.screens = loc.getScreens();
             for(Screen scrn: screens){
-                if(scrn.getNewLocation().equalsIgnoreCase(location) && scrn.getNewDirecton().equals(direction)){
+                if(scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)){
                     return scrn;
                 }
             }
