@@ -31,7 +31,7 @@ public class Controller {
 
     public void moveForward() {
         Screen current = map.getScreen(location, direction);
-        if (current.clear(direction)) {
+        if (current.clear()) {
             this.location = current.getNewLocation();
             this.direction = current.getNewDirecton();
             Screen newScreen = map.getScreen(location, direction);

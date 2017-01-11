@@ -47,9 +47,9 @@ public class Screen {
             this.clear = true;
         }
 
-        if (clear == true) {
-            this.newDirection = input.next();
+        if (this.clear == false) {
             this.newLocation = input.next();
+            this.newDirection = input.next();         
         }
 
     }
@@ -66,7 +66,7 @@ public class Screen {
         return this.image;
     }
 
-    public boolean clear(String direction) {
+    public boolean clear() {
         return this.clear;
     }
 
