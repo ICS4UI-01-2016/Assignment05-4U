@@ -28,7 +28,7 @@ public class GUI extends javax.swing.JFrame {
     }     
    
     public void setImage(BufferedImage img){
-       imageComponent1.setImage(img); 
+       imageComponentAdventure1.setImage(img); 
     }
     
     @SuppressWarnings("unchecked")
@@ -40,7 +40,7 @@ public class GUI extends javax.swing.JFrame {
         WestButton = new javax.swing.JButton();
         SouthButton = new javax.swing.JButton();
         ForwardButton = new javax.swing.JButton();
-        imageComponent1 = new ImageComponentAdventure();
+        imageComponentAdventure1 = new hhssadventure.ImageComponentAdventure();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,14 +99,15 @@ public class GUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(EastButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(imageComponent1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addGap(77, 77, 77)
+                        .addComponent(imageComponentAdventure1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
+                .addComponent(imageComponentAdventure1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(NorthButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -186,6 +187,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton NorthButton;
     private javax.swing.JButton SouthButton;
     private javax.swing.JButton WestButton;
-    private ImageComponentAdventure imageComponent1;
+    private hhssadventure.ImageComponentAdventure imageComponentAdventure1;
     // End of variables declaration//GEN-END:variables
 }
