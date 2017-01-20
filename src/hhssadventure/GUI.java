@@ -14,7 +14,7 @@ import java.awt.image.BufferedImage;
  */
 public class GUI extends javax.swing.JFrame {
     private Controller controller;
-    private ImageComponentAdventure imagePanel;
+    
     
     /**
      * Creates new form GUIAdventure
