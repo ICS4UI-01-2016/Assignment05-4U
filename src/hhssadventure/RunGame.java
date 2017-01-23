@@ -9,13 +9,22 @@ package hhssadventure;
  *
  * @author lamon
  */
-public class HHSSAdventure {
+public class RunGame {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // create GUI (interface
+        GUI gui = new GUI();
+
+        //show the interface
+        gui.setVisible(true);
+
+        //create map
+        Map map = new Map("images/pics.txt");
+
+        // starting position
+        LocationController c = new LocationController(gui, map, map.getIntArea(), map.getIntDirection());
     }
-    
 }
