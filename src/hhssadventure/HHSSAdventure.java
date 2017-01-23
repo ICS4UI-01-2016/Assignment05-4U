@@ -15,7 +15,17 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // create the map
+        Map map = new Map("images/pics.txt");
+        
+        // create the interface
+        GUI gui = new GUI();
+        gui.setMap(map);
+        
+        // show the interface
+        gui.setVisible(true);
+        
+        
     }
     
 }
