@@ -23,7 +23,7 @@ public class Location {
         //initialize array, since there are 4 lines, and 4 directions
         screens = new ArrayList<>();
              
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i <= 3; i++) {
             Screen scrn = new Screen(locationName, input);          
             screens.add(scrn);
         }

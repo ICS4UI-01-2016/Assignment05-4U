@@ -46,11 +46,11 @@ public class Map {
     }
     
       public String getStartLocation(){
-        return startLocation;
+        return this.startLocation;
     }
     
     public String getStartDirection(){
-        return startDirection;
+        return this.startDirection;
     }
     
     public Screen getScreen(String location, String direction){

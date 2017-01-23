@@ -11,17 +11,27 @@ package hhssadventure;
  */
 public class Controller {
 
+    // instance variables for gui, map, location, direction
     private GUI gui;
     private Map map;
     private String location;
     private String direction;
     
+    /**
+     * constructor for controller
+     * @param gui
+     * @param map
+     * @param location
+     * @param direction 
+     */
     public Controller(GUI gui, Map map, String location, String direction) {
+        // initialize variables
         this.gui = gui;
         this.map = map;
         this.location = map.getStartLocation();
         this.direction = map.getStartDirection();
 
+        // make sure gui can talk to you
         gui.setController(this);
         // set the starting image
         Screen current = map.getScreen(location, direction);

@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,14 +15,13 @@ import javax.imageio.ImageIO;
  * @author guanv6321
  */
 public class Screen {
-
-    private BufferedImage image;
+    private String locationName;
     private String direction;
+    private BufferedImage image;
     private boolean clear;
     private String newLocation;
-    private String locationName;
     private String newDirection;
-
+    
     /**
      * Using a scanner to create a new screen
      *
@@ -30,15 +30,15 @@ public class Screen {
      */
     public Screen(String locationName, Scanner input) {
         // checks the direction and location
-        this.direction = input.next();
         this.locationName = locationName;
+        this.direction = input.next();      
         String imageName = input.next();
 
         // load the image file
         try {
             this.image = ImageIO.read(new File("images/" + imageName));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
 
         }
 
@@ -52,7 +52,7 @@ public class Screen {
         }
 
         // if path is not clear
-        if (this.clear == false) {
+        if (this.clear) {
             // moves forward
             this.newLocation = input.next();
             this.newDirection = input.next();         
@@ -91,7 +91,7 @@ public class Screen {
     public boolean clear() {
         return this.clear;
     }
-
+    
     /**
      * gets the new location
      * @return the new location
