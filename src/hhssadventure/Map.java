@@ -1,6 +1,5 @@
 package hhssadventure;
 
-
 import hhssadventure.Location;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,11 +16,12 @@ import java.util.Scanner;
  */
 public class Map {
 
+    // instance variables
     private ArrayList<Location> locations;
     private ArrayList<Screen> screens;
     private String startLocation;
     private String startDirection;
-    
+
     public Map(String fileName) {
 
         locations = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Map {
             Scanner input = new Scanner(new File(fileName));
             this.startLocation = input.next();
             this.startDirection = input.next();
-            
+
             // Make screens
             // loop to the end of the file
             while (input.hasNext()) {
@@ -40,29 +40,36 @@ public class Map {
                 locations.add(loc);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace(); 
+            ex.printStackTrace();
         }
 
     }
-    
-      public String getStartLocation(){
+
+    /**
+     * gets starting location
+     * @return starting location
+     */
+    public String getStartLocation() {
         return this.startLocation;
     }
-    
-    public String getStartDirection(){
+
+    /**
+     * gets starting direction
+     * @return starting direction
+     */
+    public String getStartDirection() {
         return this.startDirection;
     }
-    
-    public Screen getScreen(String location, String direction){
-        for(Location loc: locations){
+
+    public Screen getScreen(String location, String direction) {
+        for (Location loc : locations) {
             this.screens = loc.getScreens();
-            for(Screen scrn: screens){
-                if(scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)){
+            for (Screen scrn : screens) {
+                if (scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)) {
                     return scrn;
                 }
             }
         }
         return null;
     }
-    
 }

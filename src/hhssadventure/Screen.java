@@ -15,6 +15,8 @@ import javax.imageio.ImageIO;
  * @author guanv6321
  */
 public class Screen {
+    
+    // instance variables
     private String locationName;
     private String direction;
     private BufferedImage image;
@@ -52,7 +54,7 @@ public class Screen {
         }
 
         // if path is not clear
-        if (this.clear) {
+        if (this.clear == false) {
             // moves forward
             this.newLocation = input.next();
             this.newDirection = input.next();         
