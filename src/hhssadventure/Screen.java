@@ -27,7 +27,7 @@ public class Screen {
     /**
      * Using a scanner to create a new screen
      *
-     * @param locationName
+     * @param locationName stores location name
      * @param input A scanner containing screen info
      */
     public Screen(String locationName, Scanner input) {
@@ -54,7 +54,7 @@ public class Screen {
         }
 
         // if path is not clear
-        if (this.clear == false) {
+        if (this.clear) {
             // moves forward
             this.newLocation = input.next();
             this.newDirection = input.next();         
