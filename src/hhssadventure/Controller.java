@@ -7,7 +7,7 @@ package hhssadventure;
 
 /**
  *
- * @author Denise
+ * @author Brendan
  */
 public class Controller {
     
