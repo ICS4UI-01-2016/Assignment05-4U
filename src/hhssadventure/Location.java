@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Location {
 
-    //A way to store all possible screens in an array 
+    // A way to store all possible screens in an array 
     private ArrayList<Screen> screens;
 
     /**
@@ -24,10 +24,10 @@ public class Location {
      * @param input 
      */
     public Location (String locationName, Scanner input) {
-        //initialize array, since there are 4 lines, and 4 directions
+        // Initialize array, since there are 4 lines, and 4 directions
         screens = new ArrayList<>();
          
-        // makes 3 screens 
+        // Makes 3 screens 
         for (int i = 0; i <= 3; i++) {
             Screen scrn = new Screen(locationName, input);          
             screens.add(scrn);
