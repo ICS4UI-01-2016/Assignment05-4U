@@ -4,25 +4,26 @@ package hhssadventure;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author guanv6321
  */
 public class Controller {
 
-    // instance variables for gui, map, location, direction
+    // Create constants to be used (instance variables)
+    // Create gui variable within controller
     private GUI gui;
     private Map map;
     private String location;
     private String direction;
-    
+
     /**
      * constructor for controller
+     *
      * @param gui
      * @param map
      * @param location
-     * @param direction 
+     * @param direction
      */
     public Controller(GUI gui, Map map, String location, String direction) {
         // initialize variables
