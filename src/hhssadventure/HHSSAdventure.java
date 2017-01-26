@@ -7,7 +7,7 @@ package hhssadventure;
 
 /**
  *
- * @author lamon
+ * @author kulla6503, guanv6321
  */
 public class HHSSAdventure {
 
@@ -15,7 +15,22 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Creates the interface
+        GUI gui = new GUI();
+
+        // Shows the interface
+        gui.setVisible(true);
+
+        // Creates the map
+        Map map = new Map("images/pics.txt");
+
+        // Gets the starting location
+        String startLocation = map.getStartLocation();
+
+        // Gets the starting direction
+        String startDirection = map.getStartDirection();
+
+        // Create the controller
+        Controller c = new Controller(gui, map, startLocation, startDirection);
     }
-    
 }
