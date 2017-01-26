@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 /**
  *
- * @author guanv6321
+ * @author guanv6321, kulla6503 
  */
 public class Map {
 
@@ -23,26 +23,34 @@ public class Map {
     private String startDirection;
 
     /**
-     * constructor to initialize starting location and direction
+     * Constructor to initialize starting location and direction
      * @param fileName 
      */
     public Map(String fileName) {
 
+        // Initialize the location array list 
         locations = new ArrayList<>();
         try {
-            // make the scanner for the text file
+            // Make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
+            
+            // Gets the start location 
             this.startLocation = input.next();
+            
+            // Gets the star direction 
             this.startDirection = input.next();
 
             // Make screens
-            // loop to the end of the file
+            // Loop to the end of the file
             while (input.hasNext()) {
-                // creating a screen from the scanner
+                
+                // Creating a screen from the scanner
                  Location loc = new Location(input.next(), input);
-                // added the created screen to the list
+                 
+                // Added the created screen to the list
                 locations.add(loc);
             }
+            // The Method catches the print stack trace method 
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }

@@ -12,24 +12,33 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author guanv6321
+ * @author kulla6503, guanv6321
  */
 public class ImageComponentAdventure extends JComponent{
     private BufferedImage image;
     
+     /**
+     * Construct the image
+     */ 
     public ImageComponentAdventure(){
         image = null;
     }
     
     @Override
-    public void paintComponent(Graphics g){      
+    public void paintComponent(Graphics g){   
+        
         if(image != null){
+            // If the image is null
             g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
-    
+    /**
+     * The image is painted to the screen 
+     * @param img the image being painted
+     */
     public void setImage(BufferedImage img){
         image = img;
-        repaint(); // so we see the change being made       
+        // So the changes made are seen 
+        repaint();        
     }
 }
