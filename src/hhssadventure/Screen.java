@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  * @author guanv6321
  */
 public class Screen {
-    
+
     // instance variables
     private String locationName;
     private String direction;
@@ -23,7 +23,7 @@ public class Screen {
     private boolean clear;
     private String newLocation;
     private String newDirection;
-    
+
     /**
      * Using a scanner to create a new screen
      *
@@ -31,13 +31,13 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(String locationName, Scanner input) {
-        
+
         // Checks the location
         this.locationName = locationName;
-        
+
         // Checks the direction 
-        this.direction = input.next();    
-        
+        this.direction = input.next();
+
         // The image name is scanned 
         String imageName = input.next();
 
@@ -51,7 +51,7 @@ public class Screen {
 
         // If next word is "true"
         if (input.next().equals("true")) {
-            
+
             // Set clear to "false"
             this.clear = false;
         } else {
@@ -61,18 +61,19 @@ public class Screen {
 
         // If path is not clear
         if (this.clear) {
-            
+
             // Moves forward to new location 
             this.newLocation = input.next();
-            
+
             // Moves forward to new direction 
-            this.newDirection = input.next();         
+            this.newDirection = input.next();
         }
 
     }
 
     /**
      * Gets the location name
+     *
      * @return the location name
      */
     public String getLocationName() {
@@ -81,6 +82,7 @@ public class Screen {
 
     /**
      * Gets the current direction
+     *
      * @return the current direction
      */
     public String getDirection() {
@@ -89,6 +91,7 @@ public class Screen {
 
     /**
      * Gets the image
+     *
      * @return the image
      */
     public BufferedImage getImage() {
@@ -97,14 +100,16 @@ public class Screen {
 
     /**
      * Gets the condition of front being clear
+     *
      * @return the condition of front being clear
      */
     public boolean clear() {
         return this.clear;
     }
-    
+
     /**
      * Gets the new location
+     *
      * @return the new location
      */
     public String getNewLocation() {
@@ -113,10 +118,10 @@ public class Screen {
 
     /**
      * Gets the new direction
+     *
      * @return the new direction
      */
     public String getNewDirecton() {
         return this.newDirection;
     }
-
 }

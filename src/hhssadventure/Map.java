@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 /**
  *
- * @author guanv6321, kulla6503 
+ * @author guanv6321, kulla6503
  */
 public class Map {
 
@@ -24,7 +24,8 @@ public class Map {
 
     /**
      * Constructor to initialize starting location and direction
-     * @param fileName 
+     *
+     * @param fileName
      */
     public Map(String fileName) {
 
@@ -33,20 +34,20 @@ public class Map {
         try {
             // Make the scanner for the text file
             Scanner input = new Scanner(new File(fileName));
-            
+
             // Gets the start location 
             this.startLocation = input.next();
-            
+
             // Gets the star direction 
             this.startDirection = input.next();
 
             // Make screens
             // Loop to the end of the file
             while (input.hasNext()) {
-                
+
                 // Creating a screen from the scanner
-                 Location loc = new Location(input.next(), input);
-                 
+                Location loc = new Location(input.next(), input);
+
                 // Added the created screen to the list
                 locations.add(loc);
             }
@@ -59,6 +60,7 @@ public class Map {
 
     /**
      * Gets starting location
+     *
      * @return starting location
      */
     public String getStartLocation() {
@@ -67,6 +69,7 @@ public class Map {
 
     /**
      * Gets starting direction
+     *
      * @return starting direction
      */
     public String getStartDirection() {
@@ -75,22 +78,23 @@ public class Map {
 
     /**
      * Gets the screen
+     *
      * @param location of the screen
      * @param direction of the screen
      * @return the location and direction
      */
     public Screen getScreen(String location, String direction) {
-        
+
         // Goes through the screen
         for (Location loc : locations) {
-            
+
             // The screens past for location loc
             this.screens = loc.getScreens();
-            
+
             // Checks if location and direction are equal
             for (Screen scrn : screens) {
-                
-                
+
+
                 if (scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)) {
                     // Return the screen if it is found
                     return scrn;

@@ -7,15 +7,14 @@ import java.awt.image.BufferedImage;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author guanv6321
  */
 public class GUI extends javax.swing.JFrame {
+
     private Controller controller;
-    private ImageComponentAdventure imagePanel;
-    
+
     /**
      * Creates new form GUIAdventure
      */
@@ -23,14 +22,14 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void setController(Controller c){
+    public void setController(Controller c) {
         controller = c;
-    }     
-   
-    public void setImage(BufferedImage img){
-       imageComponentAdventure1.setImage(img); 
     }
-    
+
+    public void setImage(BufferedImage img) {
+        imageComponentAdventure1.setImage(img);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -143,9 +142,6 @@ public class GUI extends javax.swing.JFrame {
         controller.lookWest();
     }//GEN-LAST:event_WestButtonActionPerformed
 
-    
-    
-    
     /**
      * @param args the command line arguments
      */

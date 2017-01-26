@@ -82,8 +82,9 @@ public class Controller {
         gui.setImage(newScreen.getImage());
 
     }
+
     /**
-     * Method allows for the user to turn East 
+     * Method allows for the user to turn East
      */
     public void lookEast() {
         // Set direction to equal East 
@@ -94,6 +95,7 @@ public class Controller {
         gui.setImage(newScreen.getImage());
 
     }
+
     /**
      * Method allows for the user to turn South
      */
@@ -106,6 +108,7 @@ public class Controller {
         gui.setImage(newScreen.getImage());
 
     }
+
     /**
      * Method allows for the user to turn West
      */
