@@ -97,7 +97,7 @@ S IMG_0116.JPG false Staff S
 W IMG_0117.JPG true
 Science2
 N IMG_0123.JPG true
-E IMG_0119.JPG false Science1 
+E IMG_0119.JPG false Science1 E
 S IMG_0120.JPG true
 W IMG_0121.JPG false Art2 W
 Science1

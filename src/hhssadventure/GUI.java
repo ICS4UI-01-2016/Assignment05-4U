@@ -22,7 +22,7 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void setControler(Controller c){
+    public void setController(Controller c){
         controller = c;
     }
     
