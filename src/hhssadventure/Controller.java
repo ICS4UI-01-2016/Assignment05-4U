@@ -12,4 +12,21 @@ package hhssadventure;
  */
 public class Controller {
     
+        private GUI gui;
+        private School school;
+        private String screen;
+        private String direction;
+    
+        public Controller(GUI gui, School school, String screen, String direction){
+            
+            this.gui = gui;
+            this.school = school;
+            this.screen = screen;
+            this.direction = direction;
+            
+            gui.setController(this);
+            
+            
+            
+        }
 }

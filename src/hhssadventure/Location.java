@@ -9,6 +9,6 @@ package hhssadventure;
  *
  * @author Brendan
  */
-public class PlaceInSchool {
+public class Location {
     
 }
