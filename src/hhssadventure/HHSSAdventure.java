@@ -7,7 +7,7 @@ package hhssadventure;
 
 /**
  *
- * @author lamon
+ * @author kulla6503, guanv6321
  */
 public class HHSSAdventure {
 
