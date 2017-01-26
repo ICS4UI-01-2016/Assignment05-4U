@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Location {
     private String name;
-    private ArrayList<screen> screens;
+    private ArrayList<screen> screens;  //Only private screens being used for the map
 
     public Location(Scanner input) {
         // Initialize the list of screens for this location
@@ -63,5 +63,13 @@ public class Location {
         }
         // Return nothing if no screen was found
         return null;
+    }
+    
+    /**
+     * return the array lists screens
+     * @return the screens from the array list
+     */
+    public ArrayList getScreen(){
+        return screens;
     }
 }

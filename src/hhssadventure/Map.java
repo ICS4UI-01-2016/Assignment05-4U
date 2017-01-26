@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import javafx.stage.Screen;
 
 
 
@@ -22,9 +21,8 @@ public class Map {
 
     String StartLoc;
     String StartDir;
-
-
     private ArrayList<Location> locations;
+    private ArrayList<screen>screens;
 
 
     public Map(String fileName) {
@@ -32,12 +30,11 @@ public class Map {
         try {
             Scanner input = new Scanner(new File(fileName));
 
-            StartLoc  = input.nextLine();
-            StartDir = input.nextLine();
+            this.StartLoc  = input.nextLine();
+            this.StartDir = input.nextLine();
 
-            while (input.hasNext()) {
+            while(input.hasNext()) {
                 Location loc = new Location(input);
-
                 locations.add(loc);
             }
     
@@ -45,7 +42,6 @@ public class Map {
             ex.printStackTrace();
         }
     }
-
 
     public String getStartLoc() {
         return StartDir;
@@ -55,10 +51,10 @@ public class Map {
         return StartDir;
     }
     
-    public screen getScreen(String findLocation, String findDirection) {
+    public screen getScreen(String Location, String Direction) {
         for (Location loc : this.locations) {
-            if (loc.getName().equals(findLocation)) {
-                return loc.getScreen(findDirection);
+            if (loc.getName().equals(Location)) {
+                return loc.getScreen(Direction);
             }
         }
         // No screen found, return nothing!

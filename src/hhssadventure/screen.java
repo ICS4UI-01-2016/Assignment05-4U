@@ -17,71 +17,98 @@ import javax.imageio.ImageIO;
  */
 public class screen {
    
-    private String Direction;
     private BufferedImage image;
     private String img;
-    private boolean blocked;
-    private String nextDirection;
-    private String newimg;
+    private String Direction;
     private String Location;
+    private String newimg;
+    private String nextDirection;
     private String nextLocation;
+    private boolean blocked;
             
-    screen(Scanner input){
+    /**
+     * This method takes the images and splits them apart from the "_" to return the direction and image number
+     * @param input 
+     */
+    screen(Scanner input){  
+        //setup the scanner
         //scan int image name
-     String imageName = "";  
+     String imageName = input.next();  
      try {
             imageName = input.nextLine();
         } catch (Exception e) {
             e.printStackTrace();
         }
-   
-     String[] split = imageName.split(" ");
-     Direction = split[0];
-     img = split [1];
-     blocked = Boolean.parseBoolean(split[2]);
-     
-     if(!blocked){
-         nextLocation = split[3];
-         nextDirection = split[4];
-     }
      
      //load in the image file
      try{
-         image = ImageIO.read(new File("images/" + img ));
+         this.image = ImageIO.read(new File("images/" + imageName ));
      }catch(Exception e){
          e.printStackTrace();
      }
     }  
   
+    /**
+     * This method gets the available directions for the next move
+     * @return the direction
+     */
     public String Direction(){
         return this.Direction;
     }
     
+    /**
+     * This gets the initial location
+     * @return the initial location
+     */
     public String Location(){
         return this.Location;
     }
    
+    /**
+     * This method gets the next location/image that will be moved to
+     * @return the next location 
+     */
     public String nextLocation(){
         return this.nextLocation;
     }
     
+    /**
+     * This method gets the initial image
+     * @return the image
+     */
     public String getimg() {
         return this.img;
     }
     
-     public String getnewimg() {
+    /**
+     * This method is to get the new image
+     * @return the new image
+     */ 
+    public String getnewimg() {
         return this.newimg;
     }
     
-    public boolean isBlocked() {
+    /**
+     * This method is to find whether or not the next move is blocked
+     * @return blocked
+     */
+     public boolean isBlocked() {
         return this.blocked;
     }
     
+    /**
+     * The method to get the next direction
+     * @return the next direction
+     */
     public String getNextDirection() {
         return this.nextDirection;
     }
     
  
+    /**
+     * the getImage method
+     * @return the image
+     */
     public BufferedImage getImage(){
         return image;
     }          
