@@ -58,7 +58,7 @@ public class Map {
     }
 
     /**
-     * gets starting location
+     * Gets starting location
      * @return starting location
      */
     public String getStartLocation() {
@@ -66,7 +66,7 @@ public class Map {
     }
 
     /**
-     * gets starting direction
+     * Gets starting direction
      * @return starting direction
      */
     public String getStartDirection() {
@@ -74,24 +74,30 @@ public class Map {
     }
 
     /**
-     * gets the screen
+     * Gets the screen
      * @param location of the screen
      * @param direction of the screen
      * @return the location and direction
      */
     public Screen getScreen(String location, String direction) {
-        // goes through the screen
+        
+        // Goes through the screen
         for (Location loc : locations) {
+            
+            // The screens past for location loc
             this.screens = loc.getScreens();
-            // checks if location and direction are equal
+            
+            // Checks if location and direction are equal
             for (Screen scrn : screens) {
+                
+                
                 if (scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)) {
-                    // return the screen if it is found
+                    // Return the screen if it is found
                     return scrn;
                 }
             }
         }
-        // return nothing if no screen is found
+        // Return nothing if no screen is found
         return null;
     }
 }

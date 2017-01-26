@@ -31,12 +31,17 @@ public class Screen {
      * @param input A scanner containing screen info
      */
     public Screen(String locationName, Scanner input) {
-        // checks the direction and location
+        
+        // Checks the location
         this.locationName = locationName;
-        this.direction = input.next();      
+        
+        // Checks the direction 
+        this.direction = input.next();    
+        
+        // The image name is scanned 
         String imageName = input.next();
 
-        // load the image file
+        // Load the image file
         try {
             this.image = ImageIO.read(new File("images/" + imageName));
         } catch (Exception ex) {
@@ -44,26 +49,30 @@ public class Screen {
 
         }
 
-        // if next word is "true"
+        // If next word is "true"
         if (input.next().equals("true")) {
-            // set clear to false
+            
+            // Set clear to "false"
             this.clear = false;
         } else {
-            // set clear to true
+            // Set clear to "true"
             this.clear = true;
         }
 
-        // if path is not clear
+        // If path is not clear
         if (this.clear) {
-            // moves forward
+            
+            // Moves forward to new location 
             this.newLocation = input.next();
+            
+            // Moves forward to new direction 
             this.newDirection = input.next();         
         }
 
     }
 
     /**
-     * gets the location name
+     * Gets the location name
      * @return the location name
      */
     public String getLocationName() {
@@ -71,7 +80,7 @@ public class Screen {
     }
 
     /**
-     * gets the current direction
+     * Gets the current direction
      * @return the current direction
      */
     public String getDirection() {
@@ -79,7 +88,7 @@ public class Screen {
     }
 
     /**
-     * gets the image
+     * Gets the image
      * @return the image
      */
     public BufferedImage getImage() {
@@ -87,7 +96,7 @@ public class Screen {
     }
 
     /**
-     * gets the condition of front being clear
+     * Gets the condition of front being clear
      * @return the condition of front being clear
      */
     public boolean clear() {
@@ -95,7 +104,7 @@ public class Screen {
     }
     
     /**
-     * gets the new location
+     * Gets the new location
      * @return the new location
      */
     public String getNewLocation() {
@@ -103,7 +112,7 @@ public class Screen {
     }
 
     /**
-     * gets the new direction
+     * Gets the new direction
      * @return the new direction
      */
     public String getNewDirecton() {
