@@ -25,20 +25,24 @@ public class Map {
     private String South;
     private String West;
 
-    public Map(String fileName) {
+    public Map(String Name) {
         // initialize the list
+        java.io.File fileName = new java.io.File(Name);
         screens = new ArrayList<>();
         miniscreens = new ArrayList<>();
+        System.out.println(fileName);
+        
         try {
             // make the scanner for the text file
-            Scanner input = new Scanner(new File(fileName));
-
-
+            Scanner input = new Scanner(fileName);
 
             while (input.hasNextLine()) {
                 //creating a screen from the scanner
+                System.out.println(input);
                 Screen s = new Screen(input);
                 // added the created screen to the list
+                System.out.println(input);
+                System.out.println("Anything");
                 screens.add(s);
                 //HELP THIS LINE
                 input.nextLine();
@@ -68,12 +72,12 @@ public class Map {
         return null;
     }
     
-    public Screen findScreen(String IMGDes, String IMGDirect2){
+    public Screen findScreen(String IMGDes, String IMGDirect2) throws FileNotFoundException{
         
         for(Screen s: screens){
             
             if(s.getIMGDirect().equals(IMGDes)){
-                Scanner input = new Scanner(new File(fileName));
+                Scanner input = new Scanner(new File("Russell.jpg"));
                 for(int i = 0; i < 4; i++){
                     Screen t = new Screen(input);
                 }

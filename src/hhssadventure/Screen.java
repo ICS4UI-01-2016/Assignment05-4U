@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+import com.sun.prism.Texture;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
@@ -37,7 +38,7 @@ public class Screen {
      */
     public Screen(Scanner input) {
         // scan in the image name
-        String imageName = input.next();
+        String imageName = input.nextLine();
         //use the split to grab the image number
         String[] Split = imageName.split(" ");
 
@@ -49,10 +50,11 @@ public class Screen {
             this.IMGDes = Split[3].substring(0, Split[3].length());
             this.IMGDirect2 = Split[4].substring(0, Split[4].length());
         }
+        
 
         // loading the image file
         try {
-            image = ImageIO.read(new File("images/" + imageName));
+            image = ImageIO.read(new File("images/IMG_" + IMGNum));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,6 +99,7 @@ public class Screen {
         String WestFaceIMG = input.nextLine();
         input.nextLine();
         String SouthFaceIMG = input.nextLine();
+        System.out.println("SouthFaceIMG");
     }
 
     /**

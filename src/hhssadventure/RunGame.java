@@ -24,8 +24,8 @@ public class RunGame {
         // show the interface
         gui.setVisible(true);
         //create the map
-        Map map = new Map("images/pics.txt");
+        Map map = new Map("images\\pics.txt");
         // create the game controller
-        Controller c = new Controller(gui, map, "Upstairs1", "0047");
+        Controller c = new Controller(gui, map, 0047, "Upstairs1");
     }
 }

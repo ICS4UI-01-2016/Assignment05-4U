@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author moore3607
  */
 public class Controller {
+
     private GUI gui;
     private Map map;
     private int IMGNum;
@@ -19,76 +19,68 @@ public class Controller {
     private String IMGDirect;
     private String IMGBool;
     private ArrayList<Screen> screens;
-    
-    public Controller(GUI gui, Map map, int IMGNum, String IMGDes){
+
+    public Controller(GUI gui, Map map, int IMGNum, String IMGDes) {
         this.gui = gui;
         this.map = map;
         this.IMGNum = IMGNum;
         this.IMGDes = IMGDes;
-        
+
         //make sure the GUI can talk to you
-        gui.setControler(this);
-        
+        gui.setController(this);
+
         // set the starting image
-        Screen start = map.getScreen(IMGNum);
+        Screen start = map.getScreen(IMGDes);
         gui.setImage(start.getImage());
     }
-    
-    public void goNorth(){
+
+    public void goNorth() {
         // get the screen we are on right now
-        Screen current = map.getScreen(IMGNum);
+        Screen current = map.getScreen(IMGDes);
         //ask if we can move north
-        if(current.canGoNorth()){
+        if (current.canGoNorth()) {
             // move up a row
-            if(IMGDirect.equals("N")){
-                
-    }
+            if (IMGDirect.equals("N")) {
             }
-            //need new location
-            // get the new screen
-            Screen newScreen = map.getScreen(IMGNum);
-            // set the image
-            gui.setImage(newScreen.getImage());
         }
+        //need new location
+        // get the new screen
+        Screen newScreen = map.getScreen(IMGDes);
+        // set the image
+        gui.setImage(newScreen.getImage());
     }
-    
-    public void goSouth(){
+
+    public void goSouth() {
         // get the screen we are on right now
-        Screen current = map.getScreen(IMGNum);
+        Screen current = map.getScreen(IMGDes);
         //ask if we can move south
-        if(current.canGoSouth()){
-            // move down a row
-            row++;
+        if (current.canGoSouth()) {
             // get the new screen
-            Screen newScreen = map.getScreen(IMGNum);
+            Screen newScreen = map.getScreen(IMGDes);
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
-    
-    public void goEast(){
+
+    public void goEast() {
         // get the screen we are on right now
-        Screen current = map.getScreen(IMGNum);
+        Screen current = map.getScreen(IMGDes);
         //ask if we can move east
-        if(current.canGoEast()){
-            // move to the right column
-            row--;
+        if (current.canGoEast()) {
             // get the new screen
-            Screen newScreen = map.getScreen(IMGNum);
+            Screen newScreen = map.getScreen(IMGDes);
             // set the image
             gui.setImage(newScreen.getImage());
         }
     }
-    
-    public void goWest(){
+
+    public void goWest() {
         // get the screen we are on right now
-        Screen current = map.getScreen(IMGNum);
+        Screen current = map.getScreen(IMGDes);
         //ask if we can move west
-        if(current.canGoWest()){
-            // move to the left column
-            row--;
+        if (current.canGoWest()) {
             // get the new screen
-            Screen newScreen = map.getScreen(IMGNum);
+            Screen newScreen = map.getScreen(IMGDes);
             // set the image
             gui.setImage(newScreen.getImage());
         }
