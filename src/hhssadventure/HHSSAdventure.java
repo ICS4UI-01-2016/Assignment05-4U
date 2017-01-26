@@ -17,16 +17,22 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args)  {
-        // creates the interface
+        // Creates the interface
         GUI gui = new GUI();
-        // shows the interface
+        
+        // Shows the interface
         gui.setVisible(true);
-        // creates the map
+        
+        // Creates the map
         Map map = new Map("images/pics.txt");
-        // gets starting location and direction
+        
+        // Gets the starting location and direction
         String startLocation = map.getStartLocation();
+        
+        // Gets the starting direction
         String startDirection = map.getStartDirection();
-        // create the controller
+        
+        // Create the controller
         Controller c = new Controller(gui, map, startLocation, startDirection);
     }
     
