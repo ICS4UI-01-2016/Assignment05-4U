@@ -94,7 +94,6 @@ public class Map {
             // Checks if location and direction are equal
             for (Screen scrn : screens) {
 
-
                 if (scrn.getLocationName().equalsIgnoreCase(location) && scrn.getDirection().equals(direction)) {
                     // Return the screen if it is found
                     return scrn;

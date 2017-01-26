@@ -26,8 +26,8 @@ public class Location {
         // Initialize array, since there are 4 lines, and 4 directions
         screens = new ArrayList<>();
 
-        // Makes 3 screens 
-        for (int i = 0; i <= 3; i++) {
+        // Makes the next 4 possible screens 
+        for (int i = 0; i < 4; i++) {
             Screen scrn = new Screen(locationName, input);
             screens.add(scrn);
         }
