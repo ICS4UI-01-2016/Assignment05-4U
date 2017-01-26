@@ -14,6 +14,14 @@ import java.util.ArrayList;
 public class School {
     
     private ArrayList<Screen> screens;
-    private ArrayList<Screen> locations;
+    private ArrayList<Location> locations;
+    
+    private String initialLocation;
+    private String initialDirection;
+    
+    public School(String fileName){
+        
+    }
+    
     
 }

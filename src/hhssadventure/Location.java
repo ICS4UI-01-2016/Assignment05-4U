@@ -5,10 +5,28 @@
  */
 package hhssadventure;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Brendan
  */
 public class Location {
-    
+
+    private ArrayList<Screen> screens;
+
+    public Location(String locationName, Scanner in) {
+        screens = new ArrayList<>();
+
+        for (int i = 0; i <= 3; i++) {
+            Screen s = new Screen(locationName, in);
+            screens.add(s);
+        }
+    }
+
+    public ArrayList getNextScreen() {
+        return screens;
+    }
+
 }
