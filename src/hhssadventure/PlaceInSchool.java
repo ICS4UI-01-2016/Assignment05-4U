@@ -5,11 +5,10 @@
  */
 package hhssadventure;
 
-
 /**
  *
  * @author Brendan
  */
-public class Controller {
+public class PlaceInSchool {
     
 }
