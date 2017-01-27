@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author Brendan
+ * @author Denise
  */
 public class GUI extends javax.swing.JFrame {
 
@@ -27,9 +27,8 @@ public class GUI extends javax.swing.JFrame {
         controller = c;
     }
     
-    public void setImage(BufferedImage img) {
-        // the image panel sets its image
-        imageComponent2.drawImage(img);
+    public void setImage(BufferedImage img){
+        imageComponent1.drawImage(img);
     }
     
     /**
@@ -41,39 +40,39 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imageComponent2 = new hhssadventure.ImageComponent();
+        imageComponent1 = new hhssadventure.ImageComponent();
         northButton = new javax.swing.JButton();
         westButton = new javax.swing.JButton();
-        southButton = new javax.swing.JButton();
         eastButton = new javax.swing.JButton();
+        southButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         northButton.setText("North");
-        imageComponent2.add(northButton);
-        northButton.setBounds(160, 300, 59, 23);
+        imageComponent1.add(northButton);
+        northButton.setBounds(170, 210, 59, 23);
 
         westButton.setText("West");
-        imageComponent2.add(westButton);
-        westButton.setBounds(70, 330, 57, 23);
-
-        southButton.setText("South");
-        imageComponent2.add(southButton);
-        southButton.setBounds(160, 360, 61, 23);
+        imageComponent1.add(westButton);
+        westButton.setBounds(80, 240, 57, 23);
 
         eastButton.setText("East");
-        imageComponent2.add(eastButton);
-        eastButton.setBounds(250, 330, 53, 23);
+        imageComponent1.add(eastButton);
+        eastButton.setBounds(250, 240, 53, 23);
+
+        southButton.setText("South");
+        imageComponent1.add(southButton);
+        southButton.setBounds(170, 260, 61, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imageComponent2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imageComponent2, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+            .addComponent(imageComponent1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,7 +115,7 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton eastButton;
-    private hhssadventure.ImageComponent imageComponent2;
+    private hhssadventure.ImageComponent imageComponent1;
     private javax.swing.JButton northButton;
     private javax.swing.JButton southButton;
     private javax.swing.JButton westButton;

@@ -22,7 +22,7 @@ public class HHSSAdventure {
         
         gui.setVisible(true);
         
-        School school = new School("image/pics.txt");
+        School school = new School("images/pics.txt");
         
         String initialLocation = school.getInitialLocation();
         
