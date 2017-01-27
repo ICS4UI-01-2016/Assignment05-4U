@@ -14,19 +14,19 @@ public class Controller {
     
         private GUI gui;
         private School school;
-        private String screen;
+        private String location;
         private String direction;
     
-        public Controller(GUI gui, School school, String screen, String direction){
+        public Controller(GUI gui, School school, String location, String direction){
             
             this.gui = gui;
             this.school = school;
-            this.screen = screen;
+            this.location = location;
             this.direction = direction;
             
             gui.setController(this);
             
-            
-            
+            Screen current = school.getScreen(location, direction);
+            gui.setImage(current.getImage());
         }
 }
