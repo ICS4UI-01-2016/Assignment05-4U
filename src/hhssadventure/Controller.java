@@ -5,28 +5,66 @@
  */
 package hhssadventure;
 
-
 /**
  *
  * @author Brendan
  */
 public class Controller {
     
-        private GUI gui;
-        private School school;
-        private String location;
-        private String direction;
+    private GUI gui;
+    private School school;
+    private String location;
+    private String direction;
     
-        public Controller(GUI gui, School school, String location, String direction){
+    public Controller(GUI gui, School school, String location, String direction) {
+        
+        this.gui = gui;
+        this.school = school;
+        this.location = location;
+        this.direction = direction;
+        
+        gui.setController(this);
+        
+        Screen current = school.getScreen(location, direction);
+        gui.setImage(current.getImage());
+    }
+    
+    public void goNorth() {
+        this.direction = "N";
+        Screen newImage = school.getScreen(location, direction);
+        gui.setImage(newImage.getImage());
+    }
+    
+    public void goEast() {
+        this.direction = "E";
+        Screen newImage = school.getScreen(location, direction);
+        gui.setImage(newImage.getImage());
+    }
+    
+    public void goSouth() {
+        this.direction = "S";
+        Screen newImage = school.getScreen(location, direction);
+        gui.setImage(newImage.getImage());
+    }
+    
+    public void goWest() {
+        this.direction = "W";
+        Screen newImage = school.getScreen(location, direction);
+        gui.setImage(newImage.getImage());
+    }
+    
+    public void goForwards() {
+        Screen current = school.getScreen(location, direction);
+        
+        if (current.getPathNotBlocked()) {
             
-            this.gui = gui;
-            this.school = school;
-            this.location = location;
-            this.direction = direction;
+            this.location = current.getSecLocation();
+            this.direction = current.getSecDirection();
             
-            gui.setController(this);
+            Screen newImage = school.getScreen(location, direction);
             
-            Screen current = school.getScreen(location, direction);
-            gui.setImage(current.getImage());
+            gui.setImage(newImage.getImage());
         }
+    }
+    
 }

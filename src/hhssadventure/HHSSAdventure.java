@@ -5,6 +5,8 @@
  */
 package hhssadventure;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author lamon
@@ -14,14 +16,19 @@ public class HHSSAdventure {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         GUI gui = new GUI();
         
+        gui.setVisible(true);
         
+        School school = new School("image/pics.txt");
         
+        String initialLocation = school.getInitialLocation();
         
+        String initialDirection = school.getInitialDirection();
         
+        Controller c = new Controller(gui, school, initialLocation, initialDirection);
     }
     
 }
