@@ -9,10 +9,11 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author Denise
+ * @author Brendan
  */
 public class GUI extends javax.swing.JFrame {
 
+    // making the controller and the image panel
     private Controller controller;
     private ImageComponent imagePanel;
     
@@ -23,10 +24,18 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
 
+    /**
+     * create the controller
+     * @param c represents the controller
+     */
     public void setController(Controller c){
         controller = c;
     }
     
+    /**
+     * set the image
+     * @param img represents the image
+     */
     public void setImage(BufferedImage img){
         imageComponent1.drawImage(img);
     }
