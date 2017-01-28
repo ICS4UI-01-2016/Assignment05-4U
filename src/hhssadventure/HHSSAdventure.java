@@ -5,8 +5,6 @@
  */
 package hhssadventure;
 
-import hhssadventure.Map;
-
 /**
  *
  * @author Munt
@@ -22,7 +20,8 @@ public class HHSSAdventure {
         //set the gui to be visible
         gui.setVisible(true);
         //create the map 
-        Map map = new Map("images/pics.txt");
+        Map map = new Map("images/pics.txt");//error
+        System.out.println(map);
         //create the statring location
         String firstLoc = map.getFirstLocation();
         //set the startin location 

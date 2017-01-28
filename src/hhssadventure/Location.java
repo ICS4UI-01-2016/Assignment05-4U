@@ -28,7 +28,8 @@ public class Location {
         screens = new ArrayList<>();
         //makes the 3 screens for each location 
         for (int i = 0; i <= 3; i++) {
-            Screen s = new Screen(locationName, input);
+        Screen s= new Screen(locationName, input);//error 
+            
             //add the screens to the array 
             screens.add(s);
         }
@@ -39,7 +40,7 @@ public class Location {
      *
      * @return screens
      */
-    public ArrayList getScreens() {
+    public ArrayList<Screen> getScreens() {
         return screens;
     }
 

@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
  */
 /**
  *
- * @author munta
+ * @author muntake
  */
 public class Screen {
 //insatnce variables 
@@ -28,9 +28,16 @@ public class Screen {
         //grab the first location
         this.locationName = LocationName;
         //scan the direction of location 
+ //Caf1
+  //  N
+//Upstairs1
+//N IMG_0045.JPG false Dowstairs S
+//E IMG_0046.JPG true
+//S IMG_0047.JPG false Upstairs2 S
+//W IMG_0049.JPG true
         this.direction = in.next();
         //scan in the image 
-        String imageName=in.next();
+        String imageName = in.next();//error
 
         try {
             this.image = ImageIO.read(new File("images/" + imageName));
@@ -38,7 +45,7 @@ public class Screen {
         }
 
         //check too see if front is clear 
-        if (in.next().equals("true")) {
+        if (in.next().equals("True")) {
             this.IsClear = false;
             //else you can move
         } else {
@@ -47,8 +54,10 @@ public class Screen {
         }
         //if you have moved (was true) then you set the new direction and location 
         if (this.IsClear) {
-            this.nextDirection = in.next();
             this.nextLoc = in.next();
+            this.nextDirection = in.next();
+            System.out.println(nextLoc);
+            
         }
 
     }
@@ -59,7 +68,7 @@ public class Screen {
      * @return the location
      */
     public String getlocationName() {
-        return locationName;
+        return this.locationName;
     }
 
     /**

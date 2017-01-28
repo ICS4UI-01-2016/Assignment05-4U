@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.tools.JavaFileManager.Location;
 
 /**
  *
@@ -47,12 +46,12 @@ public class Map {
             //while there is still text that has not been scanned 
             while (input.hasNext()) {
                 //eneter the locations into an array 
-                Location n = new Location(input);
+                Location n = new Location(input.next(),input);//error
+                System.out.println(n);
                 //add to array
                 locations.add(n);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
         }
     }
 
@@ -85,7 +84,7 @@ public class Map {
     public Screen getScreen(String Location, String Direction) {
         //go through all screens from location class
         for (Location l : locations) {
-            this.screens = l.getSreens();
+            this.screens = l.getScreens();
 
             for (Screen s : screens) {
                 //check to see if the imane location and the directions are the same 
